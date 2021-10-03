@@ -1,12 +1,18 @@
 import React from "react"
 import logo from "./logo.svg"
 import "./App.css"
+import styled from "@emotion/styled"
+
+const SampleText = styled.p({}, ({ theme }) => ({
+  color: theme.palette.textColor.white.quarternary,
+}))
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <SampleText>Hello World</SampleText>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
