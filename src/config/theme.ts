@@ -1,4 +1,4 @@
-import { Theme } from "@emotion/react";
+import { Theme } from "@emotion/react"
 
 export const theme: Theme = {
   palette: {
@@ -70,7 +70,7 @@ export const theme: Theme = {
       },
     },
   },
-};
+}
 
 const breakpoints = {
   xs: 0,
@@ -80,12 +80,12 @@ const breakpoints = {
   xl: 1200,
   xxl: 1440,
   xxxl: 1920,
-} as const;
+} as const
 
-type BreakpointsKey = "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl";
+type BreakpointsKey = "xs" | "sm" | "md" | "lg" | "xl" | "xxl" | "xxxl"
 
 function mq(maxWidth: BreakpointsKey) {
-  return `@media screen and (max-width: ${breakpoints[maxWidth]}px)`;
+  return `@media screen and (max-width: ${breakpoints[maxWidth]}px)`
 }
 
-export { mq };
+export { mq }
