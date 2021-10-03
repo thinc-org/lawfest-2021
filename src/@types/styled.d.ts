@@ -17,7 +17,6 @@ declare module "@emotion/react" {
         950: string;
       };
       secondary: {
-        50: string;
         100: string;
         200: string;
         300: string;
@@ -31,6 +30,8 @@ declare module "@emotion/react" {
       };
       black: {
         active: string;
+        disabled: string;
+        10: string;
         50: string;
         100: string;
         200: string;
@@ -56,13 +57,13 @@ declare module "@emotion/react" {
         };
       };
       textColor: {
-        whiteText: {
+        white: {
           primary: string;
           secondary: string;
           tertiary: string;
           quarternary: string;
         };
-        blackText: {
+        black: {
           primary: string;
           secondary: string;
           tertiary: string;
