@@ -1,11 +1,11 @@
 import React from "react"
 import logo from "./logo.svg"
 import "./App.css"
-import styled from "@emotion/styled"
+import { styled } from "./config/theme/stitches.config"
 
-const SampleText = styled.p({}, ({ theme }) => ({
-  color: theme.palette.textColor.white.quarternary,
-}))
+const SampleText = styled("p", {
+  color: "$text_white_tertiary",
+})
 
 function App() {
   return (
