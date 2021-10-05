@@ -9,7 +9,7 @@ function Example() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <StyledText css={{ color: '$primary400' }} variant="h1">
-          Hello World
+          Hello Sekai
         </StyledText>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
