@@ -5,6 +5,8 @@ import { styled } from "./config/theme/stitches.config"
 
 const SampleText = styled("p", {
   color: "$text_white_tertiary",
+  fontFamily: "$ChulaCharas",
+  fontSize: "$10",
 })
 
 function App() {
