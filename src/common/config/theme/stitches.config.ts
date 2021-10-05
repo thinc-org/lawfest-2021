@@ -11,7 +11,7 @@ export const { styled, theme, keyframes, prefix, css, globalCss } =
         ...palette,
       },
       fonts: {
-        Mitr: "'Kanit', sans-serif",
+        Mitr: "'Mitr', sans-serif",
         ChulaCharas: "'ChulaCharas', sans-serif",
       },
       fontSizes: {
