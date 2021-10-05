@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "naumovs.color-highlight",
+        "esbenp.prettier-vscode",
+        "formulahendry.auto-rename-tag"
+    ]
+}
