@@ -1,20 +1,16 @@
 import React from "react"
 import logo from "./logo.svg"
 import "./App.css"
-import { styled } from "./config/theme/stitches.config"
-
-const SampleText = styled("p", {
-  color: "$text_white_tertiary",
-  fontFamily: "$ChulaCharas",
-  fontSize: "$10",
-})
+import { StyledText } from "common/components/Typography"
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <SampleText>Hello World</SampleText>
+        <StyledText css={{ color: "$primary400" }} variant="h1">
+          Hello World
+        </StyledText>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
