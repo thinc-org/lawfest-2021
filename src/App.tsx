@@ -1,14 +1,14 @@
-import React from "react"
-import logo from "./logo.svg"
-import "./App.css"
-import { StyledText } from "common/components/Typography"
+import React from 'react'
+import logo from './logo.svg'
+import './App.css'
+import { StyledText } from 'common/components/Typography'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <StyledText css={{ color: "$primary400" }} variant="h1">
+        <StyledText css={{ color: '$primary400' }} variant="h1">
           Hello World
         </StyledText>
         <p>
