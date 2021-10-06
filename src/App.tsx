@@ -10,7 +10,7 @@ function App() {
             key={`route-${index}`}
             exact
             path={routeProps.path}
-            children={routeProps.component}
+            component={routeProps.component}
           />
         ))}
       </Switch>
