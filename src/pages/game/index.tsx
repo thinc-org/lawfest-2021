@@ -5,12 +5,8 @@ import {
 } from 'common/utils/requestAnimationFrame'
 import { LogoContainer, LogoImage } from './styled'
 import Logo from 'assets/logo.svg'
-
-const inkPos = [
-  [60, 190, '#CE894B', '#EFA561', 5, 400],
-  [300, 270, '#FBC55C', '#FBC55C', 8, 400],
-  [200, 450, '#444C71', '#444C71', 17, 1000],
-]
+import { INK_POS } from './constant'
+import { IInkRender } from './typed'
 
 function Game() {
   const [state, setState] = useState(0)
@@ -23,13 +19,13 @@ function Game() {
       nowCnt = 0
     const ctx = canvasRef.current?.getContext('2d')!
 
-    let particle: any = []
+    let particle: IInkRender[] = []
 
     const addInk = (
       posX: number,
       posY: number,
-      colorOne: string,
-      colorTwo: string,
+      colorStopFirst: string,
+      colorStopSecond: string,
       size: number,
       time: number
     ) => {
@@ -40,8 +36,8 @@ function Game() {
           angle: i * 5,
           size: size + Math.random() * 3,
           life: time + Math.random() * 50,
-          colorOne,
-          colorTwo,
+          colorStopFirst,
+          colorStopSecond,
         })
       }
     }
@@ -49,16 +45,16 @@ function Game() {
     const render = () => {
       for (var i = 0; i < particle.length; i++) {
         const grad = ctx.createLinearGradient(0, 0, 180, 0)
-        var p = particle[i]
-
-        grad.addColorStop(0, p.colorOne)
-        grad.addColorStop(1, p.colorTwo)
+        const p = particle[i]
+        grad.addColorStop(0, p.colorStopFirst)
+        grad.addColorStop(1, p.colorStopSecond)
 
         ctx.fillStyle = grad
 
         if (Math.random() < 0.1) {
           continue
         }
+        ctx.globalAlpha = 0.5
         ctx.beginPath()
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2, false)
         ctx.fill()
@@ -91,41 +87,20 @@ function Game() {
 
     const animLoop = (now: number) => {
       const diff = now - beginTime
-      if (diff >= 1000 && nowCnt === 0) {
-        addInk(
-          +inkPos[nowCnt][0],
-          +inkPos[nowCnt][1],
-          inkPos[nowCnt][2].toString(),
-          inkPos[nowCnt][3].toString(),
-          +inkPos[nowCnt][4],
-          +inkPos[nowCnt][5]
-        )
-        nowCnt++
-      } else if (diff >= 2000 && nowCnt === 1) {
-        addInk(
-          +inkPos[nowCnt][0],
-          +inkPos[nowCnt][1],
-          inkPos[nowCnt][2].toString(),
-          inkPos[nowCnt][3].toString(),
-          +inkPos[nowCnt][4],
-          +inkPos[nowCnt][5]
-        )
-        nowCnt++
-      } else if (diff >= 3000 && nowCnt === 2) {
-        addInk(
-          +inkPos[nowCnt][0],
-          +inkPos[nowCnt][1],
-          inkPos[nowCnt][2].toString(),
-          inkPos[nowCnt][3].toString(),
-          +inkPos[nowCnt][4],
-          +inkPos[nowCnt][5]
-        )
-        nowCnt++
-      } else if (diff >= 7000) {
-        setState(1)
-        return
+      if (nowCnt < INK_POS.length && diff >= INK_POS[nowCnt].delay) {
+        const { isImage, posX, posY, life, size, colorStart, colorStop } =
+          INK_POS[nowCnt++]
+        if (isImage) {
+          setState(1)
+          return
+        }
+        addInk(posX, posY, colorStart, colorStop, size, life)
       }
-      requestAnimationFrame(animLoop)
+
+      const finalPos = INK_POS[INK_POS.length - 1]
+
+      const num = requestAnimationFrame(animLoop)
+      if (finalPos.delay + finalPos.life + 100 <= diff) return num
       animate()
       render()
     }

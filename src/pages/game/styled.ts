@@ -9,7 +9,7 @@ export const LogoImage = styled('img', {
   position: 'absolute',
   top: '50%',
   left: '50%',
-  transition: 'all 2s ease-in',
+  transition: 'all 1s ease-in',
   variants: {
     show: {
       open: {
