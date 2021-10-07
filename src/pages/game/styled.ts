@@ -9,14 +9,16 @@ export const LogoImage = styled('img', {
   position: 'absolute',
   top: '50%',
   left: '50%',
-  transition: 'all 1s ease-in',
+  transition: 'opacity 1s ease-in',
   variants: {
     show: {
       open: {
-        transform: 'translate(-50%, -50%) scale(1)',
+        transform: 'translate(-50%, -50%)',
+        opacity: 1,
       },
       close: {
-        transform: 'translate(-50%, -50%) scale(0)',
+        transform: 'translate(-50%, -50%)',
+        opacity: 0,
       },
     },
   },
