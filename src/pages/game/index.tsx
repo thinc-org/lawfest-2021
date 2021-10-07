@@ -11,7 +11,6 @@ import { IInkRender } from './typed'
 function Game() {
   const [state, setState] = useState(0)
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const imageRef = useRef<HTMLImageElement>(null)
 
   useEffect(() => {
     let num = -1,
@@ -27,9 +26,10 @@ function Game() {
       colorStopFirst: string,
       colorStopSecond: string,
       size: number,
-      time: number
+      time: number,
+      opacity: number
     ) => {
-      for (var i = 0; i < 36 * 2; i++) {
+      for (var i = 0; i < 36 * 2.3; i++) {
         particle.push({
           x: posX,
           y: posY,
@@ -38,6 +38,7 @@ function Game() {
           life: time + Math.random() * 50,
           colorStopFirst,
           colorStopSecond,
+          opacity,
         })
       }
     }
@@ -54,9 +55,9 @@ function Game() {
         if (Math.random() < 0.1) {
           continue
         }
-        ctx.globalAlpha = 0.5
+        ctx.globalAlpha = p.opacity
         ctx.beginPath()
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2, false)
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 1.5, false)
         ctx.fill()
       }
     }
@@ -88,13 +89,21 @@ function Game() {
     const animLoop = (now: number) => {
       const diff = now - beginTime
       if (nowCnt < INK_POS.length && diff >= INK_POS[nowCnt].delay) {
-        const { isImage, posX, posY, life, size, colorStart, colorStop } =
-          INK_POS[nowCnt++]
+        const {
+          opacity,
+          isImage,
+          posX,
+          posY,
+          life,
+          size,
+          colorStart,
+          colorStop,
+        } = INK_POS[nowCnt++]
         if (isImage) {
           setState(1)
           return
         }
-        addInk(posX, posY, colorStart, colorStop, size, life)
+        addInk(posX, posY, colorStart, colorStop, size, life, opacity)
       }
 
       const finalPos = INK_POS[INK_POS.length - 1]
@@ -118,7 +127,6 @@ function Game() {
     <LogoContainer>
       <LogoImage
         show={state ? 'open' : 'close'}
-        ref={imageRef}
         src={Logo}
         alt="logo"
       ></LogoImage>

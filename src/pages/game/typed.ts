@@ -6,6 +6,7 @@ export interface IInkDetail {
   life: number
   colorStart: string
   colorStop: string
+  opacity: number
   isImage?: boolean
 }
 
@@ -17,4 +18,5 @@ export interface IInkRender {
   life: number
   colorStopFirst: string
   colorStopSecond: string
+  opacity: number
 }
