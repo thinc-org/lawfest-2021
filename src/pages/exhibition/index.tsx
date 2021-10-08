@@ -9,42 +9,28 @@ class Exhibition extends React.Component<{},{status:0}> {
     this.state = {status:0}
   }
   render(){
-    if(this.state.status === 0) 
-      return(
-        <div>
-         <img src = {home} width = '30px'></img>
-         <Selectors onClick={(i:any)=>this.handleClick(i)}></Selectors>
-        </div>
-      )
+    var content
     
+    if(this.state.status === 0) 
+      content = <Selectors onClick={(i:any)=>this.handleClick(i)}></Selectors>
     else if(this.state.status === 1){
-      return(
-        <div>
-         <img src = {home} width = '30px'></img>
-         <p>pages 1</p>
+      content = <p style={{display:'flex', justifyContent:'center'}}>What is Hope?</p>
+    }else if(this.state.status === 2){
+      content = <p style={{display:'flex', justifyContent:'center'}}>Hope Ignited</p>
+    }else if(this.state.status === 3){
+      content = <p style={{display:'flex', justifyContent:'center'}}>Hopeless but Hoping</p>
+    }
+
+    return(
+        <div style={{backgroundColor:'#f1e1c7'}}>
+         <img src = {home} width = '30px'onClick = {()=>this.setState({status:0})}></img>
+         {content}
         </div>
       )
-    }
-    else if(this.state.status === 2){
-      return(
-        <div>
-         <img src = {home} width = '30px'></img>
-         <p>pages 2</p>
-        </div>
-      )
-    }
-    else if(this.state.status === 3){
-      return(
-        <div>
-         <img src = {home} width = '30px'></img>
-         <p>pages 3</p>
-        </div>
-      )
-    }
   }
   
   handleClick(i:any){
-    console.log("click "+i)
+    //console.log("click "+i)
     this.setState({status:i})
     this.render()
   }
