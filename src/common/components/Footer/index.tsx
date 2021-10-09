@@ -6,8 +6,10 @@ import lawfestLogo from 'assets/images/lawfest_logo_white.png'
 const Footer = () => {
   return (
     <FooterContainer>
-      <StyledImg alt="lawfest_logo" src={lawfestLogo} />
-      <StyledImg alt="thinc_logo" src={thincLogo} />
+      <div>
+        <StyledImg alt="lawfest_logo" src={lawfestLogo} />
+        <StyledImg alt="thinc_logo" src={thincLogo} />
+      </div>
       <FooterText>copyright © 2021 Law Festival x Thinc.</FooterText>
     </FooterContainer>
   )

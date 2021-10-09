@@ -1,6 +1,7 @@
 import { RouteProps } from 'react-router-dom'
 import Example from 'pages/example'
 import Game from 'pages/game'
+import ComponentsDemo from 'pages/componentsDemo'
 
 const routes: RouteProps[] = [
   {
@@ -11,6 +12,12 @@ const routes: RouteProps[] = [
   {
     path: '/game',
     component: Game,
+    exact: true,
+  },
+
+  {
+    path: '/componentsDemo',
+    component: ComponentsDemo,
     exact: true,
   },
 ]

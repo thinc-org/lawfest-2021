@@ -7,4 +7,5 @@ export const QuestionContainer = styled(StyledText, {
   width: '80%',
   color: 'white',
   padding: '8px 0',
+  textAlign: 'center',
 })
