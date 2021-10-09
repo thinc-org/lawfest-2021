@@ -12,6 +12,9 @@ import Button from 'common/components/Button'
 
 function ComponentsDemo() {
   const [value, setValue] = useState(50)
+  const [text, setText] = useState(
+    'รถจักรยานยนต์คันหนึ่งแล่นผ่านคุณไป มันเฉี่ยวสีข้างคุณเล็กน้อย โชคดีที่ไม่เป็นอะไร'
+  )
   return (
     <div
       style={{
@@ -49,9 +52,14 @@ function ComponentsDemo() {
       />
 
       <StyledText variant="h4">Dialogue</StyledText>
-      <Dialogue name="ผู้นำทาง" variant="secondary">
-        รถจักรยานยนต์คันหนึ่งแล่นผ่านคุณไป มันเฉี่ยวสีข้างคุณเล็กน้อย
-        โชคดีที่ไม่เป็นอะไร
+      <Dialogue
+        name="ผู้นำทาง"
+        variant="secondary"
+        onClick={() => {
+          setText((text) => 'x' + text)
+        }}
+      >
+        {text}
       </Dialogue>
 
       <StyledText variant="h4">Footer</StyledText>

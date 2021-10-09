@@ -8,6 +8,8 @@ export const DialogueContainer = styled('div', {
   backgroundColor: '#FFF1D8B2',
   padding: '27px 16px 20px 20px',
   position: 'relative',
+  cursor: 'pointer',
+  userSelect: 'none',
 })
 
 export const NameContainer = styled('div', {

@@ -2,31 +2,36 @@ import { useCallback, useEffect, useState } from 'react'
 
 const useTextAnimation = (originalText: string, onClick?: () => void) => {
   const [text, setText] = useState('')
-  const [playingAnimation, setPlayingAnimation] = useState(true)
+  const [textInterval, setTextInterval] = useState<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
-    const showText = async () => {
-      for (let i = 0; i < originalText.length; i++) {
-        setText((text) =>
-          text.length < originalText.length
-            ? text + originalText[i]
-            : originalText
-        )
-        await new Promise((resolve) => setTimeout(resolve, 50))
+    setText('')
+    let pos = 0
+    const interval = setInterval(() => {
+      if (pos >= originalText.length) {
+        clearInterval(interval)
+        setTextInterval(null)
+      } else {
+        setText((text) => text + originalText[pos])
+        pos++
       }
-      setText(originalText)
+    }, 50)
+    setTextInterval(interval)
+
+    return () => {
+      clearInterval(interval)
     }
-    showText()
   }, [originalText])
 
   const onDialogueClick = useCallback(() => {
-    if (playingAnimation) {
-      setPlayingAnimation(false)
+    if (textInterval) {
+      clearInterval(textInterval)
+      setTextInterval(null)
       setText(originalText)
     } else {
       if (onClick) onClick()
     }
-  }, [originalText, onClick, playingAnimation])
+  }, [originalText, onClick, textInterval])
 
   return { text, onDialogueClick }
 }
