@@ -15,11 +15,6 @@ export const StyledButton = styled('button', {
   backgroundColor: '#02030380',
 
   variants: {
-    variant: {
-      game: {
-        border: '4px solid #8A5627',
-      },
-    },
     selected: {
       true: {
         border: '4px solid #F0A561',

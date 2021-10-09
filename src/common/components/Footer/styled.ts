@@ -1,5 +1,4 @@
 import { styled } from 'common/config'
-import { StyledText } from '../Typography'
 
 export const FooterContainer = styled('div', {
   backgroundColor: '#444C71',
