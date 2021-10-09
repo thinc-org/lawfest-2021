@@ -19,6 +19,9 @@ export const NameContainer = styled('div', {
   position: 'absolute',
   top: '-10px',
   left: '20px',
+
+  textAlign: 'center',
+
   variants: {
     variant: {
       primary: {

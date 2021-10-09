@@ -5,6 +5,12 @@ export const FooterContainer = styled('div', {
   boxSizing: 'border-box',
   height: '110px',
   padding: '16px 0 11px 0',
+  width: '100%',
+
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+
   '@sm': {
     height: '80px',
   },
