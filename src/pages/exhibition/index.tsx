@@ -10,20 +10,35 @@ class Exhibition extends React.Component<{},{status:0}> {
   }
   render(){
     var content
-    
+
     if(this.state.status === 0) 
       content = <Selectors onClick={(i:any)=>this.handleClick(i)}></Selectors>
     else if(this.state.status === 1){
-      content = <p style={{display:'flex', justifyContent:'center'}}>What is Hope?</p>
+      content = (
+        <div>
+          <p style={{display:'flex', justifyContent:'center',marginTop:'30%'}}>What is Hope?</p>
+          <p style={{display:'flex', justifyContent:'center'}}>---แตะเพื่อไปต่อ---</p>
+        </div>
+      )
     }else if(this.state.status === 2){
-      content = <p style={{display:'flex', justifyContent:'center'}}>Hope Ignited</p>
+      content = (
+        <div>
+          <p style={{display:'flex', justifyContent:'center',marginTop:'30%'}}>Hope Ignited</p>
+          <p style={{display:'flex', justifyContent:'center'}}>---แตะเพื่อไปต่อ---</p>
+        </div>
+      )
     }else if(this.state.status === 3){
-      content = <p style={{display:'flex', justifyContent:'center'}}>Hopeless but Hoping</p>
+      content = (
+        <div>
+          <p style={{display:'flex', justifyContent:'center',marginTop:'30%'}}>Hopeless but Hoping</p>
+          <p style={{display:'flex', justifyContent:'center'}}>---แตะเพื่อไปต่อ---</p>
+        </div>
+      )
     }
 
     return(
         <div style={{backgroundColor:'#f1e1c7'}}>
-         <img src = {home} width = '30px'onClick = {()=>this.setState({status:0})}></img>
+         <img src = {home} width = '30px' onClick = {()=>this.setState({status:0})} alt="home-icon"></img>
          {content}
         </div>
       )

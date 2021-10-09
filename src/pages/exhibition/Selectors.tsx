@@ -15,7 +15,7 @@ function Selector(props: { no: string; name: string }){
 
   return(
     <div>
-      <img src = {sources} width = "160px" style={{borderRadius: '10px'}}>
+      <img src = {sources} width = "160px" style={{borderRadius: '10px'}} alt={props.no}>
       </img>
       <p style={{textAlign:'center'}}>
         {"Mission "+props.no+":"}
