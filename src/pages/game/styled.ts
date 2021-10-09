@@ -1,8 +1,19 @@
 import { styled } from 'common/config/'
 
 export const LogoContainer = styled('div', {
-  position: 'relative',
+  position: 'absolute',
   width: 'fit-content',
+  transition: 'opacity 1s ease-in',
+  variants: {
+    show: {
+      open: {
+        opacity: 1,
+      },
+      close: {
+        opacity: 0,
+      },
+    },
+  },
 })
 
 export const LogoImage = styled('img', {
