@@ -1,12 +1,12 @@
 import { RouteProps } from 'react-router-dom'
-import Example from 'pages/example'
 import ComponentsDemo from 'pages/componentsDemo'
 import PixiTesting from 'pages/pixi'
+import Home from 'pages/home'
 
 const routes: RouteProps[] = [
   {
     path: '/',
-    component: Example,
+    component: Home,
     exact: true,
   },
   {
