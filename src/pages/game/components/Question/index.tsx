@@ -4,7 +4,7 @@ import { QuestionProps } from './types'
 
 const Question = ({ children }: QuestionProps) => {
   return (
-    <QuestionContainer mobileVariants="headline">{children}</QuestionContainer>
+    <QuestionContainer mobileVariant="headline">{children}</QuestionContainer>
   )
 }
 

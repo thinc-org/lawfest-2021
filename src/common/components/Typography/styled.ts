@@ -70,7 +70,7 @@ export const StyledText = styled('div', {
         fontFamily: '$Mitr',
       },
     },
-    mobileVariants: {
+    mobileVariant: {
       largeTitle: {
         fontSize: '34px',
         fontWeight: '$medium',
@@ -116,6 +116,7 @@ export const StyledText = styled('div', {
         fontSize: '17px',
         fontWeight: '$regular',
         fontFamily: '$ChulaCharas',
+        letterSpacing: '0.3px',
       },
 
       callout: {
