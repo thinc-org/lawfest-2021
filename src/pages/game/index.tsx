@@ -7,9 +7,12 @@ import { LogoContainer, LogoImage } from './styled'
 import Logo from 'assets/logo.svg'
 import { INK_POS } from './constant'
 import { IInkRender } from './typed'
+import { useMainController } from 'common/components/Controller/MainController'
+import { SCENE_LIST } from 'common/constant/Scene'
 
 function Game() {
   const [state, setState] = useState(0)
+  const { handleSetNowScene, nowScene } = useMainController()
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -31,7 +34,7 @@ function Game() {
     ) => {
       for (var i = 0; i < 36 * 2.3; i++) {
         particle.push({
-          x: posX,
+          x: posX + 43,
           y: posY,
           angle: i * 5,
           size: size + Math.random() * 3,
@@ -124,13 +127,19 @@ function Game() {
   }, [])
 
   return (
-    <LogoContainer>
+    <LogoContainer show={nowScene === 'intro' ? 'open' : 'close'}>
       <LogoImage
         show={state ? 'open' : 'close'}
         src={Logo}
         alt="logo"
+        onTransitionEnd={() => {
+          window.setTimeout(
+            () => handleSetNowScene(SCENE_LIST['intro'].nextScene),
+            800
+          )
+        }}
       ></LogoImage>
-      <canvas ref={canvasRef} width="414" height="896"></canvas>
+      <canvas ref={canvasRef} width="496" height="896"></canvas>
     </LogoContainer>
   )
 }

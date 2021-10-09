@@ -1,7 +1,11 @@
+import {
+  MainControllerProvider,
+  useMainController,
+} from 'common/components/Controller/MainController'
 import { styled } from 'common/config'
-import React, { useEffect, useState } from 'react'
-
-const IMAGE_LIST = ['01.png', '02.png', '03.png']
+import { IMAGE_LIST, SCENE_LIST } from 'common/constant/Scene'
+import Game from 'pages/game'
+import React, { useState } from 'react'
 
 const RootContainer = styled('div', {
   width: '100vw',
@@ -29,7 +33,7 @@ const GameContainer = styled('div', {
 })
 
 const Image = styled('img', {
-  transition: 'opacity 700ms ease-in, filter 2s ease-out',
+  transition: 'opacity 1s ease-in, filter 2s ease-out',
   width: '100%',
   height: '100%',
   position: 'absolute',
@@ -59,25 +63,15 @@ const Image = styled('img', {
 })
 
 function PixiTesting() {
-  const [now, setNow] = useState(2)
-
-  useEffect(() => {
-    let x = 0
-    const now = setInterval(() => {
-      setNow(x++)
-      x %= IMAGE_LIST.length
-    }, 3000)
-    return () => {
-      clearInterval(now)
-    }
-  }, [])
+  const { nowScene } = useMainController()
 
   return (
     <RootContainer>
-      <GameContainer>
+      <GameContainer css={{ backgroundColor: SCENE_LIST[nowScene].bgColor }}>
+        <Game />
         {IMAGE_LIST.map((val, key) => (
           <Image
-            show={key === now}
+            show={val === SCENE_LIST[nowScene].bgImageSrc}
             isBlur={false}
             src={`images/${val}`}
             key={key}
@@ -89,4 +83,12 @@ function PixiTesting() {
   )
 }
 
-export default PixiTesting
+function Wrapper() {
+  return (
+    <MainControllerProvider>
+      <PixiTesting />
+    </MainControllerProvider>
+  )
+}
+
+export default Wrapper
