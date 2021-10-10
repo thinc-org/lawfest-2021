@@ -5,6 +5,7 @@ import {
 import { styled } from 'common/config'
 import { IMAGE_LIST, SCENE_LIST } from 'common/constant/Scene'
 import Game from 'pages/game'
+import InputScene from 'pages/game/components/Input'
 import React, { useState } from 'react'
 
 const RootContainer = styled('div', {
@@ -38,6 +39,7 @@ const Image = styled('img', {
   height: '100%',
   position: 'absolute',
   objectFit: 'cover',
+  zIndex: -99,
   variants: {
     show: {
       true: {
@@ -68,7 +70,7 @@ function PixiTesting() {
   return (
     <RootContainer>
       <GameContainer css={{ backgroundColor: SCENE_LIST[nowScene].bgColor }}>
-        <Game />
+        {/* <Game /> */}
         {IMAGE_LIST.map((val, key) => (
           <Image
             show={val === SCENE_LIST[nowScene].bgImageSrc}
@@ -78,6 +80,17 @@ function PixiTesting() {
             alt={val}
           ></Image>
         ))}
+        <div
+          style={{
+            position: 'absolute',
+            top: '0',
+            bottom: '0',
+            left: '0',
+            right: '0',
+          }}
+        >
+          <InputScene></InputScene>
+        </div>
       </GameContainer>
     </RootContainer>
   )
