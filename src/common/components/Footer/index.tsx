@@ -10,7 +10,7 @@ const Footer = () => {
         <StyledImg alt="lawfest_logo" src={lawfestLogo} />
         <StyledImg alt="thinc_logo" src={thincLogo} />
       </div>
-      <FooterText>copyright © 2021 Law Festival x Thinc.</FooterText>
+      <FooterText>Copyright © 2021 Law Festival x Thinc.</FooterText>
     </FooterContainer>
   )
 }
