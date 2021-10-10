@@ -10,27 +10,14 @@ class Exhibition extends React.Component<{},{status:0}> {
   }
   render(){
     var content
+    var str = ['What is Hope?', 'Hope Ignited', 'Hopeless but Hoping']
 
     if(this.state.status === 0) 
       content = <Selectors onClick={(i:any)=>this.handleClick(i)}></Selectors>
-    else if(this.state.status === 1){
+    else{
       content = (
         <div style={{height:'100%',display:'flex', justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
-          <p>What is Hope?</p>
-          <p>---แตะเพื่อไปต่อ---</p>
-        </div>
-      )
-    }else if(this.state.status === 2){
-      content = (
-        <div style={{height:'100%',display:'flex', justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
-          <p>Hope Ignited</p>
-          <p>---แตะเพื่อไปต่อ---</p>
-        </div>
-      )
-    }else if(this.state.status === 3){
-      content = (
-        <div style={{height:'100%',display:'flex', justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
-          <p>Hopeless but Hoping</p>
+          <p>{str[this.state.status - 1]}</p>
           <p>---แตะเพื่อไปต่อ---</p>
         </div>
       )
