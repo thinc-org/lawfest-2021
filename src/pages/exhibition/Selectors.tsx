@@ -30,7 +30,7 @@ function Selectors(props:{onClick:any}){
 
 	return(
 	<div>
-      <div style={{display:'flex',  justifyContent:'center', alignItems:'center', marginTop:'122px'}}>
+      <div style={{display:'flex',  justifyContent:'center', alignItems:'center', paddingTop:'120px'}}>
         <div onClick={()=>props.onClick(1)} style={{display:'flex',marginRight:'30px'}}>
           <Selector name = "What is Hope?" no = "1" ></Selector>
         </div>
