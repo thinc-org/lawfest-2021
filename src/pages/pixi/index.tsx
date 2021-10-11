@@ -5,7 +5,9 @@ import {
 import { styled } from 'common/config'
 import { IMAGE_LIST, SCENE_LIST } from 'common/constant/Scene'
 import Game from 'pages/game'
-import InputScene from 'pages/game/components/Input'
+import ChoiceTemplate from 'pages/game/components/Template/Choice'
+import DialogueTemplate from 'pages/game/components/Template/Dialogue'
+import InputScene from 'pages/game/components/Template/Input'
 import React, { useState } from 'react'
 
 const RootContainer = styled('div', {
@@ -89,7 +91,45 @@ function PixiTesting() {
             right: '0',
           }}
         >
-          <InputScene></InputScene>
+          {/* <InputScene
+            question={'กินข้าวหรือยัง ?'}
+            placeholder={'ทดสอบ ทดสอบ'}
+            onSubmit={(val) => {
+              alert(val)
+            }}
+          /> */}
+          {/* <ChoiceTemplate
+            question={'สวัสดีครับบบบบบบบบบบบบบบบบบ'}
+            choices={[
+              {
+                text: 'เราเคยรู้จักกันหรือเปล่าาาาาาาาาาาาาาาาาาาาาาาาาา',
+                onClick: () => {},
+                nextScene: 'Hello',
+              },
+              {
+                text: 'เราเคยรู้จักกันหรือเปล่าาาาาาาาาาาาาาาาาาาาาาาาาา',
+                onClick: () => {},
+                nextScene: 'Hello',
+              },
+              {
+                text: 'เราเคยรู้จักกันหรือเปล่าาาาาาาาาาาาาาาาาาาาาาาาาา',
+                onClick: () => {},
+                nextScene: 'Hello',
+              },
+              {
+                text: 'เราเคยรู้จักกันหรือเปล่าาาาาาาาาาาาาาาาาาาาาาาาาา',
+                onClick: () => {},
+                nextScene: 'Hello',
+              },
+            ]}
+          /> */}
+          <DialogueTemplate
+            dialogues={[
+              { name: 'hello world', variant: 'primary', text: 'test' },
+              { name: 'hello world', variant: 'secondary', text: 'Test2' },
+            ]}
+            onFinish={() => {}}
+          />
         </div>
       </GameContainer>
     </RootContainer>
