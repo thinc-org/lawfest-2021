@@ -8,6 +8,7 @@ import Game from 'pages/game'
 import ChoiceTemplate from 'pages/game/components/Template/Choice'
 import DialogueTemplate from 'pages/game/components/Template/Dialogue'
 import InputScene from 'pages/game/components/Template/Input'
+import SliderTemplate from 'pages/game/components/Template/Slider'
 import React, { useState } from 'react'
 
 const RootContainer = styled('div', {
@@ -130,6 +131,17 @@ function PixiTesting() {
             ]}
             onFinish={() => {}}
           />
+        </div>
+        <div
+          style={{
+            position: 'absolute',
+            top: '0',
+            bottom: '0',
+            left: '0',
+            right: '0',
+          }}
+        >
+          <SliderTemplate question="Hello World" onSubmit={() => {}} />
         </div>
       </GameContainer>
     </RootContainer>
