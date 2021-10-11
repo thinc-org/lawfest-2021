@@ -1,21 +1,28 @@
-import StyledInput from 'common/components/TextInput'
 import { StyledText } from 'common/components/Typography'
 import Button from 'common/components/Button'
 import React, { useCallback, useEffect, useState } from 'react'
-import { IInputQuestion } from './typed'
+import { ISliderQuestion } from './typed'
 import { QuestionContainer, RootContainer } from './styled'
+import Slider from 'common/components/Slider'
 
-function InputTemplate(props: IInputQuestion) {
-  const { question, onSubmit, placeholder } = props
-  const [input, setInput] = useState('')
+function SliderTemplate(props: ISliderQuestion) {
+  const { question, onSubmit } = props
+  const [input, setInput] = useState(50)
+  const [isChange, setChange] = useState(false)
 
   useEffect(() => {
-    setInput('')
+    setInput(50)
+    setChange(false)
   }, [])
 
   const handleSubmit = useCallback(() => {
     onSubmit(input)
   }, [input, onSubmit])
+
+  const handleSetInput = useCallback((val: number) => {
+    setInput(val)
+    setChange(true)
+  }, [])
 
   return (
     <RootContainer>
@@ -23,15 +30,10 @@ function InputTemplate(props: IInputQuestion) {
         <StyledText variant="h5" css={{ paddingBottom: '10px' }}>
           {question || 'sdads'}
         </StyledText>
-        <StyledInput
-          placeholder={placeholder || ''}
-          css={{ marginBottom: '20px' }}
-          value={input}
-          onChange={(el) => setInput(el.currentTarget.value)}
-        ></StyledInput>
+        <Slider value={input} onChange={handleSetInput}></Slider>
         <Button
           variant="secondary"
-          css={{ maxWidth: '200px', display: !!input ? 'block' : 'none' }}
+          css={{ maxWidth: '200px', display: isChange ? 'block' : 'none' }}
           onClick={handleSubmit}
         >
           ตกลง
@@ -41,4 +43,4 @@ function InputTemplate(props: IInputQuestion) {
   )
 }
 
-export default InputTemplate
+export default SliderTemplate
