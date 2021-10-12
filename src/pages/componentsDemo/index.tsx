@@ -9,6 +9,7 @@ import TextInput from 'common/components/TextInput'
 import TextArea from 'common/components/TextArea'
 import Slider from 'common/components/Slider'
 import Button from 'common/components/Button'
+import TextWithLine from 'common/components/TextWithLine'
 
 function ComponentsDemo() {
   const [value, setValue] = useState(50)
@@ -24,6 +25,14 @@ function ComponentsDemo() {
         backgroundColor: '#F1E1C7',
       }}
     >
+      <StyledText variant="h4">Text With Line</StyledText>
+      <TextWithLine mobileVariant="subhead" css={{ color: '$primary600' }}>
+        แตะเพื่อเริ่มออกเดินทาง
+      </TextWithLine>
+
+      <Button>Primary</Button>
+      <Button variant="secondary">Secondary</Button>
+
       <StyledText variant="h4">Button</StyledText>
       <Button>Primary</Button>
       <Button variant="secondary">Secondary</Button>
