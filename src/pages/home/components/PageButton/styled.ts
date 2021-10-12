@@ -55,11 +55,12 @@ export const StyledText = styled('div', {
   fontFamily: '$ChulaCharas',
   display: 'flex',
   alignItems: 'center',
-  '@sm': {
-    fontSize: '16px',
-  },
   marginTop: '10px',
   marginBottom: '20px',
   cursor: 'pointer',
   userSelect: 'none',
+  '@sm': {
+    fontSize: '16px',
+    marginBottom: '35px',
+  },
 })
