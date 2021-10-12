@@ -3,8 +3,8 @@ import { styled } from 'common/config'
 export const FooterContainer = styled('div', {
   backgroundColor: '#444C71',
   boxSizing: 'border-box',
-  height: '110px',
-  padding: '16px 0 11px 0',
+  height: '95px',
+  padding: '11px 0 10px 0',
   width: '100%',
 
   display: 'flex',
@@ -12,12 +12,12 @@ export const FooterContainer = styled('div', {
   alignItems: 'center',
 
   '@sm': {
-    height: '80px',
+    height: '70px',
   },
 })
 
 export const StyledImg = styled('img', {
-  height: '57px',
+  height: '52px',
   padding: '0 10px 7px 10px',
   '@sm': {
     height: '30px',
