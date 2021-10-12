@@ -7,7 +7,7 @@ import { LogoContainer, LogoImage } from './styled'
 import Logo from 'assets/logo.svg'
 import { INK_POS } from './constant'
 import { IInkRender } from './typed'
-import { useMainController } from 'common/components/Controller/MainController'
+import { useMainController } from 'common/context/Controller/MainController'
 import { SCENE_LIST } from 'common/constant/Scene'
 
 function Game() {
