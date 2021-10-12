@@ -14,3 +14,10 @@ export const QuestionContainer = styled('div', {
   flexDirection: 'column',
   alignItems: 'center',
 })
+
+export const QuestionWrapper = styled('div', {
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  marginBottom: '20px',
+})

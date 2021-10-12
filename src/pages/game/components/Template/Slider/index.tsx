@@ -1,9 +1,9 @@
-import { StyledText } from 'common/components/Typography'
 import Button from 'common/components/Button'
 import React, { useCallback, useEffect, useState } from 'react'
 import { ISliderQuestion } from './typed'
-import { QuestionContainer, RootContainer } from './styled'
+import { QuestionContainer, QuestionWrapper, RootContainer } from './styled'
 import Slider from 'common/components/Slider'
+import Question from '../../Question'
 
 function SliderTemplate(props: ISliderQuestion) {
   const { question, onSubmit } = props
@@ -27,13 +27,17 @@ function SliderTemplate(props: ISliderQuestion) {
   return (
     <RootContainer>
       <QuestionContainer>
-        <StyledText variant="h5" css={{ paddingBottom: '10px' }}>
-          {question || 'sdads'}
-        </StyledText>
+        <QuestionWrapper>
+          <Question>{question || 'sdads'}</Question>
+        </QuestionWrapper>
         <Slider value={input} onChange={handleSetInput}></Slider>
         <Button
           variant="secondary"
-          css={{ maxWidth: '200px', display: isChange ? 'block' : 'none' }}
+          css={{
+            maxWidth: '200px',
+            display: isChange ? 'block' : 'none',
+            marginTop: '20px',
+          }}
           onClick={handleSubmit}
         >
           ตกลง
