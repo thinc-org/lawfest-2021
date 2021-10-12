@@ -1,5 +1,11 @@
 import React from 'react'
-import { ButtonConatiner, StyledButton, ButtonText, StyledText } from './styled'
+import {
+  ButtonConatiner,
+  StyledButton,
+  ButtonText,
+  StyledText,
+  StyledImage,
+} from './styled'
 import gameIcon from 'assets/images/game_icon.svg'
 import exhibitionIcon from 'assets/images/exhibition_icon.svg'
 import { MdKeyboardArrowLeft } from 'react-icons/md'
@@ -14,7 +20,7 @@ const PageButton = () => {
             history.push('/game')
           }}
         >
-          <img alt="game" src={gameIcon} />
+          <StyledImage alt="game" src={gameIcon} />
           <ButtonText>เข้าสู่เกมส์</ButtonText>
         </StyledButton>
         <StyledButton
@@ -22,7 +28,11 @@ const PageButton = () => {
             history.push('/exhibition')
           }}
         >
-          <img alt="game" src={exhibitionIcon} />
+          <StyledImage
+            alt="game"
+            src={exhibitionIcon}
+            css={{ height: '80%', '@sm': { height: 'auto' } }}
+          />
           <ButtonText
             css={{
               '@sm': {

@@ -13,11 +13,17 @@ export const ButtonText = styled('div', {
   fontWeight: '$medium',
   fontFamily: '$Mitr',
   marginLeft: '20px',
+  lineHeight: '35px',
   '@sm': {
     fontSize: '18px',
     letterSpacing: '0.4px',
     marginLeft: '0',
   },
+})
+
+export const StyledImage = styled('img', {
+  height: '90%',
+  '@sm': { height: 'auto' },
 })
 
 export const StyledButton = styled('button', {
@@ -33,7 +39,7 @@ export const StyledButton = styled('button', {
   justifyContent: 'center',
   alignItems: 'center',
 
-  height: '120px',
+  height: 'min(120px, 13vh)',
   width: '453px',
   margin: '10px',
 
@@ -65,6 +71,6 @@ export const StyledText = styled('div', {
   userSelect: 'none',
   '@sm': {
     fontSize: '16px',
-    marginBottom: '35px',
+    marginBottom: '17px',
   },
 })
