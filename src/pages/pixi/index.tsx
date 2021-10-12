@@ -1,7 +1,7 @@
 import {
   MainControllerProvider,
   useMainController,
-} from 'common/components/Controller/MainController'
+} from 'common/context/Controller/MainController'
 import { styled } from 'common/config'
 import { IMAGE_LIST, SCENE_LIST } from 'common/constant/Scene'
 import Game from 'pages/game'
