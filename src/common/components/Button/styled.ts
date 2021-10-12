@@ -4,13 +4,14 @@ export const StyledButton = styled('button', {
   fontSize: '$5',
   fontWeight: '$medium',
   fontFamily: '$Mitr',
-  height: '40px',
+  padding: '10px',
   width: '80%',
   border: 'none',
   borderRadius: '5px',
   boxShadow: '2px 2px 4px 0px #00000040',
   cursor: 'pointer',
   color: '$black10',
+  overflowWrap: 'break-word',
 
   variants: {
     variant: {

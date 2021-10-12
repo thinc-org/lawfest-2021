@@ -4,7 +4,8 @@ export const StyledButton = styled('button', {
   fontSize: '$5',
   fontWeight: '$regular',
   fontFamily: '$ChulaCharas',
-  height: '40px',
+  padding: '5px',
+  minHeight: '40px',
   width: '80%',
   border: 'none',
   borderRadius: '5px',
@@ -13,6 +14,7 @@ export const StyledButton = styled('button', {
   boxSizing: 'border-box',
   color: '$black10',
   backgroundColor: '#02030380',
+  overflowWrap: 'break-word',
 
   variants: {
     selected: {
