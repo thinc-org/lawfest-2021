@@ -6,6 +6,7 @@ export const QuestionContainer = styled(StyledText, {
     'linear-gradient(90deg, rgba(206, 137, 75, 0) 0%, #CE894B 48.25%, rgba(206, 137, 75, 0) 100%)',
   width: '80%',
   color: 'white',
-  padding: '8px 0',
+  padding: '8px 20px',
   textAlign: 'center',
+  overflowWrap: 'break-word',
 })

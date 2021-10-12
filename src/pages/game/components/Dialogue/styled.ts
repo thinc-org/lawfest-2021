@@ -1,7 +1,7 @@
 import { styled } from 'common/config'
 
 export const DialogueContainer = styled('div', {
-  height: '150px',
+  minHeight: '150px',
   width: 'calc(100% - 40px)',
   boxSizing: 'border-box',
   borderRadius: '10px',
@@ -14,12 +14,13 @@ export const DialogueContainer = styled('div', {
 
 export const NameContainer = styled('div', {
   color: 'white',
-  height: '20px',
-  width: '120px',
+  minHeight: '20px',
+  minWidth: '120px',
+  maxWidth: 'calc(100% - 40px)',
   borderRadius: '10px',
 
   position: 'absolute',
-  top: '-10px',
+  bottom: 'calc(100% - 10px)',
   left: '20px',
 
   textAlign: 'center',
