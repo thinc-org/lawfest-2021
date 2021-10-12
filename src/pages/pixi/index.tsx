@@ -74,7 +74,7 @@ function PixiTesting() {
     <RootContainer>
       <GameContainer css={{ backgroundColor: SCENE_LIST[nowScene].bgColor }}>
         {/* <Game /> */}
-        {IMAGE_LIST.map((val, key) => (
+        {/* {IMAGE_LIST.map((val, key) => (
           <Image
             show={val === SCENE_LIST[nowScene].bgImageSrc}
             isBlur={false}
@@ -82,8 +82,8 @@ function PixiTesting() {
             key={key}
             alt={val}
           ></Image>
-        ))}
-        <div
+        ))} */}
+        {/* <div
           style={{
             position: 'absolute',
             top: '0',
@@ -92,14 +92,14 @@ function PixiTesting() {
             right: '0',
           }}
         >
-          {/* <InputScene
+          <InputScene
             question={'กินข้าวหรือยัง ?'}
             placeholder={'ทดสอบ ทดสอบ'}
             onSubmit={(val) => {
               alert(val)
             }}
-          /> */}
-          {/* <ChoiceTemplate
+          />
+          <ChoiceTemplate
             question={'สวัสดีครับบบบบบบบบบบบบบบบบบ'}
             choices={[
               {
@@ -123,7 +123,17 @@ function PixiTesting() {
                 nextScene: 'Hello',
               },
             ]}
-          /> */}
+          />
+        </div> */}
+        {/* <div
+          style={{
+            position: 'absolute',
+            top: '0',
+            bottom: '0',
+            left: '0',
+            right: '0',
+          }}
+        >
           <DialogueTemplate
             dialogues={[
               { name: 'hello world', variant: 'primary', text: 'test' },
@@ -131,7 +141,7 @@ function PixiTesting() {
             ]}
             onFinish={() => {}}
           />
-        </div>
+        </div> */}
         <div
           style={{
             position: 'absolute',
