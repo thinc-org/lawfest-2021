@@ -3,38 +3,124 @@ import Selectors from 'pages/exhibition/Selectors'
 import home from 'assets/pic/home.png'
 import React from 'react'
 
-class Exhibition extends React.Component<{},{status:0}> {
-  constructor(props:any){
-    super(props)
-    this.state = {status:0}
+class Exhibition extends React.Component<{}, { status: 0 }> {
+  static data = {
+    0: { type: 'menu' },
+    1: { type: 'text', text: 'What is Hope?', next: 4 },
+    2: { type: 'text', text: 'Hope Ignited', next: 5 },
+    3: { type: 'text', text: 'Hopeless but Hoping', next: 6 },
+    4: {
+      type: 'text',
+      text: 'Where there is hope, there is life',
+      quoteOwner: 'Anne Frank',
+      quoteOwnerRef: 'JEWISH’S DIARIST DURING WW2',
+      next: 4,
+    },
+    5: {
+      type: 'text',
+      text: 'If justice takes place, there shall be hope.',
+      quoteOwner: 'Alberto Manguel',
+      quoteOwnerRef: 'CANADIAN NOVELIST',
+      next: 5,
+    },
+    6: {
+      type: 'text',
+      text: '“Once you choose hope, anything is possible.”',
+      quoteOwner: 'Christopher Reeve',
+      quoteOwnerRef: 'AMERICAN ACTOR, DIRECTOR, AND ACTIVIST',
+      next: 6,
+    },
   }
-  render(){
-    var content
-    var str = ['What is Hope?', 'Hope Ignited', 'Hopeless but Hoping']
 
-    if(this.state.status === 0) 
-      content = <Selectors onClick={(i:any)=>this.handleClick(i)}></Selectors>
-    else{
+  constructor(props: any) {
+    super(props)
+    this.state = { status: 0 }
+  }
+  render() {
+    var content
+    const data: any = Exhibition.data[this.state.status]
+
+    if (data['type'] === 'menu')
       content = (
-        <div style={{height:'100%',display:'flex', justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
-          <p>{str[this.state.status - 1]}</p>
+        <Selectors onClick={(i: any) => this.handleClick(i)}></Selectors>
+      )
+    else if (data['type'] === 'text') {
+      content = (
+        <div
+          style={{
+            height: '100%',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            flexDirection: 'column',
+          }}
+          onClick={() => this.setState({ status: data['next'] })}
+        >
+          <p
+            style={{
+              fontWeight: 'bold',
+            }}
+          >
+            {data['text']}
+          </p>
+          {data['quoteOwner'] ? (
+            <div
+              style={{
+                paddingLeft: '20%',
+                paddingTop: '2%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                flexDirection: 'column',
+                fontSize: '12px',
+              }}
+            >
+              <p
+                style={{
+                  fontWeight: 'bold',
+                  lineHeight: 0,
+                }}
+              >
+                {data['quoteOwner']}
+              </p>
+              <p
+                style={{
+                  fontWeight: 'normal',
+                  lineHeight: 0,
+                }}
+              >
+                {data['quoteOwnerRef']}
+              </p>
+            </div>
+          ) : null}
           <p>---แตะเพื่อไปต่อ---</p>
         </div>
       )
     }
 
-    return(
-        <div style={{backgroundColor:'#f1e1c7', height:'100vh', position:'relative'}}>
-          <img src = {home} width = '30px' onClick = {()=>this.setState({status:0})} alt="home-icon" style={{position:'absolute'}}></img> 
-         {content}
-        </div>
-      )
+    return (
+      <div
+        style={{
+          backgroundColor: '#f1e1c7',
+          height: '100vh',
+          position: 'relative',
+        }}
+      >
+        <img
+          src={home}
+          width="30px"
+          onClick={() => this.setState({ status: 0 })}
+          alt="home-icon"
+          style={{ position: 'absolute' }}
+        ></img>
+        {content}
+      </div>
+    )
   }
-  
-  handleClick(i:any){
+
+  handleClick(i: any) {
     //console.log("click "+i)
-    this.setState({status:i})
-    this.render()
+    this.setState({ status: i })
   }
 }
 export default Exhibition
