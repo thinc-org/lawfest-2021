@@ -3,6 +3,9 @@ import { styled } from 'common/config'
 export const ButtonConatiner = styled('div', {
   display: 'flex',
   justifyContent: 'center',
+  width: '100%',
+  padding: '0 5px',
+  boxSizing: 'border-box',
 })
 
 export const ButtonText = styled('div', {
@@ -36,8 +39,9 @@ export const StyledButton = styled('button', {
 
   '@sm': {
     flexDirection: 'column',
-    height: '177px',
-    width: '177px',
+    height: '170px',
+    width: '45%',
+    maxWidth: '170px',
   },
 
   '@xs': {
