@@ -30,9 +30,6 @@ function ComponentsDemo() {
         แตะเพื่อเริ่มออกเดินทาง
       </TextWithLine>
 
-      <Button>Primary</Button>
-      <Button variant="secondary">Secondary</Button>
-
       <StyledText variant="h4">Button</StyledText>
       <Button>Primary</Button>
       <Button variant="secondary">Secondary</Button>

@@ -6,7 +6,7 @@ import { DialogueProps } from './types'
 
 const Dialogue = (props: DialogueProps) => {
   const { name, variant, children, onClick } = props
-  const { text, onDialogueClick } = useTextAnimation(children, onClick)
+  const { index, onDialogueClick } = useTextAnimation(children, onClick)
 
   return (
     <DialogueContainer onClick={onDialogueClick}>
@@ -14,7 +14,8 @@ const Dialogue = (props: DialogueProps) => {
         <StyledText mobileVariant="footnote">{name}</StyledText>
       </NameContainer>
       <StyledText mobileVariant="body" css={{ textAlign: 'left' }}>
-        {text}
+        {children.slice(0, index)}
+        <span style={{ opacity: '0' }}>{children.slice(index)}</span>
       </StyledText>
     </DialogueContainer>
   )
