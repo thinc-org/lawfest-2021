@@ -4,12 +4,16 @@ import { RootContainer } from '../Input/styled'
 import { IDialogueTemplate } from './types'
 
 function DialogueTemplate(props: IDialogueTemplate) {
-  const { dialogues } = props
+  const { dialogues, onFinish } = props
   const [now, setNow] = useState(0)
 
   const handleChange = useCallback(() => {
-    setNow((now + 1) % dialogues.length)
-  }, [now, dialogues])
+    if (now === dialogues.length - 1) {
+      onFinish()
+      return
+    }
+    setNow(now + 1)
+  }, [now, dialogues.length, onFinish])
 
   useEffect(() => {
     setNow(0)

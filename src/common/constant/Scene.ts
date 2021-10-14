@@ -37,15 +37,13 @@ export const SCENE_LIST: { [x: string]: IScene } = {
     question: 'คุณอยากให้เราเรียกคุณว่าอะไร ?',
     fadeIn: ['fade'],
     fadeOut: ['fade'],
-    onSubmit(val) {
-      console.log(val)
-    },
   },
   map: {
     type: 'dialog',
     bgType: 'image',
+    bgColor: '#F1E1C7',
     bgImageSrc: 'images/01.png',
-    nextScene: 'map-click',
+    nextScene: 'slider',
     dialog: [
       {
         name: 'Hello',
@@ -59,6 +57,14 @@ export const SCENE_LIST: { [x: string]: IScene } = {
       },
     ],
     isStoredData: false,
+  },
+  slider: {
+    type: 'slider',
+    question: 'คุณมีความหวังเท่าไหร่แล้วล่ะ',
+    bgType: 'color',
+    isStoredData: true,
+    dataKey: 'hope',
+    nextScene: 'name-input',
   },
   'map-click': {
     type: 'image-click',
