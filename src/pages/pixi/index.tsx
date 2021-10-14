@@ -11,6 +11,7 @@ import DialogueTemplate from 'pages/game/components/Template/Dialogue'
 import InputScene from 'pages/game/components/Template/Input'
 import SliderTemplate from 'pages/game/components/Template/Slider'
 import React, { useState } from 'react'
+import SceneController from 'pages/game/components/Scene'
 
 const RootContainer = styled('div', {
   width: '100vw',
@@ -143,7 +144,7 @@ function PixiTesting() {
             onFinish={() => {}}
           />
         </div> */}
-        <div
+        {/* <div
           style={{
             position: 'absolute',
             top: '0',
@@ -153,7 +154,8 @@ function PixiTesting() {
           }}
         >
           <SliderTemplate question="Hello World" onSubmit={() => {}} />
-        </div>
+        </div> */}
+        <SceneController />
       </GameContainer>
     </RootContainer>
   )
