@@ -1,4 +1,6 @@
+import { ICallbackData } from '../../Scene/types'
+
 export interface ISliderQuestion {
   question: string
-  onSubmit: (...args: any) => void
+  onSubmit(val: ICallbackData): void
 }

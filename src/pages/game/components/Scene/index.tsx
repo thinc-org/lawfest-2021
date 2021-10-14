@@ -6,9 +6,10 @@ import InputTemplate from '../Template/Input'
 import SliderTemplate from '../Template/Slider'
 import { IScene, SCENE_LIST } from 'common/constant/Scene'
 import { FadeOut, SceneContainer, SceneRootContainer } from './styled'
+import { ICallbackData } from './types'
 
 function SceneController() {
-  const { nowScene, handleSetNowScene } = useMainController()
+  const { nowScene, handleSetNowScene, handleSetStorage } = useMainController()
   const [sceneData, setSceneData] = useState<IScene>({
     type: 'dummy',
     bgType: 'color',
@@ -21,15 +22,28 @@ function SceneController() {
   const [preventClick, setPreventClick] = useState<boolean>(false)
 
   const handleSubmit = useCallback(
-    (...args: any[]) => {
-      if (sceneData.onSubmit) {
-        sceneData.onSubmit(...args)
+    (val: ICallbackData) => {
+      if (sceneData.isStoredData && sceneData.dataKey) {
+        handleSetStorage(sceneData.dataKey, val.storeValue)
       }
-      handleSetNowScene(sceneData.nextScene)
-      setMode('out')
-      setPreventClick(true)
+
+      const nextScene = val.nextSceneOverride || sceneData.nextScene
+      handleSetNowScene(nextScene)
+      if (sceneData.type !== SCENE_LIST[nextScene].type) {
+        setMode('out')
+        setPreventClick(true)
+      } else {
+        setSceneData(SCENE_LIST[nextScene])
+      }
     },
-    [handleSetNowScene, sceneData]
+    [
+      handleSetNowScene,
+      handleSetStorage,
+      sceneData.dataKey,
+      sceneData.isStoredData,
+      sceneData.nextScene,
+      sceneData.type,
+    ]
   )
 
   useEffect(() => {
@@ -80,6 +94,7 @@ function SceneController() {
           <ChoiceTemplate
             choices={sceneData.choices!}
             question={sceneData.question!}
+            handleSubmit={handleSubmit}
           ></ChoiceTemplate>
         )}
         {sceneData.type === 'slider' && (

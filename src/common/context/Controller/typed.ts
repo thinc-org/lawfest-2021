@@ -1,10 +1,8 @@
 export interface IMainController {
-  name: string
-  age: number
+  store: {
+    [x: string]: any
+  }
   nowScene: string
-  hopeValue: number
-  handleSetName: (x: string) => void
-  handleSetHope: (x: number) => void
-  handleSetAge: (x: number) => void
+  handleSetStorage: (key: string, val: void) => void
   handleSetNowScene: (x: string) => void
 }

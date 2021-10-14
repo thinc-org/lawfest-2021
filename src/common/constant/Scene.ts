@@ -13,9 +13,6 @@ export interface IScene {
   dialog?: IDialogueData[]
   question?: string
   choices?: IChoice[]
-  fadeIn?: string[]
-  fadeOut?: string[]
-  onSubmit?: (...args: any[]) => void
 }
 
 export const SCENE_LIST: { [x: string]: IScene } = {
@@ -25,7 +22,6 @@ export const SCENE_LIST: { [x: string]: IScene } = {
     bgColor: '#F1E1C7',
     nextScene: 'name-input',
     isStoredData: false,
-    fadeOut: ['fade'],
   },
   'name-input': {
     type: 'input',
@@ -35,28 +31,36 @@ export const SCENE_LIST: { [x: string]: IScene } = {
     dataKey: 'name',
     isStoredData: true,
     question: 'คุณอยากให้เราเรียกคุณว่าอะไร ?',
-    fadeIn: ['fade'],
-    fadeOut: ['fade'],
   },
   map: {
     type: 'dialog',
     bgType: 'image',
     bgColor: '#F1E1C7',
     bgImageSrc: 'images/01.png',
+    isStoredData: false,
+    nextScene: 'map2',
+    dialog: [
+      {
+        name: 'Hello',
+        text: 'เลือกเส้นทางที่คุณต้องการจะไป',
+        variant: 'primary',
+      },
+    ],
+  },
+  map2: {
+    type: 'dialog',
+    bgType: 'image',
+    bgColor: '#F1E1C7',
+    bgImageSrc: 'images/01.png',
     nextScene: 'slider',
+    isStoredData: false,
     dialog: [
       {
         name: 'Hello',
         text: 'เลือกเส้นทางที่คุณต้องการจะไป',
         variant: 'secondary',
       },
-      {
-        name: 'World',
-        text: 'อยากตาย ;-;',
-        variant: 'primary',
-      },
     ],
-    isStoredData: false,
   },
   slider: {
     type: 'slider',
@@ -64,7 +68,42 @@ export const SCENE_LIST: { [x: string]: IScene } = {
     bgType: 'color',
     isStoredData: true,
     dataKey: 'hope',
-    nextScene: 'name-input',
+    nextScene: 'choice',
+  },
+  choice: {
+    type: 'choice',
+    bgType: 'color',
+    isStoredData: true,
+    dataKey: 'age',
+    nextScene: '',
+    question: '"ว่าแต่เราอายุเท่าไหร่ล่ะ ?"',
+    choices: [
+      {
+        nextScene: 'map',
+        text: '1-12 ปี',
+        value: '0',
+      },
+      {
+        nextScene: 'slider',
+        text: '13-24 ปี',
+        value: '1',
+      },
+      {
+        nextScene: 'name-input',
+        text: '25-40 ปี',
+        value: '2',
+      },
+      {
+        nextScene: 'map2',
+        text: '41-60 ปี',
+        value: '3',
+      },
+      {
+        nextScene: 'slider',
+        text: '60 ปีเป็นต้นไป',
+        value: '4',
+      },
+    ],
   },
   'map-click': {
     type: 'image-click',

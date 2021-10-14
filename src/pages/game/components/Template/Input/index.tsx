@@ -14,7 +14,9 @@ function InputTemplate(props: IInputQuestion) {
   }, [])
 
   const handleSubmit = useCallback(() => {
-    onSubmit(input)
+    onSubmit({
+      storeValue: input,
+    })
   }, [onSubmit, input])
 
   return (

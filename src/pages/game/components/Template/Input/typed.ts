@@ -1,6 +1,8 @@
+import { ICallbackData } from '../../Scene/types'
+
 export interface IInputQuestion {
   nextScene: string
   question: string
   placeholder?: string
-  onSubmit: (...args: any) => void
+  onSubmit(val: ICallbackData): void
 }
