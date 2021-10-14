@@ -1,15 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import {
   MainControllerProvider,
   useMainController,
 } from 'common/context/Controller/MainController'
 import { styled } from 'common/config'
-import Game from 'pages/game'
-import ChoiceTemplate from 'pages/game/components/Template/Choice'
-import DialogueTemplate from 'pages/game/components/Template/Dialogue'
-import InputScene from 'pages/game/components/Template/Input'
-import SliderTemplate from 'pages/game/components/Template/Slider'
-import React, { useState } from 'react'
 import SceneController from 'pages/game/components/Scene'
 import { SCENE } from 'common/constant/Scene'
 
@@ -38,36 +31,36 @@ const GameContainer = styled('div', {
   },
 })
 
-const Image = styled('img', {
-  transition: 'opacity 1s ease-in, filter 2s ease-out',
-  width: '100%',
-  height: '100%',
-  position: 'absolute',
-  objectFit: 'cover',
-  zIndex: -99,
-  variants: {
-    show: {
-      true: {
-        opacity: 1,
-      },
-      false: {
-        opacity: 0,
-      },
-    },
-    isBlur: {
-      true: {
-        filter: 'blur(15px)',
-      },
-      false: {
-        filter: 'blur(0px)',
-      },
-    },
-  },
+// const Image = styled('img', {
+//   transition: 'opacity 1s ease-in, filter 2s ease-out',
+//   width: '100%',
+//   height: '100%',
+//   position: 'absolute',
+//   objectFit: 'cover',
+//   zIndex: -99,
+//   variants: {
+//     show: {
+//       true: {
+//         opacity: 1,
+//       },
+//       false: {
+//         opacity: 0,
+//       },
+//     },
+//     isBlur: {
+//       true: {
+//         filter: 'blur(15px)',
+//       },
+//       false: {
+//         filter: 'blur(0px)',
+//       },
+//     },
+//   },
 
-  defaultVariants: {
-    show: true,
-  },
-})
+//   defaultVariants: {
+//     show: true,
+//   },
+// })
 
 function PixiTesting() {
   const { nowScene } = useMainController()
@@ -75,86 +68,6 @@ function PixiTesting() {
   return (
     <RootContainer>
       <GameContainer css={{ backgroundColor: SCENE[nowScene].bgColor }}>
-        {/* <Game /> */}
-        {/* {IMAGE_LIST.map((val, key) => (
-          <Image
-            show={val === SCENE_LIST[nowScene].bgImageSrc}
-            isBlur={false}
-            src={`images/${val}`}
-            key={key}
-            alt={val}
-          ></Image>
-        ))} */}
-        {/* <div
-          style={{
-            position: 'absolute',
-            top: '0',
-            bottom: '0',
-            left: '0',
-            right: '0',
-          }}
-        >
-          <InputScene
-            question={'กินข้าวหรือยัง ?'}
-            placeholder={'ทดสอบ ทดสอบ'}
-            onSubmit={(val) => {
-              alert(val)
-            }}
-          />
-          <ChoiceTemplate
-            question={'สวัสดีครับบบบบบบบบบบบบบบบบบ'}
-            choices={[
-              {
-                text: 'เราเคยรู้จักกันหรือเปล่าาาาาาาาาาาาาาาาาาาาาาาาาา',
-                onClick: () => {},
-                nextScene: 'Hello',
-              },
-              {
-                text: 'เราเคยรู้จักกันหรือเปล่าาาาาาาาาาาาาาาาาาาาาาาาาา',
-                onClick: () => {},
-                nextScene: 'Hello',
-              },
-              {
-                text: 'เราเคยรู้จักกันหรือเปล่าาาาาาาาาาาาาาาาาาาาาาาาาา',
-                onClick: () => {},
-                nextScene: 'Hello',
-              },
-              {
-                text: 'เราเคยรู้จักกันหรือเปล่าาาาาาาาาาาาาาาาาาาาาาาาาา',
-                onClick: () => {},
-                nextScene: 'Hello',
-              },
-            ]}
-          />
-        </div> */}
-        {/* <div
-          style={{
-            position: 'absolute',
-            top: '0',
-            bottom: '0',
-            left: '0',
-            right: '0',
-          }}
-        >
-          <DialogueTemplate
-            dialogues={[
-              { name: 'hello world', variant: 'primary', text: 'test' },
-              { name: 'hello world', variant: 'secondary', text: 'Test2' },
-            ]}
-            onFinish={() => {}}
-          />
-        </div> */}
-        {/* <div
-          style={{
-            position: 'absolute',
-            top: '0',
-            bottom: '0',
-            left: '0',
-            right: '0',
-          }}
-        >
-          <SliderTemplate question="Hello World" onSubmit={() => {}} />
-        </div> */}
         <SceneController />
       </GameContainer>
     </RootContainer>
