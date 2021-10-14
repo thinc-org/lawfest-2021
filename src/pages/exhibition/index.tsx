@@ -111,7 +111,7 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
           width="30px"
           onClick={() => this.setState({ status: 0 })}
           alt="home-icon"
-          style={{ position: 'absolute' }}
+          style={{paddingTop:'5px',paddingLeft:'10px', position: 'absolute' }}
         ></img>
         {content}
       </div>

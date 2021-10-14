@@ -15,7 +15,7 @@ function Selector(props: { no: string; name: string }){
 
   return(
     <div>
-      <img src = {sources} width = "160px" style={{borderRadius: '10px'}} alt={props.no}>
+      <img src = {sources}  width = '80%' style={{borderRadius: '10px',maxWidth:'160px',marginLeft:'10%'}} alt={props.no}>
       </img>
       <p style={{textAlign:'center'}}>
         {"Mission "+props.no+":"}
@@ -30,8 +30,8 @@ function Selectors(props:{onClick:any}){
 
 	return(
 	<div>
-      <div style={{display:'flex',  justifyContent:'center', alignItems:'center', paddingTop:'120px'}}>
-        <div onClick={()=>props.onClick(1)} style={{display:'flex',marginRight:'30px'}}>
+      <div style={{display:'flex',  justifyContent:'center', paddingTop:'110px'}}>
+        <div onClick={()=>props.onClick(1)} style={{display:'flex',marginRight:'5%'}}>
           <Selector name = "What is Hope?" no = "1" ></Selector>
         </div>
 		<div onClick={()=>props.onClick(2)}>
