@@ -63,6 +63,7 @@ export const SCENE_LIST: { [x: string]: IScene } = {
   'map-click': {
     type: 'image-click',
     bgType: 'image',
+    bgColor: '#F1E1C7',
     bgImageSrc: 'images/01.png',
     nextScene: 'map-click',
     isStoredData: false,
