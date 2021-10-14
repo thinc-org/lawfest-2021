@@ -4,7 +4,6 @@ import {
   useMainController,
 } from 'common/context/Controller/MainController'
 import { styled } from 'common/config'
-import { IMAGE_LIST, SCENE_LIST } from 'common/constant/Scene'
 import Game from 'pages/game'
 import ChoiceTemplate from 'pages/game/components/Template/Choice'
 import DialogueTemplate from 'pages/game/components/Template/Dialogue'
@@ -12,6 +11,7 @@ import InputScene from 'pages/game/components/Template/Input'
 import SliderTemplate from 'pages/game/components/Template/Slider'
 import React, { useState } from 'react'
 import SceneController from 'pages/game/components/Scene'
+import { SCENE } from 'common/constant/Scene'
 
 const RootContainer = styled('div', {
   width: '100vw',
@@ -74,7 +74,7 @@ function PixiTesting() {
 
   return (
     <RootContainer>
-      <GameContainer css={{ backgroundColor: SCENE_LIST[nowScene].bgColor }}>
+      <GameContainer css={{ backgroundColor: SCENE[nowScene].bgColor }}>
         {/* <Game /> */}
         {/* {IMAGE_LIST.map((val, key) => (
           <Image
