@@ -8,7 +8,7 @@ import Logo from 'assets/logo.svg'
 import { INK_POS } from './constant'
 import { IInkRender } from './typed'
 import { useMainController } from 'common/context/Controller/MainController'
-import { SCENE_LIST } from 'common/constant/Scene'
+import { SCENE } from 'common/constant/Scene'
 
 function Game() {
   const [state, setState] = useState(0)
@@ -134,7 +134,7 @@ function Game() {
         alt="logo"
         onTransitionEnd={() => {
           window.setTimeout(
-            () => handleSetNowScene(SCENE_LIST['intro'].nextScene),
+            () => handleSetNowScene(SCENE['intro'].nextScene),
             800
           )
         }}

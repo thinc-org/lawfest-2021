@@ -4,7 +4,7 @@ import ChoiceTemplate from '../Template/Choice'
 import DialogueTemplate from '../Template/Dialogue'
 import InputTemplate from '../Template/Input'
 import SliderTemplate from '../Template/Slider'
-import { IScene, SCENE_LIST } from 'common/constant/Scene'
+import { IScene, SCENE } from 'common/constant/Scene'
 import { FadeOut, SceneContainer, SceneRootContainer } from './styled'
 import { ICallbackData } from './types'
 
@@ -29,11 +29,11 @@ function SceneController() {
 
       const nextScene = val.nextSceneOverride || sceneData.nextScene
       handleSetNowScene(nextScene)
-      if (sceneData.type !== SCENE_LIST[nextScene].type) {
+      if (sceneData.type !== SCENE[nextScene].type) {
         setMode('out')
         setPreventClick(true)
       } else {
-        setSceneData(SCENE_LIST[nextScene])
+        setSceneData(SCENE[nextScene])
       }
     },
     [
@@ -47,11 +47,11 @@ function SceneController() {
   )
 
   useEffect(() => {
-    if (!Object.keys(SCENE_LIST).includes(nowScene)) {
+    if (!Object.keys(SCENE).includes(nowScene)) {
       throw new Error('Not found scene')
     }
     if (sceneData.type === 'dummy') {
-      setSceneData(SCENE_LIST[nowScene])
+      setSceneData(SCENE[nowScene])
     }
     setNewScene(nowScene)
   }, [newScene, nowScene, sceneData.type])
@@ -70,7 +70,7 @@ function SceneController() {
         onAnimationEnd={(el) => {
           const animName = el.animationName
           if (animName === FadeOut.name) {
-            setSceneData(SCENE_LIST[nowScene])
+            setSceneData(SCENE[nowScene])
             setMode('in')
             setPreventClick(false)
           }
