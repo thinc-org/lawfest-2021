@@ -16,7 +16,9 @@ function SliderTemplate(props: ISliderQuestion) {
   }, [])
 
   const handleSubmit = useCallback(() => {
-    onSubmit(input)
+    onSubmit({
+      storeValue: input,
+    })
   }, [input, onSubmit])
 
   const handleSetInput = useCallback((val: number) => {

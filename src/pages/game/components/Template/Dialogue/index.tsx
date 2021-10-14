@@ -9,7 +9,7 @@ function DialogueTemplate(props: IDialogueTemplate) {
 
   const handleChange = useCallback(() => {
     if (now === dialogues.length - 1) {
-      onFinish()
+      onFinish({})
       return
     }
     setNow(now + 1)
