@@ -1,4 +1,5 @@
 import 'App.css'
+import {SelectorText} from './styled'
 import choice1 from 'assets/pic/Activity1.png'
 import choice2 from 'assets/pic/Activity2.png'
 import choice3 from 'assets/pic/Activity3.png'
@@ -14,15 +15,11 @@ function Selector(props: { no: string; name: string }){
   }
 
   return(
-    <div>
-      <img src = {sources}  width = '80%' style={{borderRadius: '10px',maxWidth:'160px',marginLeft:'10%'}} alt={props.no}>
+    <div style={{justifyContent:'center'}}>
+      <img src = {sources}  width = '80%' style={{borderRadius: '10px',marginLeft:'10%',maxWidth:'200px'}} alt={props.no}>
       </img>
-      <p style={{textAlign:'center'}}>
-        {"Mission "+props.no+":"}
-      </p>
-      <p style={{textAlign:'center'}}>
-        {props.name}
-      </p>
+      <SelectorText>{'Mission'+props.no+':'}</SelectorText>
+      <SelectorText> {props.name}</SelectorText>
     </div>
   )
 }

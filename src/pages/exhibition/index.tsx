@@ -2,6 +2,7 @@ import 'App.css'
 import Selectors from 'pages/exhibition/Selectors'
 import home from 'assets/pic/home.png'
 import React from 'react'
+import { StyledText } from './styled'
 
 class Exhibition extends React.Component<{}, { status: 0 }> {
   static data = {
@@ -56,13 +57,8 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
           }}
           onClick={() => this.setState({ status: data['next'] })}
         >
-          <p
-            style={{
-              fontWeight: 'bold',
-            }}
-          >
-            {data['text']}
-          </p>
+          <StyledText>{data['text']}</StyledText>
+
           {data['quoteOwner'] ? (
             <div
               style={{
@@ -93,7 +89,7 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
               </p>
             </div>
           ) : null}
-          <p>---แตะเพื่อไปต่อ---</p>
+          <p style={{marginTop:'10px'}}>—— แตะเพื่อไปต่อ ——</p>
         </div>
       )
     }
