@@ -4,10 +4,12 @@ import Button from 'common/components/Button'
 import React, { useCallback, useEffect, useState } from 'react'
 import { IInputQuestion } from './typed'
 import { QuestionContainer, RootContainer } from './styled'
+import { useMainController } from 'common/context/Controller/MainController'
 
 function InputTemplate(props: IInputQuestion) {
-  const { question, onSubmit, placeholder } = props
+  const { question, nextScene, onSubmit, placeholder } = props
   const [input, setInput] = useState('')
+  const { handleSetNowScene } = useMainController()
 
   useEffect(() => {
     setInput('')
@@ -15,7 +17,8 @@ function InputTemplate(props: IInputQuestion) {
 
   const handleSubmit = useCallback(() => {
     onSubmit(input)
-  }, [input, onSubmit])
+    handleSetNowScene(nextScene || '')
+  }, [onSubmit, input, handleSetNowScene, nextScene])
 
   return (
     <RootContainer>

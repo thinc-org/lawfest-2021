@@ -17,7 +17,7 @@ export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
   const [hopeValue, setHopeValue] = useState<number>(0)
   const [age, setAge] = useState<number>(0)
 
-  const [nowScene, setNowScene] = useState<string>('intro')
+  const [nowScene, setNowScene] = useState<string>('name-input')
 
   const handleSetName = useCallback((name: string) => {
     setName(name)

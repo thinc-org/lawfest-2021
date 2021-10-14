@@ -1,25 +1,21 @@
-interface IQuestion {
-  topic: string
-}
+import { IDialogueData } from 'pages/game/components/Template/Dialogue/types'
+import { IChoice } from 'pages/game/components/Template/Choice/types'
 
-interface IChoice {
-  text: string
-  value: any
-}
-
-interface IScene {
+export interface IScene {
   type: string
   bgType: 'color' | 'image'
   isStoredData: boolean
   nextScene: string
   bgColor?: string
+  placeholder?: string
   bgImageSrc?: string
   dataKey?: string
-  dialog?: string[]
-  question?: IQuestion
+  dialog?: IDialogueData[]
+  question?: string
   choices?: IChoice[]
   fadeIn?: string[]
   fadeOut?: string[]
+  onSubmit?: (...args: any[]) => void
 }
 
 export const SCENE_LIST: { [x: string]: IScene } = {
@@ -38,16 +34,30 @@ export const SCENE_LIST: { [x: string]: IScene } = {
     nextScene: 'map',
     dataKey: 'name',
     isStoredData: true,
-    question: { topic: 'คุณอยากให้เราเรียกคุณว่าอะไร ?' },
+    question: 'คุณอยากให้เราเรียกคุณว่าอะไร ?',
     fadeIn: ['fade'],
     fadeOut: ['fade'],
+    onSubmit(val) {
+      console.log(val)
+    },
   },
   map: {
     type: 'dialog',
     bgType: 'image',
     bgImageSrc: 'images/01.png',
     nextScene: 'map-click',
-    dialog: ['เลือกเส้นทางที่คุณต้องการจะไป'],
+    dialog: [
+      {
+        name: 'Hello',
+        text: 'เลือกเส้นทางที่คุณต้องการจะไป',
+        variant: 'secondary',
+      },
+      {
+        name: 'World',
+        text: 'อยากตาย ;-;',
+        variant: 'primary',
+      },
+    ],
     isStoredData: false,
   },
   'map-click': {

@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import Dialogue from '../../Dialogue'
 import { RootContainer } from '../Input/styled'
 import { IDialogueTemplate } from './types'
@@ -10,6 +10,10 @@ function DialogueTemplate(props: IDialogueTemplate) {
   const handleChange = useCallback(() => {
     setNow((now + 1) % dialogues.length)
   }, [now, dialogues])
+
+  useEffect(() => {
+    setNow(0)
+  }, [dialogues])
 
   return (
     <RootContainer css={{ alignItems: 'flex-end' }}>
