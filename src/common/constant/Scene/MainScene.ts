@@ -12,10 +12,17 @@ export const MAIN_SCENE: { [x: string]: IScene } = {
     type: 'input',
     bgType: 'color',
     bgColor: '#F1E1C7',
-    nextScene: 'map',
+    nextScene: 'click-to-continue',
     dataKey: 'name',
     isStoredData: true,
     question: 'คุณอยากให้เราเรียกคุณว่าอะไร ?',
+  },
+  'click-to-continue': {
+    type: 'image-click',
+    bgType: 'color',
+    bgColor: '#F1E1C7',
+    isStoredData: false,
+    nextScene: 'map',
   },
   map: {
     type: 'dialog',
