@@ -6,6 +6,16 @@ export const RootContainer = styled('div', {
   justifyContent: 'center',
   textAlign: 'center',
   alignItems: 'center',
-  paddingLeft: '20px',
-  paddingRight: '20px',
+  variants: {
+    padding: {
+      true: {
+        paddingLeft: '20px',
+        paddingRight: '20px',
+      },
+      false: {},
+    },
+  },
+  defaultVariants: {
+    padding: true,
+  },
 })

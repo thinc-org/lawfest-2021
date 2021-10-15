@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import Dialogue from '../../Dialogue'
 import { RootContainer } from '../Container'
+import { DialogueContainer } from './styled'
 import { IDialogueTemplate } from './types'
 
 function DialogueTemplate(props: IDialogueTemplate) {
@@ -20,24 +21,15 @@ function DialogueTemplate(props: IDialogueTemplate) {
   }, [dialogues])
 
   return (
-    <RootContainer css={{ alignItems: 'flex-end' }}>
-      <div
-        style={{
-          width: '100%',
-          paddingBottom: '80px',
-          display: 'flex',
-          justifyContent: 'center',
-          background:
-            'linear-gradient(0deg, #292929 0%, rgba(41, 41, 41, 0) 100%)',
-        }}
-      >
+    <RootContainer css={{ alignItems: 'flex-end' }} padding="false">
+      <DialogueContainer>
         <Dialogue
           children={dialogues[Math.min(now, dialogues.length - 1)].text}
           variant={dialogues[Math.min(now, dialogues.length - 1)].variant}
           onClick={handleChange}
           name={dialogues[Math.min(now, dialogues.length - 1)].name}
         />
-      </div>
+      </DialogueContainer>
     </RootContainer>
   )
 }
