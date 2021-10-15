@@ -32,10 +32,10 @@ function DialogueTemplate(props: IDialogueTemplate) {
         }}
       >
         <Dialogue
-          children={dialogues[now].text}
-          variant={dialogues[now].variant}
+          children={dialogues[Math.min(now, dialogues.length - 1)].text}
+          variant={dialogues[Math.min(now, dialogues.length - 1)].variant}
           onClick={handleChange}
-          name={dialogues[now].name}
+          name={dialogues[Math.min(now, dialogues.length - 1)].name}
         />
       </div>
     </RootContainer>
