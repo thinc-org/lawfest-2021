@@ -11,17 +11,12 @@ const routes: RouteProps[] = [
     exact: true,
   },
   {
-    path: '/game',
-    component: Game,
-    exact: true,
-  },
-  {
     path: '/componentsDemo',
     component: ComponentsDemo,
     exact: true,
   },
   {
-    path: '/pixi',
+    path: '/game',
     component: PixiTesting,
     exact: true,
   },
