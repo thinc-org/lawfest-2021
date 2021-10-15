@@ -13,13 +13,17 @@ export const InkContainer = styled('div', {
   transform: 'translate(-50%, -50%)',
 })
 
-export const LawFestLogoContainer = styled('img', {
-  position: 'absolute',
-  top: '31vh',
+export const LawFestLogo = styled('img', {
   height: '33vh',
+  position: 'absolute',
+
   left: '50%',
   transform: 'translate(-50%, -50%)',
+
+  // Animation
+  top: '31vh',
   transition: 'top 3s',
+
   variants: {
     state: {
       before: {},
@@ -30,37 +34,41 @@ export const LawFestLogoContainer = styled('img', {
   },
 })
 
-export const AfterStateContainer = styled('div', {
-  position: 'absolute',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  transition: 'bottom 2s',
-  bottom: '-50vh',
-  width: '100%',
-  zIndex: 2,
-  variants: {
-    state: {
-      before: {},
-      after: {
-        bottom: '0',
-      },
-    },
-  },
-})
 export const StartButton = styled('div', {
   height: '13vh',
-  position: 'absolute',
-  top: '87vh',
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
+  position: 'absolute',
+
+  // Animation
+  top: '87vh',
   transition: 'opacity 1s',
+
   variants: {
     state: {
       before: {},
       after: {
         opacity: '0',
+      },
+    },
+  },
+})
+
+export const AfterStateContainer = styled('div', {
+  width: '100%',
+  zIndex: 2,
+  position: 'absolute',
+
+  // Animation
+  bottom: '-50vh',
+  transition: 'bottom 2s',
+
+  variants: {
+    state: {
+      before: {},
+      after: {
+        bottom: '0',
       },
     },
   },

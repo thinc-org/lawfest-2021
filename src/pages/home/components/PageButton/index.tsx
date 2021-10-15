@@ -5,15 +5,17 @@ import {
   ButtonText,
   StyledText,
   StyledImage,
+  Container,
 } from './styled'
 import gameIcon from 'assets/images/game_icon.svg'
 import exhibitionIcon from 'assets/images/exhibition_icon.svg'
 import { MdKeyboardArrowLeft } from 'react-icons/md'
 import { useHistory } from 'react-router'
+
 const PageButton = () => {
   const history = useHistory()
   return (
-    <>
+    <Container>
       <ButtonConatiner>
         <StyledButton
           onClick={() => {
@@ -49,7 +51,7 @@ const PageButton = () => {
         <MdKeyboardArrowLeft />
         กลับสู่เว็บไซต์งานรพีฯ
       </StyledText>
-    </>
+    </Container>
   )
 }
 
