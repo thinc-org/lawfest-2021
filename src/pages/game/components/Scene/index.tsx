@@ -30,7 +30,7 @@ function SceneController() {
 
       const nextScene = val.nextSceneOverride || sceneData.nextScene
       handleSetNowScene(nextScene)
-      if (sceneData.type !== SCENE[nextScene].type) {
+      if (sceneData.type !== SCENE[nextScene].type || sceneData.forceFade) {
         setMode('out')
         setPreventClick(true)
       } else {
@@ -41,6 +41,7 @@ function SceneController() {
       handleSetNowScene,
       handleSetStorage,
       sceneData.dataKey,
+      sceneData.forceFade,
       sceneData.isStoredData,
       sceneData.nextScene,
       sceneData.type,

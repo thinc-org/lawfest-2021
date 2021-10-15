@@ -1,8 +1,17 @@
 import { IChoice } from 'pages/game/components/Template/Choice/types'
 import { IDialogueData } from 'pages/game/components/Template/Dialogue/types'
 
+type SceneType =
+  | 'intro'
+  | 'input'
+  | 'image-click'
+  | 'slider'
+  | 'choice'
+  | 'dialog'
+  | 'dummy'
+
 export interface IScene {
-  type: string
+  type: SceneType
   bgType: 'color' | 'image'
   isStoredData: boolean
   nextScene: string
@@ -13,4 +22,5 @@ export interface IScene {
   dialog?: IDialogueData[]
   question?: string
   choices?: IChoice[]
+  forceFade?: boolean
 }
