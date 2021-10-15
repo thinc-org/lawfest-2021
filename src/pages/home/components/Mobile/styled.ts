@@ -8,41 +8,41 @@ export const Container = styled('div', {
 
 export const InkContainer = styled('div', {
   position: 'absolute',
-  top: '27vh',
+  top: '27%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
 })
 
 export const LawFestLogo = styled('img', {
-  height: '33vh',
+  height: '33%',
   position: 'absolute',
 
   left: '50%',
   transform: 'translate(-50%, -50%)',
 
   // Animation
-  top: '31vh',
+  top: '31%',
   transition: 'top 3s',
 
   variants: {
     state: {
       before: {},
       after: {
-        top: '-30vh',
+        top: '-30%',
       },
     },
   },
 })
 
 export const StartButton = styled('div', {
-  height: '13vh',
+  height: '13%',
   width: '100%',
   display: 'flex',
   justifyContent: 'center',
   position: 'absolute',
 
   // Animation
-  top: '87vh',
+  top: '87%',
   transition: 'opacity 1s',
 
   variants: {
@@ -61,14 +61,14 @@ export const AfterStateContainer = styled('div', {
   position: 'absolute',
 
   // Animation
-  bottom: '-50vh',
+  bottom: '-500px',
   transition: 'bottom 2s',
 
   variants: {
     state: {
       before: {},
       after: {
-        bottom: '0',
+        bottom: 0,
       },
     },
   },
