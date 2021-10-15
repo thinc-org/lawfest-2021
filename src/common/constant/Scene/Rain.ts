@@ -130,7 +130,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
     bgColor: '#000000',
     bgImageSrc: 'images/01.png',
     isStoredData: false,
-    nextScene: 'shop-1',
+    nextScene: 'before-shop-choice-delay',
     dialog: [
       {
         name: 'ผู้นำทาง',

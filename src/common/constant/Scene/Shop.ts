@@ -1,6 +1,45 @@
 import { IScene } from '.'
 
 export const SHOP_SCENE: { [x: string]: IScene } = {
+  'before-shop-choice-delay': {
+    type: 'delay',
+    bgType: 'image',
+    bgColor: '#000000',
+    bgImageSrc: 'images/01.png',
+    isStoredData: false,
+    nextScene: 'shop-choice',
+    delay: 1500,
+  },
+  'shop-choice': {
+    type: 'choice',
+    bgType: 'image',
+    bgColor: '#000000',
+    bgImageSrc: 'images/01.png',
+    isStoredData: false,
+    nextScene: 'before-shop-dialogue-delay',
+    question: 'จะทำอย่างไรกับเหตุการณ์ที่เกิดขึ้น ?',
+    choices: [
+      {
+        text: 'ชวนแปะคุย',
+        nextScene: '',
+        value: '',
+      },
+      {
+        text: 'ขอผ้ามาเช็ดตัว',
+        nextScene: '',
+        value: '',
+      },
+    ],
+  },
+  'before-shop-dialogue-delay': {
+    type: 'delay',
+    bgType: 'image',
+    bgColor: '#000000',
+    bgImageSrc: 'images/01.png',
+    isStoredData: false,
+    nextScene: 'shop-1',
+    delay: 1500,
+  },
   'shop-1': {
     type: 'dialog',
     bgType: 'image',
@@ -201,7 +240,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
     bgType: 'image',
     bgColor: '#F1E1C7',
     bgImageSrc: 'images/01.png',
-    nextScene: 'age-choice',
+    nextScene: 'before-raining-stop',
     isStoredData: false,
     dialog: [
       {
