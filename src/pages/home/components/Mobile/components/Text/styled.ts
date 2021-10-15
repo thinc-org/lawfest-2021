@@ -2,7 +2,8 @@ import { styled } from '@stitches/react'
 
 export const TextContainer = styled('div', {
   position: 'absolute',
-  top: '57vh',
+  height: '30%',
+  top: '57%',
   left: '50%',
   transform: 'translate(-50%, 0)',
   display: 'flex',
@@ -13,7 +14,7 @@ export const TextContainer = styled('div', {
     state: {
       before: {},
       after: {
-        top: '20vh',
+        top: '22%',
       },
     },
   },
