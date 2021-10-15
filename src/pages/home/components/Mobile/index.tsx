@@ -4,14 +4,15 @@ import Footer from 'common/components/Footer'
 import lawfestLogo from 'assets/images/lawfest_logo.svg'
 import {
   AfterStateContainer,
-  Container,
   InkContainer,
   LawFestLogoContainer,
-  StyledArrow,
-  TextContainer,
+  Container,
+  StartButton,
 } from './styled'
 import ink from 'assets/images/home_mobile.svg'
 import Text from '../Text'
+import TextWithLine from 'common/components/TextWithLine'
+
 const Mobile = () => {
   const [state, setState] = useState<'before' | 'after'>('before')
   return (
@@ -19,14 +20,25 @@ const Mobile = () => {
       <InkContainer>
         <img src={ink} style={{ width: '100vw' }} alt="" />
       </InkContainer>
-      <LawFestLogoContainer state={state}>
-        <img src={lawfestLogo} style={{ height: '274px' }} alt="" />
-      </LawFestLogoContainer>
-      <TextContainer state={state}>
-        <Text state={state} />
-      </TextContainer>
-      <StyledArrow onClick={() => setState('after')} state={state} />
+      <LawFestLogoContainer state={state} src={lawfestLogo} alt="" />
 
+      <Text state={state} />
+
+      <StartButton
+        onClick={() => {
+          setState('after')
+        }}
+        state={state}
+      >
+        <TextWithLine
+          css={{
+            color: '$primary700',
+          }}
+          mobileVariant="subhead"
+        >
+          แตะเพื่อเริ่มออกเดินทาง
+        </TextWithLine>
+      </StartButton>
       <AfterStateContainer state={state}>
         <PageButton />
         <Footer />

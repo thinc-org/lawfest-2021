@@ -1,14 +1,13 @@
 import React from 'react'
-import { IHopeYouHope, YouHopeIHope } from './styled'
+import { IHopeYouHope, TextContainer, YouHopeIHope } from './styled'
 import { TextProps } from './types'
 
 const Text = ({ state }: TextProps) => {
   return (
-    <>
+    <TextContainer state={state}>
       <YouHopeIHope
         state={state}
-        width="312"
-        height="177"
+        height="25vh"
         viewBox="0 0 312 177"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -20,8 +19,7 @@ const Text = ({ state }: TextProps) => {
       </YouHopeIHope>
       <IHopeYouHope
         state={state}
-        width="173"
-        height="40"
+        height="5vh"
         viewBox="0 0 173 40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +29,7 @@ const Text = ({ state }: TextProps) => {
           fill="black"
         />
       </IHopeYouHope>
-    </>
+    </TextContainer>
   )
 }
 
