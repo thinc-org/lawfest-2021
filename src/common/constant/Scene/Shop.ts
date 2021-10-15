@@ -1,75 +1,116 @@
-import { IScene } from './types'
+import { IScene } from '.'
 
-export const MAIN_SCENE: { [x: string]: IScene } = {
-  intro: {
-    type: 'intro',
-    bgType: 'color',
-    bgColor: '#F1E1C7',
-    nextScene: 'name-input',
-    isStoredData: false,
-  },
-  'name-input': {
-    type: 'input',
-    bgType: 'color',
-    bgColor: '#F1E1C7',
-    nextScene: 'click-to-continue',
-    dataKey: 'name',
-    isStoredData: true,
-    question: 'คุณอยากให้เราเรียกคุณว่าอะไร ?',
-  },
-  'click-to-continue': {
-    type: 'image-click',
-    bgType: 'color',
-    bgColor: '#F1E1C7',
-    isStoredData: false,
-    nextScene: 'delay',
-  },
-  delay: {
-    type: 'delay',
-    bgType: 'color',
-    bgColor: '#000000',
-    nextScene: 'map',
-    delay: 2000,
-    isStoredData: false,
-  },
-  map: {
+export const SHOP_SCENE: { [x: string]: IScene } = {
+  'shop-1': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#F1E1C7',
+    bgColor: '#000000',
     bgImageSrc: 'images/01.png',
     isStoredData: false,
-    nextScene: 'map2',
+    nextScene: 'shop-focus-image',
     dialog: [
       {
-        name: 'Hello',
-        text: 'เลือกเส้นทางที่คุณต้องการจะไป',
+        name: 'น้องรพี',
+        text: '“ ช่วงนี้เป็นไงบ้างแปะ ขายดีไหม? ”',
         variant: 'primary',
       },
-    ],
-    forceFade: true,
-  },
-  map2: {
-    type: 'dialog',
-    bgType: 'image',
-    bgColor: '#F1E1C7',
-    bgImageSrc: 'images/01.png',
-    nextScene: 'slider',
-    isStoredData: false,
-    dialog: [
       {
-        name: 'Hello',
-        text: 'เลือกเส้นทางที่คุณต้องการ',
+        name: 'แปะ',
+        text: '“ ร้านจะปิดแล้ว ”',
+        variant: 'secondary',
+      },
+      {
+        name: 'แปะ',
+        text: '“ พักนี้ขายไม่ค่อยได้เลย จริง ๆ ก็ขายไม่ได้มาพักใหญ่แล้วแหละ ตั้งแต่มีพวกร้านสะดวกซื้อดัง ๆ เขามาเปิด ”',
+        variant: 'secondary',
+      },
+      {
+        name: 'น้องรพี',
+        text: '“ อ้าว แล้วแปะจะไปทำอะไรต่อล่ะ ”',
+        variant: 'primary',
+      },
+      {
+        name: 'แปะ',
+        text: '“ ก็คงย้ายกลับไปอยู่บ้านที่ต่างจังหวัดแหละ ”',
+        variant: 'secondary',
+      },
+      {
+        name: 'แปะ',
+        text: '“ ถึงจะไม่เจริญเท่าที่นี่ แต่ก็คงพอมีช่องทางทำมาหากิน อยู่บ้าง ”',
+        variant: 'secondary',
+      },
+      {
+        name: 'น้องรพี',
+        text: '“ ย้ายกลับไปอยู่กับครอบครัวหรอแปะ ? ”',
+        variant: 'primary',
+      },
+      {
+        name: 'แปะ',
+        text: '“ ครอบครัวเหรอ... ”',
         variant: 'secondary',
       },
     ],
   },
-  slider: {
-    type: 'slider',
-    question: 'คุณมีความหวังเท่าไหร่แล้วล่ะ',
-    bgType: 'color',
-    isStoredData: true,
-    dataKey: 'hope',
+  'shop-focus-image': {
+    type: 'dialog',
+    bgType: 'image',
+    bgColor: '#000000',
+    bgImageSrc: 'images/01.png',
+    isStoredData: false,
+    nextScene: 'shop-zoom-image',
+    dialog: [
+      {
+        name: 'แปะ',
+        text: '“ ก็เคยมีอยู่นะ ”',
+        variant: 'secondary',
+      },
+    ],
+  },
+  'shop-zoom-image': {
+    type: 'image-click',
+    bgType: 'image',
+    bgColor: '#000000',
+    bgImageSrc: 'images/01.png',
+    isStoredData: false,
+    nextScene: 'shop-towel',
+  },
+  'shop-towel': {
+    type: 'dialog',
+    bgType: 'image',
+    bgColor: '#000000',
+    bgImageSrc: 'images/01.png',
+    isStoredData: false,
+    nextScene: 'shop-news',
+    dialog: [
+      {
+        name: 'แปะ',
+        text: '“เดี๋ยวแปะไปหยิบผ้ามาให้เช็ดดีกว่า เปียกไปหมดเลยนี่ ”',
+        variant: 'secondary',
+      },
+    ],
+  },
+  'shop-news': {
+    type: 'dialog',
+    bgType: 'image',
+    bgColor: '#000000',
+    bgImageSrc: 'images/01.png',
+    isStoredData: false,
+    nextScene: 'towel-pick',
+    dialog: [
+      {
+        name: 'ผู้ประกาศข่าว',
+        text: '“... รายงานสดจากหน้า…. การชุมนุมของ… เพื่อเรียกร้อง….”',
+        variant: 'secondary',
+      },
+    ],
+  },
+  'towel-pick': {
+    type: 'delay',
+    bgType: 'image',
+    bgImageSrc: 'images/01.png',
+    isStoredData: false,
     nextScene: 'age-choice',
+    delay: 2000,
   },
   'age-choice': {
     type: 'choice',
@@ -176,5 +217,3 @@ export const MAIN_SCENE: { [x: string]: IScene } = {
     ],
   },
 }
-
-export const IMAGE_LIST = ['images/01.png']
