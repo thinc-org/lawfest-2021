@@ -22,7 +22,15 @@ export const MAIN_SCENE: { [x: string]: IScene } = {
     bgType: 'color',
     bgColor: '#F1E1C7',
     isStoredData: false,
+    nextScene: 'delay',
+  },
+  delay: {
+    type: 'delay',
+    bgType: 'color',
+    bgColor: '#000000',
     nextScene: 'map',
+    delay: 2000,
+    isStoredData: false,
   },
   map: {
     type: 'dialog',

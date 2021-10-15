@@ -8,7 +8,8 @@ type SceneType =
   | 'slider'
   | 'choice'
   | 'dialog'
-  | 'dummy'
+  | 'standby'
+  | 'delay'
 
 export interface IScene {
   type: SceneType
@@ -23,4 +24,5 @@ export interface IScene {
   question?: string
   choices?: IChoice[]
   forceFade?: boolean
+  delay?: number
 }

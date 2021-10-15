@@ -8,11 +8,12 @@ import { IScene, SCENE } from 'common/constant/Scene'
 import { FadeIn, FadeOut, SceneContainer, SceneRootContainer } from './styled'
 import { ICallbackData } from './types'
 import ClickToContinueTemplate from '../Template/ClickToContinue'
+import DelayTransition from '../Template/Delay'
 
 function SceneController() {
   const { nowScene, handleSetNowScene, handleSetStorage } = useMainController()
   const [sceneData, setSceneData] = useState<IScene>({
-    type: 'dummy',
+    type: 'standby',
     bgType: 'color',
     isStoredData: false,
     nextScene: 'next',
@@ -52,7 +53,7 @@ function SceneController() {
     if (!Object.keys(SCENE).includes(nowScene)) {
       throw new Error('Not found scene')
     }
-    if (sceneData.type === 'dummy') {
+    if (sceneData.type === 'standby') {
       setSceneData(SCENE[nowScene])
     }
     setNewScene(nowScene)
@@ -109,6 +110,12 @@ function SceneController() {
         )}
         {sceneData.type === 'image-click' && (
           <ClickToContinueTemplate onSubmit={handleSubmit} />
+        )}
+        {sceneData.type === 'delay' && (
+          <DelayTransition
+            delay={sceneData.delay || 500}
+            onFinish={handleSubmit}
+          />
         )}
       </SceneContainer>
     </SceneRootContainer>
