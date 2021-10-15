@@ -31,7 +31,9 @@ export const ButtonText = styled('div', {
 
 export const StyledImage = styled('img', {
   height: '90%',
-  '@sm': { height: 'auto' },
+  '@sm': {
+    height: '80%',
+  },
 })
 
 export const StyledButton = styled('button', {
@@ -53,6 +55,7 @@ export const StyledButton = styled('button', {
 
   '@sm': {
     flexDirection: 'column',
+    justifyContent: 'space-between',
     height: '170px',
     width: '45%',
     maxWidth: '170px',

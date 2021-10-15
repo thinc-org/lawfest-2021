@@ -31,19 +31,17 @@ const PageButton = () => {
           }}
         >
           <StyledImage
-            alt="game"
-            src={exhibitionIcon}
-            css={{ height: '80%', '@sm': { height: 'auto' } }}
-          />
-          <ButtonText
             css={{
+              height: '80%',
               '@sm': {
-                marginTop: '18px',
+                marginTop: '10px',
+                height: '70%',
               },
             }}
-          >
-            เข้าสู่นิทรรศการ
-          </ButtonText>
+            alt="game"
+            src={exhibitionIcon}
+          />
+          <ButtonText>เข้าสู่นิทรรศการ</ButtonText>
         </StyledButton>
       </ButtonConatiner>
 
