@@ -5,8 +5,9 @@ import DialogueTemplate from '../Template/Dialogue'
 import InputTemplate from '../Template/Input'
 import SliderTemplate from '../Template/Slider'
 import { IScene, SCENE } from 'common/constant/Scene'
-import { FadeOut, SceneContainer, SceneRootContainer } from './styled'
+import { FadeIn, FadeOut, SceneContainer, SceneRootContainer } from './styled'
 import { ICallbackData } from './types'
+import ClickToContinueTemplate from '../Template/ClickToContinue'
 
 function SceneController() {
   const { nowScene, handleSetNowScene, handleSetStorage } = useMainController()
@@ -72,6 +73,8 @@ function SceneController() {
           if (animName === FadeOut.name) {
             setSceneData(SCENE[nowScene])
             setMode('in')
+          }
+          if (animName === FadeIn.name) {
             setPreventClick(false)
           }
         }}
@@ -102,6 +105,9 @@ function SceneController() {
             question={sceneData.question || ''}
             onSubmit={handleSubmit}
           ></SliderTemplate>
+        )}
+        {sceneData.type === 'image-click' && (
+          <ClickToContinueTemplate onSubmit={handleSubmit} />
         )}
       </SceneContainer>
     </SceneRootContainer>
