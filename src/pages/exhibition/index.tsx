@@ -58,6 +58,7 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
           onClick={() => this.setState({ status: data['next'] })}
         >
           <StyledText>{data['text']}</StyledText>
+          <p></p>
 
           {data['quoteOwner'] ? (
             <div

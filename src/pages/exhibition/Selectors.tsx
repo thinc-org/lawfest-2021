@@ -13,11 +13,11 @@ function Selector(props: { no: string; name: string }){
   }else if(props.no==='3'){
     sources = choice3
   }
+  //console.log(window.innerWidth)
 
   return(
-    <div style={{justifyContent:'center'}}>
-      <img src = {sources}  width = '80%' style={{borderRadius: '10px',marginLeft:'10%',maxWidth:'200px'}} alt={props.no}>
-      </img>
+    <div style={{display:'flex', justifyContent:'center',flexDirection:'column'}}>
+      <img src = {sources}  width = {0.3*Math.min(window.innerWidth,window.innerHeight)} style={{borderRadius: '10px',alignSelf:'center',paddingBottom:'5px'}} alt={props.no}></img>
       <SelectorText>{'Mission'+props.no+':'}</SelectorText>
       <SelectorText> {props.name}</SelectorText>
     </div>
@@ -36,8 +36,10 @@ function Selectors(props:{onClick:any}){
 		</div>
       </div>
 
-      <div onClick={()=>props.onClick(3)} style={{display:'flex',  justifyContent:'center', alignItems:'center', marginTop:'20px'}}>
+      <div style={{display:'flex',  justifyContent:'center', alignItems:'center',marginTop:'5%'}}>
+        <div onClick={()=>props.onClick(3)}>
         <Selector name = "Hopeless but Hoping" no = "3"></Selector>
+        </div>
       </div>
     </div>
   )

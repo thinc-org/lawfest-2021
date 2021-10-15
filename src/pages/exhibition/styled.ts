@@ -10,7 +10,6 @@ export const SelectorText = styled('div', {
   userSelect: 'none',
   '@sm': {
     fontSize: '16px',
-    marginBottom: '17px',
   },
 })
 
