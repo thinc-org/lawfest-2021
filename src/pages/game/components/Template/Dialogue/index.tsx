@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import Dialogue from '../../Dialogue'
-import { RootContainer } from '../Input/styled'
+import { RootContainer } from '../Container'
 import { IDialogueTemplate } from './types'
 
 function DialogueTemplate(props: IDialogueTemplate) {
