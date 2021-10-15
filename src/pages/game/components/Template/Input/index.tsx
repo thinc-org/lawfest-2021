@@ -3,7 +3,8 @@ import { StyledText } from 'common/components/Typography'
 import Button from 'common/components/Button'
 import React, { useCallback, useEffect, useState } from 'react'
 import { IInputQuestion } from './typed'
-import { QuestionContainer, RootContainer } from './styled'
+import { QuestionContainer } from './styled'
+import { RootContainer } from '../Container'
 
 function InputTemplate(props: IInputQuestion) {
   const { question, onSubmit, placeholder } = props

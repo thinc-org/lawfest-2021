@@ -115,6 +115,7 @@ function SceneController() {
           <DelayTransition
             delay={sceneData.delay || 500}
             onFinish={handleSubmit}
+            text={sceneData.text}
           />
         )}
       </SceneContainer>

@@ -1,9 +1,10 @@
 import Button from 'common/components/Button'
 import React, { useCallback, useEffect, useState } from 'react'
 import { ISliderQuestion } from './typed'
-import { QuestionContainer, QuestionWrapper, RootContainer } from './styled'
+import { QuestionContainer, QuestionWrapper } from './styled'
 import Slider from 'common/components/Slider'
 import Question from '../../Question'
+import { RootContainer } from '../Container'
 
 function SliderTemplate(props: ISliderQuestion) {
   const { question, onSubmit } = props

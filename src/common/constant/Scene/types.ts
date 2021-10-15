@@ -25,4 +25,5 @@ export interface IScene {
   choices?: IChoice[]
   forceFade?: boolean
   delay?: number
+  text?: string
 }
