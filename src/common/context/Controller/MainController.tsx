@@ -10,7 +10,7 @@ const MainControllerContext = React.createContext<IMainController>({
 
 export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
   const [store, setStore] = useState<{ [x: string]: any }>({})
-  const [nowScene, setNowScene] = useState<string>('final-hope')
+  const [nowScene, setNowScene] = useState<string>('name-input')
 
   const handleSetStorage = useCallback(
     (key: string, value: any) => {
