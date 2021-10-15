@@ -3,9 +3,11 @@ import { useCallback, useEffect, useState } from 'react'
 const useTextAnimation = (originalText: string, onClick?: () => void) => {
   const [index, setIndex] = useState(0)
   const [textInterval, setTextInterval] = useState<NodeJS.Timeout | null>(null)
+  const [currentText, setCurrentText] = useState(originalText)
 
   useEffect(() => {
     setIndex(0)
+    setCurrentText(originalText)
     let pos = 0
     const interval = setInterval(() => {
       if (pos >= originalText.length) {
@@ -33,7 +35,7 @@ const useTextAnimation = (originalText: string, onClick?: () => void) => {
     }
   }, [originalText, onClick, textInterval])
 
-  return { index, onDialogueClick }
+  return { index, onDialogueClick, isChanging: currentText !== originalText }
 }
 
 export default useTextAnimation
