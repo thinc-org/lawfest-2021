@@ -16,22 +16,21 @@ import TextWithLine from 'common/components/TextWithLine'
 const Mobile = () => {
   const [state, setState] = useState<'before' | 'after'>('before')
   return (
-    <Container>
+    <Container
+      onClick={() => {
+        setState('after')
+      }}
+    >
       {/* Background */}
       <InkContainer>
-        <img src={ink} style={{ width: '100vw' }} alt="" />
+        <img src={ink} style={{ width: '100vw', height: '100%' }} alt="" />
       </InkContainer>
 
       {/* Before */}
       <LawFestLogo state={state} src={lawfestLogo} alt="" />
       <Text state={state} />
 
-      <StartButton
-        onClick={() => {
-          setState('after')
-        }}
-        state={state}
-      >
+      <StartButton state={state}>
         <TextWithLine
           css={{
             color: '$primary700',

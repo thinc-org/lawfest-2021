@@ -11,10 +11,12 @@ export const InkContainer = styled('div', {
   top: '27%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
+  height: '70%',
 })
 
 export const LawFestLogo = styled('img', {
   height: '33%',
+  maxWidth: '80vw',
   position: 'absolute',
 
   left: '50%',
@@ -40,6 +42,7 @@ export const StartButton = styled('div', {
   display: 'flex',
   justifyContent: 'center',
   position: 'absolute',
+  userSelect: 'none',
 
   // Animation
   top: '87%',
