@@ -30,10 +30,10 @@ export const SceneContainer = styled('div', {
   variants: {
     fade: {
       in: {
-        animation: `${FadeIn} 700ms ease-in-out`,
+        animation: `${FadeIn} 800ms ease-in-out`,
       },
       out: {
-        animation: `${FadeOut} 1s ease-in-out`,
+        animation: `${FadeOut} 800ms ease-in-out`,
       },
       none: {},
     },

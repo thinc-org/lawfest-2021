@@ -38,6 +38,7 @@ export const MAIN_SCENE: { [x: string]: IScene } = {
         variant: 'primary',
       },
     ],
+    forceFade: true,
   },
   map2: {
     type: 'dialog',
@@ -49,7 +50,7 @@ export const MAIN_SCENE: { [x: string]: IScene } = {
     dialog: [
       {
         name: 'Hello',
-        text: 'เลือกเส้นทางที่คุณต้องการจะไป',
+        text: 'เลือกเส้นทางที่คุณต้องการ',
         variant: 'secondary',
       },
     ],
@@ -68,6 +69,7 @@ export const MAIN_SCENE: { [x: string]: IScene } = {
     isStoredData: true,
     dataKey: 'age',
     nextScene: '',
+    bgColor: '#F1E1C7',
     question: '"ว่าแต่เราอายุเท่าไหร่ล่ะ ?"',
     choices: [
       {
