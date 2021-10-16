@@ -14,7 +14,7 @@ export const TextContainer = styled('div', {
     state: {
       before: {},
       after: {
-        top: '22%',
+        top: '21%',
       },
     },
   },
@@ -23,7 +23,7 @@ export const TextContainer = styled('div', {
 export const YouHopeIHope = styled('svg', {
   fill: 'black',
   transition: 'fill 2s',
-  width: '75vw',
+  width: '65vw',
   variants: {
     state: {
       before: {},
