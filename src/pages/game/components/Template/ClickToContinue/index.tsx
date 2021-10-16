@@ -9,7 +9,6 @@ function ClickToContinueTemplate(props: IClickToContinue) {
 
   const handleSubmit = useCallback(
     (ev: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-      console.log(ev.clientX, ev.clientY)
       onSubmit({})
     },
     [onSubmit]
