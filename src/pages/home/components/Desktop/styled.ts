@@ -7,6 +7,9 @@ export const PageContainer = styled(Div100vh, {
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+  '@sm': {
+    display: 'none',
+  },
 })
 
 export const Image = styled('div', {

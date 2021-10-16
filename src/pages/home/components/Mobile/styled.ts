@@ -4,6 +4,10 @@ export const Container = styled('div', {
   position: 'relative',
   height: '100%',
   overflow: 'hidden',
+  display: 'none',
+  '@sm': {
+    display: 'block',
+  },
 })
 
 export const InkContainer = styled('div', {
