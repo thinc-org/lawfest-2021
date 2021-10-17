@@ -17,10 +17,11 @@ function SliderTemplate(props: ISliderQuestion) {
   }, [])
 
   const handleSubmit = useCallback(() => {
+    if (!isChange) return
     onSubmit({
       storeValue: input,
     })
-  }, [input, onSubmit])
+  }, [input, onSubmit, isChange])
 
   const handleSetInput = useCallback((val: number) => {
     setInput(val)
@@ -38,7 +39,7 @@ function SliderTemplate(props: ISliderQuestion) {
           variant="secondary"
           css={{
             maxWidth: '200px',
-            display: isChange ? 'block' : 'none',
+            opacity: isChange ? 1 : 0,
             marginTop: '20px',
           }}
           onClick={handleSubmit}

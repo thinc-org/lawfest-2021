@@ -50,7 +50,6 @@ function PixiTesting() {
   const [isLoading, setLoading] = useState<boolean>(true)
   const [progress, setProgress] = useState<number>(0)
   const [sprites, setSprites] = useState<ISprite[]>([])
-  const [prevScene, setPrevScene] = useState<string>('')
   const containerRef = useRef<HTMLDivElement | null>()
   const ImageContainer = useMemo(() => new Container(), [])
 
@@ -75,7 +74,7 @@ function PixiTesting() {
 
     for (const { name, src } of RESOURCES.sprite) {
       const embedSrc = `images/${src}`
-      if (src && !loader.resources[src]) {
+      if (src && !loader.resources[name]) {
         loader.add(name, embedSrc)
       }
     }
@@ -147,7 +146,7 @@ function PixiTesting() {
   useEffect(() => {
     if (sprites.length === 0) return
 
-    // ImageContainer.addChild(sprites[0].sprite)
+    ImageContainer.addChild(sprites[2].sprite)
   }, [ImageContainer, sprites])
 
   const handleSwitchScene = () => {}
