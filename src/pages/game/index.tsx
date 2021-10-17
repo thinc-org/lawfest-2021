@@ -69,7 +69,6 @@ const GameContainer = styled('div', {
 function PixiTesting() {
   const { nowScene } = useMainController()
   const containerRef = useRef<HTMLDivElement | null>()
-  const ref = useRef<HTMLDivElement | null>()
 
   const app = useMemo(
     () =>
@@ -78,18 +77,21 @@ function PixiTesting() {
         height: 800,
         antialias: true,
         autoDensity: true,
-        backgroundColor: 0xf1e1c7,
-        backgroundAlpha: 1,
+        backgroundColor: 0xabcd,
         resolution: window.devicePixelRatio || 1,
       }),
     []
   )
 
+  const ref = useRef<HTMLDivElement | null>()
+
   useEffect(() => {
     ref.current?.appendChild(app.view)
     const resizer = new ResizeObserver(() => {
-      app.render()
-      app.resize()
+      if (app.renderer) {
+        app.resize()
+        app.render()
+      }
     })
 
     if (containerRef.current) {
@@ -98,7 +100,6 @@ function PixiTesting() {
     }
 
     return () => {
-      app.destroy()
       resizer.disconnect()
     }
   }, [app])
@@ -110,18 +111,18 @@ function PixiTesting() {
           containerRef.current = el
         }}
       >
-        <SoundController />
         <SceneController />
-        <div
-          ref={(el) => {
-            ref.current = el
-          }}
-          style={{
-            position: 'absolute',
-            height: '100%',
-          }}
-        />
       </GameContainer>
+      <div
+        ref={(el) => {
+          ref.current = el
+        }}
+        style={{
+          position: 'absolute',
+          height: '100%',
+          zIndex: 0,
+        }}
+      ></div>
     </RootContainer>
   )
 }
@@ -129,6 +130,7 @@ function PixiTesting() {
 function Wrapper() {
   return (
     <MainControllerProvider>
+      <SoundController />
       <PixiTesting />
     </MainControllerProvider>
   )
