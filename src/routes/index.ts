@@ -1,6 +1,6 @@
 import { RouteProps } from 'react-router-dom'
 import ComponentsDemo from 'pages/componentsDemo'
-import PixiTesting from 'pages/pixi'
+import PixiTesting from 'pages/game'
 import Home from 'pages/home'
 
 const routes: RouteProps[] = [

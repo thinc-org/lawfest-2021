@@ -1,147 +1,137 @@
-import React, { useEffect, useRef, useState } from 'react'
 import {
-  cancelAnimationFrame,
-  requestAnimationFrame,
-} from 'common/utils/requestAnimationFrame'
-import { LogoContainer, LogoImage } from './styled'
-import Logo from 'assets/logo.svg'
-import { INK_POS } from './constant'
-import { IInkRender } from './typed'
-import { useMainController } from 'common/context/Controller/MainController'
+  MainControllerProvider,
+  useMainController,
+} from 'common/context/Controller/MainController'
+import { styled } from 'common/config'
+import SceneController from 'pages/game/components/Scene'
 import { SCENE } from 'common/constant/Scene'
+import SoundController from 'pages/game/components/Sound'
+import { useEffect, useMemo, useRef } from 'react'
+import { Application } from 'pixi.js'
 
-function Game() {
-  const [state, setState] = useState(0)
-  const { handleSetNowScene, nowScene } = useMainController()
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+const RootContainer = styled('div', {
+  width: '100vw',
+  minHeight: '100vh',
+  height: '100%',
+  position: 'relative',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column',
+  backgroundColor: '$black950',
+})
+
+const GameContainer = styled('div', {
+  display: 'flex',
+  maxWidth: '496px',
+  width: '100%',
+  height: '100vh',
+  maxHeight: '896px',
+  position: 'relative',
+  transition: 'all 1s ease-in',
+  '@sm': {
+    width: '100vw',
+    maxHeight: '100vh',
+  },
+})
+
+// const Image = styled('img', {
+//   transition: 'opacity 1s ease-in, filter 2s ease-out',
+//   width: '100%',
+//   height: '100%',
+//   position: 'absolute',
+//   objectFit: 'cover',
+//   zIndex: -99,
+//   variants: {
+//     show: {
+//       true: {
+//         opacity: 1,
+//       },
+//       false: {
+//         opacity: 0,
+//       },
+//     },
+//     isBlur: {
+//       true: {
+//         filter: 'blur(15px)',
+//       },
+//       false: {
+//         filter: 'blur(0px)',
+//       },
+//     },
+//   },
+
+//   defaultVariants: {
+//     show: true,
+//   },
+// })
+
+function PixiTesting() {
+  const { nowScene } = useMainController()
+  const containerRef = useRef<HTMLDivElement | null>()
+  const ref = useRef<HTMLDivElement | null>()
+
+  const app = useMemo(
+    () =>
+      new Application({
+        width: 414,
+        height: 800,
+        antialias: true,
+        autoDensity: true,
+        backgroundColor: 0xf1e1c7,
+        backgroundAlpha: 1,
+        resolution: window.devicePixelRatio || 1,
+      }),
+    []
+  )
 
   useEffect(() => {
-    let num = -1,
-      beginTime = -1,
-      nowCnt = 0
-    const ctx = canvasRef.current?.getContext('2d')!
+    ref.current?.appendChild(app.view)
+    const resizer = new ResizeObserver(() => {
+      app.render()
+      app.resize()
+    })
 
-    let particle: IInkRender[] = []
-
-    const addInk = (
-      posX: number,
-      posY: number,
-      colorStopFirst: string,
-      colorStopSecond: string,
-      size: number,
-      time: number,
-      opacity: number
-    ) => {
-      for (var i = 0; i < 36 * 2.3; i++) {
-        particle.push({
-          x: posX + 43,
-          y: posY,
-          angle: i * 5,
-          size: size + Math.random() * 3,
-          life: time + Math.random() * 50,
-          colorStopFirst,
-          colorStopSecond,
-          opacity,
-        })
-      }
+    if (containerRef.current) {
+      resizer.observe(containerRef.current)
+      app.resizeTo = containerRef.current
     }
-
-    const render = () => {
-      for (var i = 0; i < particle.length; i++) {
-        const grad = ctx.createLinearGradient(0, 0, 180, 0)
-        const p = particle[i]
-        grad.addColorStop(0, p.colorStopFirst)
-        grad.addColorStop(1, p.colorStopSecond)
-
-        ctx.fillStyle = grad
-
-        if (Math.random() < 0.1) {
-          continue
-        }
-        ctx.globalAlpha = p.opacity
-        ctx.beginPath()
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 1.5, false)
-        ctx.fill()
-      }
-    }
-
-    var delta = 0
-    var last = Date.now()
-
-    const animate = () => {
-      delta = Date.now() - last
-      last = Date.now()
-      for (var i = 0; i < particle.length; i++) {
-        var p = particle[i]
-        p.x += Math.cos(p.angle) * 4 + Math.random() * 1.7 - Math.random() * 1.7
-        p.y += Math.sin(p.angle) * 4 + Math.random() * 1.7 - Math.random() * 1.7
-        p.life -= delta
-        p.size -= delta / 80
-
-        if (p.size <= 0) {
-          p.life = 0
-        }
-
-        if (p.life <= 0) {
-          particle.splice(i--, 1)
-          continue
-        }
-      }
-    }
-
-    const animLoop = (now: number) => {
-      const diff = now - beginTime
-      if (nowCnt < INK_POS.length && diff >= INK_POS[nowCnt].delay) {
-        const {
-          opacity,
-          isImage,
-          posX,
-          posY,
-          life,
-          size,
-          colorStart,
-          colorStop,
-        } = INK_POS[nowCnt++]
-        if (isImage) {
-          setState(1)
-          return
-        }
-        addInk(posX, posY, colorStart, colorStop, size, life, opacity)
-      }
-
-      const finalPos = INK_POS[INK_POS.length - 1]
-
-      const num = requestAnimationFrame(animLoop)
-      if (finalPos.delay + finalPos.life + 100 <= diff) return num
-      animate()
-      render()
-    }
-
-    ctx.fillStyle = '#F1E1C7'
-    ctx.fillRect(0, 0, canvasRef.current?.width!, canvasRef.current?.height!)
-    num = requestAnimationFrame(animLoop)
 
     return () => {
-      cancelAnimationFrame(num)
+      app.destroy()
+      resizer.disconnect()
     }
-  }, [])
+  }, [app])
 
   return (
-    <LogoContainer show={nowScene === 'intro' ? 'open' : 'close'}>
-      <LogoImage
-        show={state ? 'open' : 'close'}
-        src={Logo}
-        alt="logo"
-        onTransitionEnd={() => {
-          window.setTimeout(
-            () => handleSetNowScene(SCENE['intro'].nextScene),
-            800
-          )
+    <RootContainer>
+      <GameContainer
+        ref={(el) => {
+          containerRef.current = el
         }}
-      ></LogoImage>
-      <canvas ref={canvasRef} width="496" height="896"></canvas>
-    </LogoContainer>
+      >
+        <SoundController />
+        <SceneController />
+        <div
+          ref={(el) => {
+            ref.current = el
+          }}
+          style={{
+            position: 'absolute',
+            height: '100%',
+          }}
+        />
+      </GameContainer>
+    </RootContainer>
   )
 }
 
-export default Game
+function Wrapper() {
+  return (
+    <MainControllerProvider>
+      <PixiTesting />
+    </MainControllerProvider>
+  )
+}
+
+export default Wrapper

@@ -21,6 +21,7 @@ export const SceneRootContainer = styled('div', {
   width: '100%',
   height: '100%',
   position: 'relative',
+  zIndex: '99',
 })
 
 export const SceneContainer = styled('div', {
