@@ -15,6 +15,7 @@ function InputTemplate(props: IInputQuestion) {
   }, [])
 
   const handleSubmit = useCallback(() => {
+    if (!input) return
     onSubmit({
       storeValue: input,
     })
@@ -34,7 +35,7 @@ function InputTemplate(props: IInputQuestion) {
         ></StyledInput>
         <Button
           variant="secondary"
-          css={{ maxWidth: '200px', display: !!input ? 'block' : 'none' }}
+          css={{ maxWidth: '200px', opacity: !!input ? 1 : 0 }}
           onClick={handleSubmit}
         >
           ตกลง
