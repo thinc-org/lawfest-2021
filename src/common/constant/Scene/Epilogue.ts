@@ -28,7 +28,7 @@ export const EPILOGUE: { [x: string]: IScene } = {
     bgType: 'color',
     bgColor: 0x000000,
     isStoredData: true,
-    dataKey: 'final-hope',
+    dataKey: 'hope',
     nextScene: 'epilogue-1',
     question: 'ตอนนี้คุณมีความหวังแค่ไหน ?',
   },

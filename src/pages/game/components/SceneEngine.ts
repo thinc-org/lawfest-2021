@@ -1,8 +1,9 @@
-import { Application, Sprite, Container, Graphics } from 'pixi.js'
+import { Application, Container, Graphics } from 'pixi.js'
+import { BaseSprite, FadeSprite } from './Sprite'
 
 interface IScene {
   name: string
-  sprite: Sprite
+  sprite: BaseSprite
 }
 
 interface SceneSwitcherSetting {
@@ -18,9 +19,9 @@ export class SceneEngine {
 
   private sceneList: IScene[]
 
-  private currentScene: Sprite | null
+  private currentScene: BaseSprite | null
 
-  private nextScene: Sprite | null
+  private nextScene: BaseSprite | null
 
   constructor(_app: Application) {
     this.app = _app
@@ -29,23 +30,21 @@ export class SceneEngine {
     this.app.stage.addChild(this.rootContainer)
     this.currentScene = null
     this.nextScene = null
+
+    this.rootContainer.sortableChildren = true
   }
 
   appendSceneList(scene: IScene[]) {
     this.sceneList = [...this.sceneList, ...scene]
   }
 
-  removeSprite(sprite: Sprite) {
+  removeSprite(sprite: BaseSprite) {
     this.rootContainer.removeChild(sprite)
   }
 
   sceneSwitcher(setting: SceneSwitcherSetting) {
     const { type, bgImg, bgColor } = setting
     if (type === 'color' && typeof bgColor !== undefined) {
-      if (this.currentScene) {
-        this.removeSprite(this.currentScene)
-      }
-
       const backgroundGraphic = new Graphics()
       backgroundGraphic
         .beginFill(bgColor)
@@ -55,34 +54,40 @@ export class SceneEngine {
 
       const backgroundTexture =
         this.app.renderer.generateTexture(backgroundGraphic)
-      const backgroundSprite = new Sprite(backgroundTexture)
+      const backgroundSprite = new FadeSprite(
+        backgroundTexture,
+        backgroundTexture.width,
+        backgroundTexture.height
+      )
 
+      if (this.currentScene) {
+        this.removeSprite(this.currentScene)
+      }
       this.rootContainer.addChild(backgroundSprite)
       this.currentScene = backgroundSprite
     }
     if (type === 'image' && bgImg) {
       const newSprite = this.sceneList.find((val) => val.name === bgImg)?.sprite
-      if (!newSprite) return
+      if (!newSprite || this.currentScene === newSprite) return
+
+      this.nextScene = newSprite
+      this.rootContainer.addChild(newSprite)
 
       if (this.currentScene) {
         this.removeSprite(this.currentScene)
       }
 
       this.currentScene = newSprite
-      this.rootContainer.addChild(newSprite)
     }
   }
 
   update() {
+    const { width, height } = this.app.screen
     ;[this.currentScene, this.nextScene].forEach((sprite) => {
       if (!sprite) return
-      const scaleX = this.rootContainer.width / sprite.width
-      const scaleY = this.rootContainer.height / sprite.height
 
-      sprite.scale.set(Math.max(scaleX, scaleY), Math.max(scaleX, scaleY))
+      sprite.resizeToApp(this.app)
     })
-
-    const { width, height } = this.app.screen
 
     this.rootContainer.x = width / 2
     this.rootContainer.y = height / 2

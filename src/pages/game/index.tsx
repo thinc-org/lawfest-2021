@@ -7,10 +7,11 @@ import SceneController from 'pages/game/components/Scene'
 import { SCENE } from 'common/constant/Scene'
 import SoundController from 'pages/game/components/Sound'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Application, Loader, Sprite, Container, Graphics } from 'pixi.js'
+import { Application, Loader, Container } from 'pixi.js'
 import { RESOURCES } from 'common/constant/Scene/Resources'
 import { StyledText } from 'common/components/Typography'
 import { SceneEngine } from './components/SceneEngine'
+import { BaseSprite, FadeSprite } from './components/Sprite'
 
 const RootContainer = styled('div', {
   width: '100vw',
@@ -34,7 +35,7 @@ const GameContainer = styled('div', {
   justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
-  transition: 'all 2s ease-in-out',
+  transition: 'all 3s ease-in-out',
   '@sm': {
     width: '100vw',
     maxHeight: '100vh',
@@ -43,14 +44,13 @@ const GameContainer = styled('div', {
 
 interface ISprite {
   name: string
-  sprite: Sprite
+  sprite: BaseSprite
 }
 
 function PixiTesting() {
   const { nowScene } = useMainController()
   const [isLoading, setLoading] = useState<boolean>(true)
   const [progress, setProgress] = useState<number>(0)
-  const [sprites, setSprites] = useState<ISprite[]>([])
   const containerRef = useRef<HTMLDivElement | null>()
   const ImageContainer = useMemo(() => new Container(), [])
 
@@ -100,12 +100,9 @@ function PixiTesting() {
     loader.load((_loader, _resource) => {
       const spritesSet: ISprite[] = []
       for (const { name } of RESOURCES.sprite) {
-        const sprite = new Sprite(_resource[name].texture)
-
-        const scaleX = containerRef.current?.clientWidth! / sprite.width
-        const scaleY = containerRef.current?.clientHeight! / sprite.height
-
-        sprite.scale.set(Math.max(scaleX, scaleY), Math.max(scaleX, scaleY))
+        const texture = _resource[name].texture
+        if (!texture) continue
+        const sprite = new FadeSprite(texture, texture.width, texture.height)
         spritesSet.push({
           name,
           sprite,
@@ -131,29 +128,15 @@ function PixiTesting() {
     }
 
     app.ticker.add(() => {
-      const { width, height } = app.screen
-
-      ImageContainer.x = width / 2
-      ImageContainer.y = height / 2
-      ImageContainer.pivot.x = ImageContainer.width / 2
-      ImageContainer.pivot.y = ImageContainer.height / 2
+      Engine.update()
     })
-
-    app.stage.addChild(ImageContainer)
 
     return () => {
       resizer.disconnect()
     }
-  }, [ImageContainer, app])
+  }, [Engine, ImageContainer, app])
 
   useEffect(() => {
-    if (sprites.length === 0) return
-
-    ImageContainer.addChild(sprites[2].sprite)
-  }, [ImageContainer, sprites])
-
-  useEffect(() => {
-    console.log('Trigger')
     Engine.sceneSwitcher({
       type: SCENE[nowScene].bgType,
       bgImg: SCENE[nowScene].bgImageSrc,

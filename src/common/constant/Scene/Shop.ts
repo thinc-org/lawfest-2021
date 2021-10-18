@@ -33,7 +33,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
     type: 'delay',
     bgType: 'image',
     bgColor: 0x000000,
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'in_shop',
     isStoredData: false,
     nextScene: 'shop-1',
     delay: 1500,
@@ -111,7 +111,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
   'shop-towel-ask': {
     type: 'dialog',
     bgType: 'image',
-    bgImageSrc: 'in-shop',
+    bgImageSrc: 'in_shop',
     isStoredData: false,
     nextScene: 'shop-news',
     dialog: [
