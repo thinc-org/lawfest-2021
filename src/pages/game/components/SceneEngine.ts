@@ -21,7 +21,7 @@ export class SceneEngine {
 
   private currentScene: BaseSprite | null
 
-  private nextScene: BaseSprite | null
+  private prevScene: BaseSprite[]
 
   constructor(_app: Application) {
     this.app = _app
@@ -29,7 +29,7 @@ export class SceneEngine {
     this.rootContainer = new Container()
     this.app.stage.addChild(this.rootContainer)
     this.currentScene = null
-    this.nextScene = null
+    this.prevScene = []
 
     this.rootContainer.sortableChildren = true
   }
@@ -40,6 +40,7 @@ export class SceneEngine {
 
   removeSprite(sprite: BaseSprite) {
     this.rootContainer.removeChild(sprite)
+    sprite.reset()
   }
 
   sceneSwitcher(setting: SceneSwitcherSetting) {
@@ -49,7 +50,7 @@ export class SceneEngine {
       backgroundGraphic
         .beginFill(bgColor)
         .lineStyle(0)
-        .drawRect(0, 0, this.app.screen.width, this.app.screen.height)
+        .drawRect(0, 0, this.app.screen.width * 2, this.app.screen.height * 2)
         .endFill()
 
       const backgroundTexture =
@@ -61,33 +62,41 @@ export class SceneEngine {
       )
 
       if (this.currentScene) {
-        this.removeSprite(this.currentScene)
+        this.prevScene.push(this.currentScene)
       }
-      this.rootContainer.addChild(backgroundSprite)
+
+      backgroundSprite.setup(this.rootContainer)
       this.currentScene = backgroundSprite
     }
     if (type === 'image' && bgImg) {
       const newSprite = this.sceneList.find((val) => val.name === bgImg)?.sprite
-      if (!newSprite || this.currentScene === newSprite) return
-
-      this.nextScene = newSprite
-      this.rootContainer.addChild(newSprite)
-
-      if (this.currentScene) {
-        this.removeSprite(this.currentScene)
+      if (!newSprite || this.currentScene === newSprite) {
+        return
       }
 
+      if (this.currentScene) {
+        this.prevScene.push(this.currentScene)
+      }
+
+      newSprite.setup(this.rootContainer)
       this.currentScene = newSprite
     }
   }
 
-  update() {
+  update(delta: number) {
     const { width, height } = this.app.screen
-    ;[this.currentScene, this.nextScene].forEach((sprite) => {
+    this.rootContainer.children.forEach((sprite: any) => {
       if (!sprite) return
-
+      sprite.updateState(delta)
       sprite.resizeToApp(this.app)
     })
+
+    if (this.prevScene.length === 0) {
+      this.prevScene.forEach((val) => {
+        this.removeSprite(val)
+      })
+      this.prevScene = []
+    }
 
     this.rootContainer.x = width / 2
     this.rootContainer.y = height / 2

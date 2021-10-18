@@ -52,7 +52,7 @@ export class BaseSprite extends Sprite {
     this.onFinish = undefined
   }
 
-  setFinallizing(onFinish: () => void) {
+  setFinalizing(onFinish: () => void) {
     this.onFinish = onFinish
     this.state = 'FINALIZE'
   }
@@ -69,7 +69,7 @@ export class FadeSprite extends BaseSprite {
         }
         break
       case 'FINALIZE':
-        if (this.alpha >= 0) {
+        if (this.alpha > 0) {
           this.alpha -= _delta * 0.02
         } else {
           this.state = 'DONE'
