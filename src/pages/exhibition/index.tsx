@@ -4,6 +4,7 @@ import home from 'assets/pic/home.png'
 import React from 'react'
 import { StyledText } from './styled'
 import Footer from 'common/components/Footer'
+import Multiplechoice from './Multiplechoice'
 
 class Exhibition extends React.Component<{}, { status: 0 }> {
   static data = {
@@ -16,7 +17,7 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
       text: 'Where there is hope, there is life',
       quoteOwner: 'Anne Frank',
       quoteOwnerRef: 'JEWISH’S DIARIST DURING WW2',
-      next: 4,
+      next: 7,
     },
     5: {
       type: 'text',
@@ -32,6 +33,9 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
       quoteOwnerRef: 'AMERICAN ACTOR, DIRECTOR, AND ACTIVIST',
       next: 6,
     },
+    7:{
+      type:'multi-choice',
+    }
   }
 
   constructor(props: any) {
@@ -95,7 +99,12 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
         </div>
       )
     }
-
+    else if (data['type'] === 'multi-choice') {
+      console.log("print this")
+      content = (
+        <Multiplechoice/>
+      )
+    }
     return (
       <div
         style={{
