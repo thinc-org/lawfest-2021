@@ -17,7 +17,7 @@ function Selector(props: { no: string; name: string }){
 
   return(
     <div style={{display:'flex', justifyContent:'center',flexDirection:'column'}}>
-      <img src = {sources}  width = {0.3*Math.min(window.innerWidth,window.innerHeight)} style={{borderRadius: '10px',alignSelf:'center',paddingBottom:'5px'}} alt={props.no}></img>
+      <img src = {sources}  width = {0.2*Math.min(window.innerWidth,window.innerHeight)} style={{borderRadius: '10px',alignSelf:'center',paddingBottom:'5px'}} alt={props.no}></img>
       <SelectorText>{'Mission'+props.no+':'}</SelectorText>
       <SelectorText> {props.name}</SelectorText>
     </div>

@@ -3,6 +3,7 @@ import Selectors from 'pages/exhibition/Selectors'
 import home from 'assets/pic/home.png'
 import React from 'react'
 import { StyledText } from './styled'
+import Footer from 'common/components/Footer'
 
 class Exhibition extends React.Component<{}, { status: 0 }> {
   static data = {
@@ -110,7 +111,10 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
           alt="home-icon"
           style={{paddingTop:'5px',paddingLeft:'10px', position: 'absolute' }}
         ></img>
-        {content}
+        {content}  
+        <div style={{position:'absolute',bottom:'0',width:'100%'}}>
+          <Footer/>
+        </div>
       </div>
     )
   }
