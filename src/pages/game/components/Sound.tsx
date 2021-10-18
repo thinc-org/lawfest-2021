@@ -9,11 +9,9 @@ function SoundController() {
   useEffect(() => {
     Loader.shared.onComplete.add(() => {
       if (nowScene === 'name-input') {
-        sound.play('bg')
+        sound.play('bg', { loop: true })
       }
     })
-    if (Loader.shared.progress === 100) {
-    }
   }, [nowScene])
 
   return <></>
