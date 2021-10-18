@@ -1,19 +1,20 @@
-import React, { useEffect, useState } from 'react'
-import { Loader } from 'pixi.js'
+import React, { useEffect } from 'react'
 import { sound } from '@pixi/sound'
+import { Loader } from 'pixi.js'
 import { useMainController } from 'common/context/Controller/MainController'
 
 function SoundController() {
-  const [nowPlaying, setNowPlaying] = useState<string>('')
   const { nowScene } = useMainController()
 
   useEffect(() => {
-    console.log(nowScene)
-    return
-    if (nowPlaying === '' && nowPlaying !== nowScene) {
-      sound.play(nowScene)
+    Loader.shared.onComplete.add(() => {
+      if (nowScene === 'name-input') {
+        sound.play('bg')
+      }
+    })
+    if (Loader.shared.progress === 100) {
     }
-  }, [nowScene, nowPlaying])
+  }, [nowScene])
 
   return <></>
 }

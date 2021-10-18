@@ -4,8 +4,7 @@ export const AGE_DIALOGUE: { [x: string]: IScene } = {
   'age-1-12': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#F1E1C7',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'in_shop_brighter',
     isStoredData: false,
     nextScene: 'after-age-dialogue',
     dialog: [
@@ -19,8 +18,7 @@ export const AGE_DIALOGUE: { [x: string]: IScene } = {
   'age-13-24': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#F1E1C7',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'in_shop_brighter',
     isStoredData: false,
     nextScene: 'after-age-dialogue',
     dialog: [
@@ -34,8 +32,7 @@ export const AGE_DIALOGUE: { [x: string]: IScene } = {
   'age-25-40': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#F1E1C7',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'in_shop_brighter',
     isStoredData: false,
     nextScene: 'after-age-dialogue',
     dialog: [
@@ -49,8 +46,7 @@ export const AGE_DIALOGUE: { [x: string]: IScene } = {
   'age-41-60': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#F1E1C7',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'in_shop_brighter',
     isStoredData: false,
     nextScene: 'after-age-dialogue',
     dialog: [
@@ -64,8 +60,7 @@ export const AGE_DIALOGUE: { [x: string]: IScene } = {
   'age-60+': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#F1E1C7',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'in_shop_brighter',
     isStoredData: false,
     nextScene: 'after-age-dialogue',
     dialog: [

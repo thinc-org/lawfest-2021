@@ -3,9 +3,8 @@ import { IScene } from '.'
 export const RAIN_SCENE: { [x: string]: IScene } = {
   'walking-1': {
     type: 'dialog',
-    bgType: 'image',
+    bgType: 'color',
     bgColor: '#000000',
-    bgImageSrc: 'images/01.png',
     isStoredData: false,
     nextScene: 'walking-2',
     dialog: [
@@ -20,7 +19,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
     type: 'dialog',
     bgType: 'image',
     bgColor: '#000000',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'footpath',
     isStoredData: false,
     nextScene: 'rain-1',
     dialog: [
@@ -34,8 +33,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
   'rain-1': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#000000',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'mirror_water',
     isStoredData: false,
     nextScene: 'hope-value-1',
     dialog: [
@@ -54,8 +52,8 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
   'hope-value-1': {
     type: 'slider',
     question: 'ตอนนี้คุณมีความหวังแค่ไหน ?',
-    bgType: 'color',
-    bgColor: '#F1E1C7',
+    bgType: 'image',
+    bgImageSrc: 'overcast_cloud',
     isStoredData: false,
     nextScene: 'rain-2',
   },
@@ -63,7 +61,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
     type: 'dialog',
     bgType: 'image',
     bgColor: '#000000',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'overcast_rain_cloud',
     isStoredData: false,
     nextScene: 'rain-3',
     dialog: [
@@ -82,8 +80,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
   'rain-3': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#000000',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'heavy_mirror_water',
     isStoredData: false,
     nextScene: 'rain-4',
     dialog: [
@@ -97,8 +94,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
   'rain-4': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#000000',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'bus',
     isStoredData: false,
     nextScene: 'rain-5',
     dialog: [
@@ -113,7 +109,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
     type: 'dialog',
     bgType: 'image',
     bgColor: '#000000',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'dirty_hand',
     isStoredData: false,
     nextScene: 'before-shop',
     dialog: [
@@ -126,9 +122,8 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
   },
   'before-shop': {
     type: 'dialog',
-    bgType: 'image',
+    bgType: 'color',
     bgColor: '#000000',
-    bgImageSrc: 'images/01.png',
     isStoredData: false,
     nextScene: 'before-shop-choice-delay',
     dialog: [

@@ -10,6 +10,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { Application, Loader, Sprite, Container, Graphics } from 'pixi.js'
 import { RESOURCES } from 'common/constant/Scene/Resources'
 import { StyledText } from 'common/components/Typography'
+import { SceneEngine } from './components/SceneEngine'
 
 const RootContainer = styled('div', {
   width: '100vw',
@@ -66,6 +67,8 @@ function PixiTesting() {
     []
   )
 
+  const Engine = useMemo(() => new SceneEngine(app), [app])
+
   const ref = useRef<HTMLDivElement | null>()
 
   // Loading assets
@@ -79,10 +82,10 @@ function PixiTesting() {
       }
     }
 
-    for (const src of RESOURCES.sound) {
+    for (const { name, src } of RESOURCES.sound) {
       const embedSrc = `sounds/${src}`
-      if (src && !loader.resources[embedSrc]) {
-        loader.add(embedSrc)
+      if (src && !loader.resources[name]) {
+        loader.add(name, embedSrc)
       }
     }
 
@@ -108,9 +111,9 @@ function PixiTesting() {
           sprite,
         })
       }
-      setSprites(spritesSet)
+      Engine.appendSceneList(spritesSet)
     })
-  }, [])
+  }, [Engine])
 
   useEffect(() => {
     ref.current?.appendChild(app.view)
@@ -149,9 +152,14 @@ function PixiTesting() {
     ImageContainer.addChild(sprites[2].sprite)
   }, [ImageContainer, sprites])
 
-  const handleSwitchScene = () => {}
-
-  useEffect(() => {}, [nowScene])
+  useEffect(() => {
+    console.log('Trigger')
+    Engine.sceneSwitcher({
+      type: SCENE[nowScene].bgType,
+      bgImg: SCENE[nowScene].bgImageSrc,
+      bgColor: SCENE[nowScene].bgColor,
+    })
+  }, [Engine, nowScene])
 
   return (
     <RootContainer>

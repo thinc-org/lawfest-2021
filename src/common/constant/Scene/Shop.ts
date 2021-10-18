@@ -4,8 +4,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
   'before-shop-choice-delay': {
     type: 'delay',
     bgType: 'image',
-    bgColor: '#000000',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'zoom_in_author',
     isStoredData: false,
     nextScene: 'shop-choice',
     delay: 1500,
@@ -13,8 +12,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
   'shop-choice': {
     type: 'choice',
     bgType: 'image',
-    bgColor: '#000000',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'zoom_in_author',
     isStoredData: false,
     nextScene: 'before-shop-dialogue-delay',
     question: 'จะทำอย่างไรกับเหตุการณ์ที่เกิดขึ้น ?',
@@ -43,8 +41,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
   'shop-1': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#000000',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'in_shop',
     isStoredData: false,
     nextScene: 'shop-focus-image',
     dialog: [
@@ -93,8 +90,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
   'shop-focus-image': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#000000',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'focus_picture_frame',
     isStoredData: false,
     nextScene: 'shop-zoom-image',
     dialog: [
@@ -108,16 +104,14 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
   'shop-zoom-image': {
     type: 'image-click',
     bgType: 'image',
-    bgColor: '#000000',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'zoom_in_picture_frame',
     isStoredData: false,
-    nextScene: 'shop-towel',
+    nextScene: 'shop-towel-ask',
   },
-  'shop-towel': {
+  'shop-towel-ask': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#000000',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'in-shop',
     isStoredData: false,
     nextScene: 'shop-news',
     dialog: [
@@ -131,8 +125,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
   'shop-news': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#000000',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'tv_annoucement',
     isStoredData: false,
     nextScene: 'towel-pick',
     dialog: [
@@ -146,14 +139,15 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
   'towel-pick': {
     type: 'delay',
     bgType: 'image',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'towel_bringing',
     isStoredData: false,
     nextScene: 'age-choice',
     delay: 2000,
   },
   'age-choice': {
     type: 'choice',
-    bgType: 'color',
+    bgType: 'image',
+    bgImageSrc: 'towel_bringing',
     isStoredData: true,
     dataKey: 'age',
     nextScene: '',
@@ -190,8 +184,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
   'after-age-dialogue': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#F1E1C7',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'in_shop_brighter',
     nextScene: 'dream-input',
     isStoredData: false,
     dialog: [
@@ -229,8 +222,8 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
   },
   'dream-input': {
     type: 'input',
-    bgType: 'color',
-    bgColor: '#F1E1C7',
+    bgType: 'image',
+    bgImageSrc: 'in_shop_brighter',
     nextScene: 'after-dream-dialogue',
     isStoredData: false,
     question: '“มีฝันที่อยากจะเห็นมันเป็นจริงหรือเปล่า?”',
@@ -238,8 +231,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
   'after-dream-dialogue': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#F1E1C7',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'zoom_in_author',
     nextScene: 'before-raining-stop',
     isStoredData: false,
     dialog: [

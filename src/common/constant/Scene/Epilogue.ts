@@ -3,18 +3,16 @@ import { IScene } from './types'
 export const EPILOGUE: { [x: string]: IScene } = {
   'before-raining-stop': {
     type: 'delay',
-    bgType: 'image',
+    bgType: 'color',
     bgColor: '#000000',
-    bgImageSrc: 'images/01.png',
     isStoredData: false,
     nextScene: 'raining-stop',
     delay: 1500,
   },
   'raining-stop': {
     type: 'dialog',
-    bgType: 'image',
-    bgColor: '#F1E1C7',
-    bgImageSrc: 'images/01.png',
+    bgType: 'color',
+    bgColor: '#000000',
     isStoredData: false,
     nextScene: 'final-hope',
     dialog: [
@@ -27,9 +25,8 @@ export const EPILOGUE: { [x: string]: IScene } = {
   },
   'final-hope': {
     type: 'slider',
-    bgType: 'image',
-    bgColor: '#F1E1C7',
-    bgImageSrc: 'images/01.png',
+    bgType: 'color',
+    bgColor: '#000000',
     isStoredData: true,
     dataKey: 'final-hope',
     nextScene: 'epilogue-1',
@@ -38,8 +35,7 @@ export const EPILOGUE: { [x: string]: IScene } = {
   'epilogue-1': {
     type: 'delay',
     bgType: 'image',
-    bgColor: '#F1E1C7',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'last_bg',
     isStoredData: false,
     nextScene: 'epilogue-2',
     delay: 3000,
@@ -49,8 +45,7 @@ export const EPILOGUE: { [x: string]: IScene } = {
   'epilogue-2': {
     type: 'delay',
     bgType: 'image',
-    bgColor: '#F1E1C7',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'last_bg',
     isStoredData: false,
     nextScene: 'epilogue-3',
     delay: 3000,
@@ -60,8 +55,7 @@ export const EPILOGUE: { [x: string]: IScene } = {
   'epilogue-3': {
     type: 'delay',
     bgType: 'image',
-    bgColor: '#F1E1C7',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'last_bg',
     isStoredData: false,
     nextScene: 'name-input',
     delay: 3000,
