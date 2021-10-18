@@ -22,7 +22,7 @@ function InputTemplate(props: IInputQuestion) {
   }, [onSubmit, input])
 
   return (
-    <RootContainer>
+    <RootContainer css={{ background: 'rgba(0, 0, 0, 0.5)' }}>
       <QuestionContainer>
         <StyledText variant="h5" css={{ paddingBottom: '10px' }}>
           {question}

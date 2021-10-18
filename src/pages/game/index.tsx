@@ -61,7 +61,7 @@ function PixiTesting() {
         height: 800,
         antialias: true,
         autoDensity: true,
-        backgroundColor: 0xabcd,
+        backgroundColor: 0xffffff,
         resolution: window.devicePixelRatio || 1,
       }),
     []
@@ -127,12 +127,13 @@ function PixiTesting() {
       app.resizeTo = containerRef.current
     }
 
-    app.ticker.add(() => {
-      Engine.update()
+    app.ticker.add((delta) => {
+      Engine.update(delta)
     })
 
     return () => {
       resizer.disconnect()
+      app.destroy()
     }
   }, [Engine, ImageContainer, app])
 

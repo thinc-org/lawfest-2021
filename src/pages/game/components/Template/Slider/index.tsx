@@ -29,7 +29,7 @@ function SliderTemplate(props: ISliderQuestion) {
   }, [])
 
   return (
-    <RootContainer>
+    <RootContainer css={{ background: 'rgba(0, 0, 0, 0.5)' }}>
       <QuestionContainer>
         <QuestionWrapper>
           <Question>{question || 'sdads'}</Question>
