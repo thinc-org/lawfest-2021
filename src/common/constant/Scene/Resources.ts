@@ -65,7 +65,7 @@ export const RESOURCES = {
       src: '15.jpg',
     },
     {
-      name: 'in_show_brighter',
+      name: 'in_shop_brighter',
       src: '16.jpg',
     },
     {
@@ -73,5 +73,10 @@ export const RESOURCES = {
       src: '17.jpg',
     },
   ],
-  sound: ['bgmusic.mp3'],
+  sound: [
+    {
+      name: 'bg',
+      src: 'bgmusic.mp3',
+    },
+  ],
 }

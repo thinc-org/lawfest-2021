@@ -21,7 +21,7 @@ export const MOTORCYCLE_SCENE: { [x: string]: IScene } = {
     type: 'dialog',
     bgType: 'image',
     bgColor: '#F1E1C7',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'map',
     isStoredData: false,
     nextScene: 'click-to-continue',
     dialog: [
@@ -43,7 +43,7 @@ export const MOTORCYCLE_SCENE: { [x: string]: IScene } = {
     type: 'dialog',
     bgType: 'image',
     bgColor: '#F1E1C7',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'landing',
     isStoredData: false,
     nextScene: 'motorcycle-1',
     dialog: [
@@ -62,8 +62,7 @@ export const MOTORCYCLE_SCENE: { [x: string]: IScene } = {
   'motorcycle-1': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#F1E1C7',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'motorcycle',
     isStoredData: false,
     nextScene: 'motorcycle-choice',
     dialog: [
@@ -81,7 +80,8 @@ export const MOTORCYCLE_SCENE: { [x: string]: IScene } = {
   },
   'motorcycle-choice': {
     type: 'choice',
-    bgType: 'color',
+    bgType: 'image',
+    bgImageSrc: 'motorcycle',
     isStoredData: false,
     nextScene: 'motorcycle-tip',
     bgColor: '#F1E1C7',
@@ -107,8 +107,7 @@ export const MOTORCYCLE_SCENE: { [x: string]: IScene } = {
   'motorcycle-tip': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#F1E1C7',
-    bgImageSrc: 'images/01.png',
+    bgImageSrc: 'motorcycle',
     isStoredData: false,
     nextScene: 'walking-1',
     dialog: [
