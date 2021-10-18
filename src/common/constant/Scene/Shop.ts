@@ -32,7 +32,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
   'before-shop-dialogue-delay': {
     type: 'delay',
     bgType: 'image',
-    bgColor: '#000000',
+    bgColor: 0x000000,
     bgImageSrc: 'images/01.png',
     isStoredData: false,
     nextScene: 'shop-1',
@@ -151,7 +151,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
     isStoredData: true,
     dataKey: 'age',
     nextScene: '',
-    bgColor: '#F1E1C7',
+    bgColor: 0xf1e1c7,
     question: '"ว่าแต่เราอายุเท่าไหร่ล่ะ ?"',
     choices: [
       {

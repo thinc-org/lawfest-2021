@@ -16,7 +16,7 @@ export interface IScene {
   bgType: 'color' | 'image'
   isStoredData: boolean
   nextScene: string
-  bgColor?: string
+  bgColor?: number
   placeholder?: string
   bgImageSrc?: string
   dataKey?: string

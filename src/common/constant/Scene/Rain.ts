@@ -4,7 +4,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
   'walking-1': {
     type: 'dialog',
     bgType: 'color',
-    bgColor: '#000000',
+    bgColor: 0x000000,
     isStoredData: false,
     nextScene: 'walking-2',
     dialog: [
@@ -18,7 +18,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
   'walking-2': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#000000',
+    bgColor: 0x000000,
     bgImageSrc: 'footpath',
     isStoredData: false,
     nextScene: 'rain-1',
@@ -60,7 +60,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
   'rain-2': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#000000',
+    bgColor: 0x000000,
     bgImageSrc: 'overcast_rain_cloud',
     isStoredData: false,
     nextScene: 'rain-3',
@@ -108,7 +108,6 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
   'rain-5': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#000000',
     bgImageSrc: 'dirty_hand',
     isStoredData: false,
     nextScene: 'before-shop',
@@ -123,7 +122,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
   'before-shop': {
     type: 'dialog',
     bgType: 'color',
-    bgColor: '#000000',
+    bgColor: 0x000000,
     isStoredData: false,
     nextScene: 'before-shop-choice-delay',
     dialog: [

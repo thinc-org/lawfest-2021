@@ -4,14 +4,14 @@ export const MOTORCYCLE_SCENE: { [x: string]: IScene } = {
   intro: {
     type: 'intro',
     bgType: 'color',
-    bgColor: '#F1E1C7',
+    bgColor: 0xf1e1c7,
     nextScene: 'name-input',
     isStoredData: false,
   },
   'name-input': {
     type: 'input',
     bgType: 'color',
-    bgColor: '#F1E1C7',
+    bgColor: 0xf1e1c7,
     dataKey: 'name',
     isStoredData: true,
     nextScene: 'map',
@@ -20,7 +20,6 @@ export const MOTORCYCLE_SCENE: { [x: string]: IScene } = {
   map: {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#F1E1C7',
     bgImageSrc: 'map',
     isStoredData: false,
     nextScene: 'click-to-continue',
@@ -34,15 +33,15 @@ export const MOTORCYCLE_SCENE: { [x: string]: IScene } = {
   },
   'click-to-continue': {
     type: 'image-click',
-    bgType: 'color',
-    bgColor: '#F1E1C7',
+    bgType: 'image',
+    bgImageSrc: 'map',
     isStoredData: false,
     nextScene: 'footpath-1',
   },
   'footpath-1': {
     type: 'dialog',
     bgType: 'image',
-    bgColor: '#F1E1C7',
+    bgColor: 0xf1e1c7,
     bgImageSrc: 'landing',
     isStoredData: false,
     nextScene: 'motorcycle-1',
@@ -84,7 +83,7 @@ export const MOTORCYCLE_SCENE: { [x: string]: IScene } = {
     bgImageSrc: 'motorcycle',
     isStoredData: false,
     nextScene: 'motorcycle-tip',
-    bgColor: '#F1E1C7',
+    bgColor: 0xf1e1c7,
     question: 'คุณจะทำยังไงกับเหตุการณ์นี้',
     choices: [
       {
