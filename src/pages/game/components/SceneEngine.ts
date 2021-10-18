@@ -1,4 +1,4 @@
-import { Application, Sprite, Container } from 'pixi.js'
+import { Application, Sprite, Container, Graphics } from 'pixi.js'
 
 interface IScene {
   name: string
@@ -8,7 +8,7 @@ interface IScene {
 interface SceneSwitcherSetting {
   type: 'color' | 'image'
   bgImg?: string
-  bgColor?: string
+  bgColor?: number
 }
 
 export class SceneEngine {
@@ -41,12 +41,27 @@ export class SceneEngine {
 
   sceneSwitcher(setting: SceneSwitcherSetting) {
     const { type, bgImg, bgColor } = setting
-    console.log(type, bgImg, bgColor)
-    if (type === 'color' && bgColor) {
+    if (type === 'color' && typeof bgColor !== undefined) {
+      if (this.currentScene) {
+        this.removeSprite(this.currentScene)
+      }
+
+      const backgroundGraphic = new Graphics()
+      backgroundGraphic
+        .beginFill(bgColor)
+        .lineStyle(0)
+        .drawRect(0, 0, this.app.screen.width, this.app.screen.height)
+        .endFill()
+
+      const backgroundTexture =
+        this.app.renderer.generateTexture(backgroundGraphic)
+      const backgroundSprite = new Sprite(backgroundTexture)
+
+      this.rootContainer.addChild(backgroundSprite)
+      this.currentScene = backgroundSprite
     }
     if (type === 'image' && bgImg) {
       const newSprite = this.sceneList.find((val) => val.name === bgImg)?.sprite
-      console.log(this.sceneList)
       if (!newSprite) return
 
       if (this.currentScene) {
