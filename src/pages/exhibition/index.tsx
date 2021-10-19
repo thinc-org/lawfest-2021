@@ -2,9 +2,10 @@ import 'App.css'
 import Selectors from 'pages/exhibition/Selectors'
 import home from 'assets/pic/home.png'
 import React from 'react'
-import { StyledText } from './styled'
+import { ContentContainer, QuoteContainer, StyledText } from './styled'
 import Footer from 'common/components/Footer'
 import Multiplechoice from './Multiplechoice'
+import TextWithLine from 'common/components/TextWithLine'
 
 class Exhibition extends React.Component<{}, { status: 0 }> {
   static data = {
@@ -24,7 +25,7 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
       text: 'If justice takes place, there shall be hope.',
       quoteOwner: 'Alberto Manguel',
       quoteOwnerRef: 'CANADIAN NOVELIST',
-      next: 5,
+      next: 8,
     },
     6: {
       type: 'text',
@@ -34,7 +35,14 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
       next: 6,
     },
     7:{
-      type:'multi-choice',
+      type:'others',
+      element:<Multiplechoice/>,
+      next:7,
+    },
+    8:{
+      type:'others',
+      element:{},
+      next:8,
     }
   }
 
@@ -52,57 +60,27 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
       )
     else if (data['type'] === 'text') {
       content = (
-        <div
-          style={{
-            height: '100%',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            flexDirection: 'column',
-          }}
-          onClick={() => this.setState({ status: data['next'] })}
-        >
-          <StyledText>{data['text']}</StyledText>
-          <p></p>
+        <div style = {{height:'100vh'}} onClick={()=>this.setState({status:data['next']})}>
+        <ContentContainer>
+            <StyledText>{data['text']}</StyledText>
+            <p></p>
+            {data['quoteOwner'] ? (
+              <QuoteContainer>
+                <p style={{fontWeight: 'bold',lineHeight: 0,}}>{data['quoteOwner']}</p>
+                <p style={{fontWeight: 'normal',lineHeight: 0,}}>{data['quoteOwnerRef']}</p>
+              </QuoteContainer>
+            ) : null}
 
-          {data['quoteOwner'] ? (
-            <div
-              style={{
-                paddingLeft: '20%',
-                paddingTop: '2%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                flexDirection: 'column',
-                fontSize: '12px',
-              }}
-            >
-              <p
-                style={{
-                  fontWeight: 'bold',
-                  lineHeight: 0,
-                }}
-              >
-                {data['quoteOwner']}
-              </p>
-              <p
-                style={{
-                  fontWeight: 'normal',
-                  lineHeight: 0,
-                }}
-              >
-                {data['quoteOwnerRef']}
-              </p>
+            <div style={{width:'70%',marginTop:'5%',display:'flex' ,justifyContent:'center'}}>
+              <TextWithLine>แตะเพื่อไปต่อ</TextWithLine>
             </div>
-          ) : null}
-          <p style={{marginTop:'10px'}}>—— แตะเพื่อไปต่อ ——</p>
-        </div>
+          </ContentContainer>
+          </div>
       )
     }
-    else if (data['type'] === 'multi-choice') {
-      console.log("print this")
+    else if (data['type'] === 'others') {
       content = (
-        <Multiplechoice/>
+        data['element']
       )
     }
     return (
