@@ -41,10 +41,6 @@ export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
     console.log(store.hope, store.age)
   }, [store.hope, store.age])
 
-  useEffect(() => {
-    if (nowScene === 'name-input') setStore({})
-  }, [nowScene])
-
   const value = {
     store,
     nowScene,
