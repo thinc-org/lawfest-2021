@@ -46,7 +46,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
     nextScene: 'shop-focus-image',
     dialog: [
       {
-        name: 'น้องรพี',
+        name: '$name',
         text: '“ ช่วงนี้เป็นไงบ้างแปะ ขายดีไหม? ”',
         variant: 'primary',
       },
@@ -61,7 +61,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
         variant: 'secondary',
       },
       {
-        name: 'น้องรพี',
+        name: '$name',
         text: '“ อ้าว แล้วแปะจะไปทำอะไรต่อล่ะ ”',
         variant: 'primary',
       },
@@ -76,7 +76,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
         variant: 'secondary',
       },
       {
-        name: 'น้องรพี',
+        name: '$name',
         text: '“ ย้ายกลับไปอยู่กับครอบครัวหรอแปะ ? ”',
         variant: 'primary',
       },

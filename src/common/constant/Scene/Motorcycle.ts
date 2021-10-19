@@ -52,7 +52,7 @@ export const MOTORCYCLE_SCENE: { [x: string]: IScene } = {
         variant: 'secondary',
       },
       {
-        name: 'น้องรพี',
+        name: '$name',
         text: '“นี่เราอยู่ที่ไหน ?”',
         variant: 'primary',
       },
@@ -71,7 +71,7 @@ export const MOTORCYCLE_SCENE: { [x: string]: IScene } = {
         variant: 'secondary',
       },
       {
-        name: 'น้องรพี',
+        name: '$name',
         text: '“มอเตอร์ไซค์!? นี่มันบนทางเท้านะเนี่ย”',
         variant: 'primary',
       },

@@ -50,7 +50,7 @@ export class SceneEngine {
       backgroundGraphic
         .beginFill(bgColor)
         .lineStyle(0)
-        .drawRect(0, 0, this.app.screen.width * 2, this.app.screen.height * 2)
+        .drawRect(0, 0, 1200, 1800)
         .endFill()
 
       const backgroundTexture =
