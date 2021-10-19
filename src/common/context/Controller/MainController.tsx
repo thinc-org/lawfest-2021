@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { IMainController } from './typed'
 
 const MainControllerContext = React.createContext<IMainController>({
@@ -33,6 +33,17 @@ export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
     },
     [store]
   )
+
+  useEffect(() => {
+    if (!store.hope || !store.age) return
+
+    // Randomize last scene logic
+    console.log(store.hope, store.age)
+  }, [store.hope, store.age])
+
+  useEffect(() => {
+    if (nowScene === 'name-input') setStore({})
+  }, [nowScene])
 
   const value = {
     store,

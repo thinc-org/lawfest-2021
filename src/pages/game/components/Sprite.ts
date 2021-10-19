@@ -49,12 +49,17 @@ export class BaseSprite extends Sprite {
   }
 
   reset() {
+    this.alpha = 0
     this.onFinish = undefined
   }
 
   setFinalizing(onFinish: () => void) {
     this.onFinish = onFinish
     this.state = 'FINALIZE'
+  }
+
+  getState() {
+    return this.state
   }
 }
 
@@ -79,5 +84,43 @@ export class FadeSprite extends BaseSprite {
       default:
         break
     }
+  }
+}
+
+export class ZoomSprite extends BaseSprite {
+  updateState(_delta: number) {
+    switch (this.state) {
+      case 'LOAD':
+        if (this.alpha < 1) {
+          this.alpha += _delta * 0.02
+        } else {
+          this.state = 'PROCESS'
+        }
+        break
+      case 'FINALIZE':
+        if (this.alpha > 0) {
+          const zoom = _delta * 0.05 + this.scale.x
+          this.alpha -= _delta * 0.005
+
+          this.scale.set(zoom, zoom)
+        } else {
+          this.state = 'DONE'
+          this.onFinish?.()
+        }
+        break
+      default:
+        break
+    }
+  }
+
+  resizeToApp(app: Application) {
+    if (this.state === 'FINALIZE') return
+
+    const scaleX = app.screen.width / this.realWidth
+    const scaleY = app.screen.height / this.realHeight
+
+    const scale = Math.max(scaleX, scaleY)
+
+    this.scale.set(scale, scale)
   }
 }
