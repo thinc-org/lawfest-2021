@@ -25,6 +25,8 @@ export class SceneEngine {
 
   private prevScene: BaseSprite[]
 
+  private prevKey: string
+
   constructor(_app: Application) {
     this.app = _app
     this.sceneList = []
@@ -32,6 +34,8 @@ export class SceneEngine {
     this.zoomContainer = new Container()
     this.currentScene = null
     this.prevScene = []
+
+    this.prevKey = ''
 
     this.app.stage.addChild(this.zoomContainer, this.rootContainer)
   }
@@ -49,6 +53,7 @@ export class SceneEngine {
   sceneSwitcher(setting: SceneSwitcherSetting) {
     const { type, bgImg, bgColor } = setting
     if (type === 'color' && typeof bgColor !== undefined) {
+      if (bgColor?.toString() === this.prevKey) return
       const backgroundGraphic = new Graphics()
 
       backgroundGraphic
@@ -72,11 +77,12 @@ export class SceneEngine {
       }
 
       backgroundSprite.setup(this.rootContainer)
+      this.prevKey = bgColor?.toString()!
       this.currentScene = backgroundSprite
     }
     if (type === 'image' && bgImg) {
       const newSprite = this.sceneList.find((val) => val.name === bgImg)?.sprite
-      if (!newSprite || this.currentScene === newSprite) {
+      if (!newSprite || bgImg === this.prevKey) {
         return
       }
 
@@ -93,6 +99,7 @@ export class SceneEngine {
       }
 
       this.currentScene = newSprite
+      this.prevKey = bgImg
     }
   }
 
