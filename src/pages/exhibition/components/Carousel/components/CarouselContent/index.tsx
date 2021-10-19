@@ -1,10 +1,11 @@
 import { StyledText } from 'common/components/Typography'
 import { ICarouselContent } from 'common/constant/ExhibitionContent/types'
 import React from 'react'
+import { Refs } from './components/Refs'
 import { Container } from './styled'
 
 const CarouselContent = (props: ICarouselContent) => {
-  const { text, imageUrl, imagePosition } = props
+  const { text, imageUrl, imagePosition, contentRefs, imageRefs } = props
   return (
     <Container imagePosition={imagePosition}>
       {imageUrl && (
@@ -23,6 +24,8 @@ const CarouselContent = (props: ICarouselContent) => {
             <br />
           </>
         ))}
+        {contentRefs && <Refs title="เนื้อหา: " refs={contentRefs} />}
+        {imageRefs && <Refs title="ภาพ: " refs={imageRefs} />}
       </div>
     </Container>
   )
