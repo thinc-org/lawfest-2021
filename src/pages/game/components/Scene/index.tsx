@@ -75,8 +75,6 @@ function SceneController() {
           if (animName === FadeOut.name) {
             setSceneData(SCENE[nowScene])
             setMode('in')
-          }
-          if (animName === FadeIn.name) {
             setPreventClick(false)
           }
         }}

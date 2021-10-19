@@ -40,6 +40,7 @@ function SliderTemplate(props: ISliderQuestion) {
           css={{
             maxWidth: '200px',
             opacity: isChange ? 1 : 0,
+            cursor: isChange ? 'pointer' : 'default',
             marginTop: '20px',
           }}
           onClick={handleSubmit}
