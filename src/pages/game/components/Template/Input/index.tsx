@@ -33,7 +33,11 @@ function InputTemplate(props: IInputQuestion) {
         ></StyledInput>
         <Button
           variant="secondary"
-          css={{ maxWidth: '200px', opacity: !!input ? 1 : 0 }}
+          css={{
+            maxWidth: '200px',
+            opacity: !!input ? 1 : 0,
+            cursor: !!input ? 'pointer' : 'default',
+          }}
           onClick={handleSubmit}
         >
           ตกลง
