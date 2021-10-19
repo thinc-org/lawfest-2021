@@ -4,7 +4,7 @@ export const EPILOGUE: { [x: string]: IScene } = {
   'before-raining-stop': {
     type: 'delay',
     bgType: 'color',
-    bgColor: 0x000000,
+    bgColor: 0xe9dfde,
     isStoredData: false,
     nextScene: 'raining-stop',
     delay: 1500,
@@ -12,7 +12,7 @@ export const EPILOGUE: { [x: string]: IScene } = {
   'raining-stop': {
     type: 'dialog',
     bgType: 'color',
-    bgColor: 0x000000,
+    bgColor: 0xe9dfde,
     isStoredData: false,
     nextScene: 'final-hope',
     dialog: [
@@ -26,7 +26,7 @@ export const EPILOGUE: { [x: string]: IScene } = {
   'final-hope': {
     type: 'slider',
     bgType: 'color',
-    bgColor: 0x000000,
+    bgColor: 0xe9dfde,
     isStoredData: true,
     dataKey: 'hope',
     nextScene: 'epilogue-1',
