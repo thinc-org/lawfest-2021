@@ -24,7 +24,7 @@ export const AGE_DIALOGUE: { [x: string]: IScene } = {
     dialog: [
       {
         name: 'แปะ',
-        text: '“เป็นวัยกำลังเผชิญโลกเลยนะ”',
+        text: '“เป็นวัยกำลังฝันเลยนะ”',
         variant: 'secondary',
       },
     ],
@@ -38,7 +38,7 @@ export const AGE_DIALOGUE: { [x: string]: IScene } = {
     dialog: [
       {
         name: 'แปะ',
-        text: '“เป็นวัยกำลังไล่ตามสิ่งที่เคยฝันเลยนะ”',
+        text: '“เป็นวัยกำลังเผชิญโลกเลยนะ”',
         variant: 'secondary',
       },
     ],
