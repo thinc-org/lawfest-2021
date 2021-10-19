@@ -49,7 +49,6 @@ export class BaseSprite extends Sprite {
   }
 
   reset() {
-    this.alpha = 0
     this.onFinish = undefined
   }
 
