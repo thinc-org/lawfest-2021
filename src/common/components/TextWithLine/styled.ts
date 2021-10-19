@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react'
+import { styled } from 'common/config'
 import { StyledText } from '../Typography'
 
 export const Container = styled('div', {

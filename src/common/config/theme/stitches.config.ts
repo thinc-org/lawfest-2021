@@ -57,6 +57,6 @@ globalCss({
     },
   ],
   '@import': [
-    "url('https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap')",
+    "url('https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap')",
   ],
 })()
