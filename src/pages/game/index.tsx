@@ -11,7 +11,7 @@ import { Application, Loader, Container } from 'pixi.js'
 import { RESOURCES } from 'common/constant/Scene/Resources'
 import { StyledText } from 'common/components/Typography'
 import { SceneEngine } from './components/SceneEngine'
-import { BaseSprite, FadeSprite } from './components/Sprite'
+import { BaseSprite, FadeSprite, ZoomSprite } from './components/Sprite'
 
 const RootContainer = styled('div', {
   width: '100vw',
@@ -58,7 +58,7 @@ function PixiTesting() {
     () =>
       new Application({
         width: 414,
-        height: 800,
+        height: 896,
         antialias: true,
         autoDensity: true,
         backgroundColor: 0xffffff,
@@ -102,7 +102,13 @@ function PixiTesting() {
       for (const { name } of RESOURCES.sprite) {
         const texture = _resource[name].texture
         if (!texture) continue
-        const sprite = new FadeSprite(texture, texture.width, texture.height)
+        let sprite: BaseSprite
+        if (name === 'map') {
+          sprite = new ZoomSprite(texture, texture.width, texture.height)
+        } else {
+          sprite = new FadeSprite(texture, texture.width, texture.height)
+        }
+
         spritesSet.push({
           name,
           sprite,

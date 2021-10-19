@@ -1,5 +1,5 @@
 import { Application, Container, Graphics } from 'pixi.js'
-import { BaseSprite, FadeSprite } from './Sprite'
+import { BaseSprite, FadeSprite, ZoomSprite } from './Sprite'
 
 interface IScene {
   name: string
@@ -17,6 +17,8 @@ export class SceneEngine {
 
   private rootContainer: Container
 
+  private zoomContainer: Container
+
   private sceneList: IScene[]
 
   private currentScene: BaseSprite | null
@@ -27,11 +29,11 @@ export class SceneEngine {
     this.app = _app
     this.sceneList = []
     this.rootContainer = new Container()
-    this.app.stage.addChild(this.rootContainer)
+    this.zoomContainer = new Container()
     this.currentScene = null
     this.prevScene = []
 
-    this.rootContainer.sortableChildren = true
+    this.app.stage.addChild(this.zoomContainer, this.rootContainer)
   }
 
   appendSceneList(scene: IScene[]) {
@@ -40,6 +42,7 @@ export class SceneEngine {
 
   removeSprite(sprite: BaseSprite) {
     this.rootContainer.removeChild(sprite)
+    this.zoomContainer.removeChild(sprite)
     sprite.reset()
   }
 
@@ -47,6 +50,7 @@ export class SceneEngine {
     const { type, bgImg, bgColor } = setting
     if (type === 'color' && typeof bgColor !== undefined) {
       const backgroundGraphic = new Graphics()
+
       backgroundGraphic
         .beginFill(bgColor)
         .lineStyle(0)
@@ -62,7 +66,9 @@ export class SceneEngine {
       )
 
       if (this.currentScene) {
-        this.prevScene.push(this.currentScene)
+        this.currentScene.setFinalizing(() => {
+          this.prevScene.push(this.currentScene!)
+        })
       }
 
       backgroundSprite.setup(this.rootContainer)
@@ -75,32 +81,48 @@ export class SceneEngine {
       }
 
       if (this.currentScene) {
-        this.prevScene.push(this.currentScene)
+        this.currentScene.setFinalizing(() => {
+          this.prevScene.push(this.currentScene!)
+        })
       }
 
-      newSprite.setup(this.rootContainer)
+      if (newSprite instanceof ZoomSprite) {
+        newSprite.setup(this.zoomContainer)
+      } else {
+        newSprite.setup(this.rootContainer)
+      }
+
       this.currentScene = newSprite
     }
   }
 
   update(delta: number) {
     const { width, height } = this.app.screen
-    this.rootContainer.children.forEach((sprite: any) => {
-      if (!sprite) return
-      sprite.updateState(delta)
-      sprite.resizeToApp(this.app)
-    })
+    ;[...this.rootContainer.children, ...this.zoomContainer.children].forEach(
+      (sprite: any) => {
+        if (!sprite) return
+        sprite.updateState(delta)
+        sprite.resizeToApp(this.app)
+      }
+    )
 
-    if (this.prevScene.length === 0) {
-      this.prevScene.forEach((val) => {
-        this.removeSprite(val)
+    if (this.prevScene.length !== 0) {
+      this.prevScene.forEach((val, key) => {
+        if (val.getState() === 'DONE') {
+          this.removeSprite(val)
+          this.prevScene.splice(key, 1)
+        }
       })
-      this.prevScene = []
     }
 
     this.rootContainer.x = width / 2
     this.rootContainer.y = height / 2
     this.rootContainer.pivot.x = this.rootContainer.width / 2
     this.rootContainer.pivot.y = this.rootContainer.height / 2
+
+    this.zoomContainer.x = width / 2
+    this.zoomContainer.y = height / 2
+    this.zoomContainer.pivot.x = this.zoomContainer.width / 2
+    this.zoomContainer.pivot.y = this.zoomContainer.height / 2
   }
 }
