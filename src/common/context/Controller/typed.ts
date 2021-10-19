@@ -5,4 +5,5 @@ export interface IMainController {
   nowScene: string
   handleSetStorage: (key: string, val: void) => void
   handleSetNowScene: (x: string) => void
+  parsingData: (x: string) => string
 }

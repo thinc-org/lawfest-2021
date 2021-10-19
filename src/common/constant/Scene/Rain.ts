@@ -24,7 +24,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
     nextScene: 'rain-1',
     dialog: [
       {
-        name: 'น้องรพี',
+        name: '$name',
         text: '“อา… เดินไปทางไหนดี”',
         variant: 'primary',
       },
@@ -43,7 +43,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
         variant: 'secondary',
       },
       {
-        name: 'น้องรพี',
+        name: '$name',
         text: '“เฮ้อ ไม่รอดอยู่ดี”',
         variant: 'primary',
       },
@@ -66,12 +66,12 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
     nextScene: 'rain-3',
     dialog: [
       {
-        name: 'น้องรพี',
+        name: '$name',
         text: '“ ฝนตกแล้ว ”',
         variant: 'primary',
       },
       {
-        name: 'น้องรพี',
+        name: '$name',
         text: '“หาที่หลบฝนดีกว่า”',
         variant: 'primary',
       },

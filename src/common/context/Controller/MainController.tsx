@@ -6,6 +6,7 @@ const MainControllerContext = React.createContext<IMainController>({
   nowScene: '',
   handleSetStorage: (key: string, value: any) => {},
   handleSetNowScene: () => {},
+  parsingData: (x: string) => '',
 })
 
 export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
@@ -23,11 +24,22 @@ export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
     setNowScene(scene)
   }, [])
 
+  const parsingData = useCallback(
+    (template: string) => {
+      if (!store['name']) return template
+      const replaceText = template.replace('$name', store['name'])
+
+      return replaceText || template
+    },
+    [store]
+  )
+
   const value = {
     store,
     nowScene,
     handleSetStorage,
     handleSetNowScene,
+    parsingData,
   }
 
   return (
