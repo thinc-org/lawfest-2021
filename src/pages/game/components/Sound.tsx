@@ -14,6 +14,12 @@ function SoundController() {
     })
   }, [nowScene])
 
+  useEffect(() => {
+    return () => {
+      sound.stopAll()
+    }
+  }, [])
+
   return <></>
 }
 
