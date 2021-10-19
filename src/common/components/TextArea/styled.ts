@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react'
+import { styled } from 'common/config'
 
 export const StyledTextArea = styled('textarea', {
   height: '184px',
