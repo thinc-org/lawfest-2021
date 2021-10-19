@@ -6,12 +6,14 @@ import { Container } from './styled'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import CarouselContent from './components/CarouselContent'
 
 const Carousel = () => {
   const { quote, name, contents } = WhatIsHope
-  const settings = {
+
+  const carouselSettings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -21,10 +23,10 @@ const Carousel = () => {
     <Container>
       <StyledText mobileVariant="title2">{quote}</StyledText>
       <TextWithLine mobileVariant="caption2">{name}</TextWithLine>
-      <div style={{ display: 'block', maxWidth: '60vw', marginTop: '23px' }}>
-        <Slider {...settings}>
+      <div style={{ display: 'block', maxWidth: '70vw', marginTop: '23px' }}>
+        <Slider {...carouselSettings}>
           {contents.map((content, idx) => (
-            <div key={idx}>{content.text}</div>
+            <CarouselContent key={idx} {...content} />
           ))}
         </Slider>
       </div>
