@@ -5,6 +5,7 @@ export interface ICarousel {
 }
 
 export interface ICarouselContent {
-  type: 'text' | 'imageCenter' | 'imageLeft'
   text: string
+  imageUrl?: string
+  imagePosition?: 'top' | 'left'
 }
