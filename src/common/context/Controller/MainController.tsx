@@ -8,12 +8,12 @@ const MainControllerContext = React.createContext<IMainController>({
   handleSetStorage: (key: string, value: any) => {},
   handleSetNowScene: () => {},
   parsingData: (x: string) => '',
-  getBgFilePath: () => {},
+  getBgFilePath: () => ({ bgLink: '', downloadLink: '' }),
 })
 
 export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
   const [store, setStore] = useState<{ [x: string]: any }>({})
-  const [nowScene, setNowScene] = useState<string>('name-input')
+  const [nowScene, setNowScene] = useState<string>('age-choice')
 
   const handleSetStorage = useCallback(
     (key: string, value: any) => {
@@ -37,8 +37,11 @@ export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
   )
 
   const getBgFilePath = useCallback(() => {
-    if (typeof store['age'] === 'undefined') return
-    if (typeof store['hope'] === 'undefined') return
+    console.log(store)
+    if (typeof store['age'] === 'undefined')
+      throw new Error('Age is not defined yet')
+    if (typeof store['hope'] === 'undefined')
+      throw new Error('Hope is not defined yet')
 
     const hopeValue: number = store['hope']
     const ageRange: ResultKey = store['age']

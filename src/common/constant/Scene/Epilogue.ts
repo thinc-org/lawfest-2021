@@ -57,8 +57,15 @@ export const EPILOGUE: { [x: string]: IScene } = {
     bgType: 'image',
     bgImageSrc: 'last_bg',
     isStoredData: false,
-    nextScene: 'name-input',
+    nextScene: 'finalize',
     delay: 3000,
     text: 'เรามี….จะให้',
+  },
+  finalize: {
+    type: 'result',
+    bgType: 'color',
+    bgColor: 0xe9dfde,
+    isStoredData: false,
+    nextScene: 'name-input',
   },
 }

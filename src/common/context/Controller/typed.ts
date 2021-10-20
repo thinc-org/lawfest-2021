@@ -1,3 +1,8 @@
+interface IBackgroundLink {
+  bgLink: string
+  downloadLink: string
+}
+
 export interface IMainController {
   store: {
     [x: string]: any
@@ -6,5 +11,5 @@ export interface IMainController {
   handleSetStorage: (key: string, val: void) => void
   handleSetNowScene: (x: string) => void
   parsingData: (x: string) => string
-  getBgFilePath: () => void
+  getBgFilePath: () => IBackgroundLink
 }
