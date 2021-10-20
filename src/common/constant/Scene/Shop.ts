@@ -160,17 +160,17 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
       {
         nextScene: 'age-13-24',
         text: '13-24 ปี',
-        value: '13-59',
+        value: '13-24',
       },
       {
         nextScene: 'age-25-40',
         text: '25-40 ปี',
-        value: '13-59',
+        value: '25-59',
       },
       {
         nextScene: 'age-41-60',
-        text: '41-60 ปี',
-        value: '13-59',
+        text: '41-59 ปี',
+        value: '25-59',
       },
       {
         nextScene: 'age-60+',
