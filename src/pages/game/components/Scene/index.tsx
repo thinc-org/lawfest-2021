@@ -9,6 +9,7 @@ import { FadeOut, SceneContainer, SceneRootContainer } from './styled'
 import { ICallbackData } from './types'
 import ClickToContinueTemplate from '../Template/ClickToContinue'
 import DelayTransition from '../Template/Delay'
+import ResultTemplate from '../Template/Result'
 
 function SceneController() {
   const { nowScene, handleSetNowScene, handleSetStorage } = useMainController()
@@ -116,6 +117,7 @@ function SceneController() {
             text={sceneData.text}
           />
         )}
+        {sceneData.type === 'result' && <ResultTemplate />}
       </SceneContainer>
     </SceneRootContainer>
   )
