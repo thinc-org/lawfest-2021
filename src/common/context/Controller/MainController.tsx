@@ -1,4 +1,5 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import { ResultKey, RESULT_MAP } from 'common/constant/Scene/ResultMap'
+import React, { useCallback, useState } from 'react'
 import { IMainController } from './typed'
 
 const MainControllerContext = React.createContext<IMainController>({
@@ -7,6 +8,7 @@ const MainControllerContext = React.createContext<IMainController>({
   handleSetStorage: (key: string, value: any) => {},
   handleSetNowScene: () => {},
   parsingData: (x: string) => '',
+  getBgFilePath: () => {},
 })
 
 export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
@@ -34,12 +36,32 @@ export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
     [store]
   )
 
-  useEffect(() => {
-    if (!store.hope || !store.age) return
+  const getBgFilePath = useCallback(() => {
+    if (typeof store['age'] === 'undefined') return
+    if (typeof store['hope'] === 'undefined') return
 
-    // Randomize last scene logic
-    console.log(store.hope, store.age)
-  }, [store.hope, store.age])
+    const hopeValue: number = store['hope']
+    const ageRange: ResultKey = store['age']
+
+    let hopeName: string
+
+    if (hopeValue <= 35) {
+      hopeName = 'low'
+    } else if (hopeValue <= 69) {
+      hopeName = 'medium'
+    } else {
+      hopeName = 'high'
+    }
+
+    const idx = Math.floor(Math.random() * 2)
+
+    const imgLink = RESULT_MAP[ageRange][idx]
+
+    return {
+      bgLink: `images/results/bg/${hopeName}/${imgLink}`,
+      downloadLink: `images/results/download/${hopeName}/${imgLink}`,
+    }
+  }, [store])
 
   const value = {
     store,
@@ -47,6 +69,7 @@ export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
     handleSetStorage,
     handleSetNowScene,
     parsingData,
+    getBgFilePath,
   }
 
   return (

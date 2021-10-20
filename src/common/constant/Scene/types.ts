@@ -10,6 +10,7 @@ type SceneType =
   | 'dialog'
   | 'standby'
   | 'delay'
+  | 'result'
 
 export interface IScene {
   type: SceneType
