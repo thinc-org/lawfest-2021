@@ -5,6 +5,7 @@ import React from 'react'
 import { ContentContainer, QuoteContainer, StyledText } from './styled'
 import Footer from 'common/components/Footer'
 import Multiplechoice from './Multiplechoice'
+import SilderPage from './SliderPage'
 import TextWithLine from 'common/components/TextWithLine'
 
 class Exhibition extends React.Component<{}, { status: 0 }> {
@@ -41,7 +42,7 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
     },
     8:{
       type:'others',
-      element:{},
+      element:<SilderPage/>,
       next:8,
     }
   }
@@ -79,6 +80,7 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
       )
     }
     else if (data['type'] === 'others') {
+      console.log(this.state.status)
       content = (
         data['element']
       )
