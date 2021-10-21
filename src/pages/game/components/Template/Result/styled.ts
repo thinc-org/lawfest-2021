@@ -13,3 +13,12 @@ export const InnerContainer = styled('div', {
   alignItems: 'center',
   width: '100%',
 })
+
+export const ButtonText = styled('div', {
+  fontSize: '$4',
+  fontWeight: '$medium',
+  fontFamily: '$Mitr',
+  '@md': {
+    fontSize: '$2',
+  },
+})

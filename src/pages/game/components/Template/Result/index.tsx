@@ -1,9 +1,8 @@
 import StyledButton from 'common/components/Button'
-import { StyledText } from 'common/components/Typography'
 import { useMainController } from 'common/context/Controller/MainController'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { RootContainer } from '../Container'
-import { InnerContainer, ResultContainer } from './styled'
+import { ButtonText, InnerContainer, ResultContainer } from './styled'
 import { AiOutlineDownload } from 'react-icons/ai'
 import { useHistory } from 'react-router'
 
@@ -47,7 +46,7 @@ function ResultTemplate() {
           onClick={handleDownload}
         >
           <InnerContainer>
-            <AiOutlineDownload size="18" />
+            <AiOutlineDownload size="20" />
             <a
               download={fileName}
               ref={(el) => (downloadRef.current = el)}
@@ -56,13 +55,11 @@ function ResultTemplate() {
             >
               Download
             </a>
-            <StyledText css={{ marginLeft: '10px' }} mobileVariant="button">
-              บันทึกรูปภาพ
-            </StyledText>
+            <ButtonText css={{ marginLeft: '10px' }}>บันทึกรูปภาพ</ButtonText>
           </InnerContainer>
         </StyledButton>
         <StyledButton variant="primary" onClick={() => router.push('/')}>
-          <StyledText mobileVariant="button">กลับสู่หน้าหลัก</StyledText>
+          <ButtonText>กลับสู่หน้าหลัก</ButtonText>
         </StyledButton>
       </ResultContainer>
     </RootContainer>
