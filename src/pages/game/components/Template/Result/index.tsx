@@ -5,12 +5,15 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { RootContainer } from '../Container'
 import { InnerContainer, ResultContainer } from './styled'
 import { AiOutlineDownload } from 'react-icons/ai'
+import { useHistory } from 'react-router'
 
 function ResultTemplate() {
   const [bgLink, setBgLink] = useState<string>('')
   const [downloadLink, setDownloadLink] = useState<string>('')
   const [fileName, setFileName] = useState<string>('')
   const downloadRef = useRef<HTMLAnchorElement | null>()
+
+  const router = useHistory()
 
   const { getBgFilePath } = useMainController()
 
@@ -58,7 +61,7 @@ function ResultTemplate() {
             </StyledText>
           </InnerContainer>
         </StyledButton>
-        <StyledButton variant="primary">
+        <StyledButton variant="primary" onClick={() => router.push('/')}>
           <StyledText mobileVariant="button">กลับสู่หน้าหลัก</StyledText>
         </StyledButton>
       </ResultContainer>
