@@ -1,6 +1,7 @@
 interface IBackgroundLink {
   bgLink: string
   downloadLink: string
+  fileName: string
 }
 
 export interface IMainController {
