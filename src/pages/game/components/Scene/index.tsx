@@ -5,7 +5,7 @@ import DialogueTemplate from '../Template/Dialogue'
 import InputTemplate from '../Template/Input'
 import SliderTemplate from '../Template/Slider'
 import { IScene, SCENE } from 'common/constant/Scene'
-import { FadeOut, SceneContainer, SceneRootContainer } from './styled'
+import { FadeIn, FadeOut, SceneContainer, SceneRootContainer } from './styled'
 import { ICallbackData } from './types'
 import ClickToContinueTemplate from '../Template/ClickToContinue'
 import DelayTransition from '../Template/Delay'
@@ -21,8 +21,7 @@ function SceneController() {
     nextScene: 'next',
   })
 
-  const [newScene, setNewScene] = useState<string>('')
-  const [mode, setMode] = useState<'in' | 'out' | 'none'>('in')
+  const [mode, setMode] = useState<'in' | 'out' | 'none'>('none')
   const [preventClick, setPreventClick] = useState<boolean>(false)
 
   const handleSubmit = useCallback(
@@ -55,11 +54,16 @@ function SceneController() {
     if (!Object.keys(SCENE).includes(nowScene)) {
       throw new Error('Not found scene')
     }
+
     if (sceneData.type === 'standby') {
       setSceneData(SCENE[nowScene])
     }
-    setNewScene(nowScene)
-  }, [newScene, nowScene, sceneData.type])
+
+    if (nowScene === 'name-input') {
+      setMode('in')
+      setSceneData(SCENE[nowScene])
+    }
+  }, [nowScene, sceneData.type])
 
   return (
     <SceneRootContainer>

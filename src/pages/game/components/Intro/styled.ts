@@ -2,7 +2,9 @@ import { styled } from 'common/config/'
 
 export const LogoContainer = styled('div', {
   position: 'absolute',
-  width: 'fit-content',
+  height: '100%',
+  width: '100%',
+  zIndex: 99,
   transition: 'opacity 1s ease-in',
   variants: {
     show: {

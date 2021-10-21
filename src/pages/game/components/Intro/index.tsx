@@ -3,17 +3,18 @@ import {
   cancelAnimationFrame,
   requestAnimationFrame,
 } from 'common/utils/requestAnimationFrame'
-import { LogoContainer, LogoImage } from '../game/styled'
+import { LogoContainer, LogoImage } from './styled'
 import Logo from 'assets/logo.svg'
-import { INK_POS } from '../game/constant'
-import { IInkRender } from '../game/typed'
+import { INK_POS } from './constant'
+import { IInkRender } from '../../typed'
 import { useMainController } from 'common/context/Controller/MainController'
 import { SCENE } from 'common/constant/Scene'
 
-function Game() {
+function Intro() {
   const [state, setState] = useState(0)
   const { handleSetNowScene, nowScene } = useMainController()
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     let num = -1,
@@ -22,6 +23,14 @@ function Game() {
     const ctx = canvasRef.current?.getContext('2d')!
 
     let particle: IInkRender[] = []
+
+    const resizer = new ResizeObserver(() => {
+      if (!canvasRef.current || !containerRef.current) return
+      canvasRef.current.width = containerRef.current.clientWidth
+      canvasRef.current.height = containerRef.current.clientHeight
+    })
+
+    if (containerRef.current) resizer.observe(containerRef.current)
 
     const addInk = (
       posX: number,
@@ -123,11 +132,15 @@ function Game() {
 
     return () => {
       cancelAnimationFrame(num)
+      resizer.disconnect()
     }
   }, [])
 
   return (
-    <LogoContainer show={nowScene === 'intro' ? 'open' : 'close'}>
+    <LogoContainer
+      ref={containerRef}
+      show={nowScene === 'intro' ? 'open' : 'close'}
+    >
       <LogoImage
         show={state ? 'open' : 'close'}
         src={Logo}
@@ -144,4 +157,4 @@ function Game() {
   )
 }
 
-export default Game
+export default Intro
