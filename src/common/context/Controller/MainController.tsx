@@ -8,12 +8,12 @@ const MainControllerContext = React.createContext<IMainController>({
   handleSetStorage: (key: string, value: any) => {},
   handleSetNowScene: () => {},
   parsingData: (x: string) => '',
-  getBgFilePath: () => ({ bgLink: '', downloadLink: '' }),
+  getBgFilePath: () => ({ bgLink: '', downloadLink: '', fileName: '' }),
 })
 
 export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
   const [store, setStore] = useState<{ [x: string]: any }>({})
-  const [nowScene, setNowScene] = useState<string>('age-choice')
+  const [nowScene, setNowScene] = useState<string>('name-input')
 
   const handleSetStorage = useCallback(
     (key: string, value: any) => {
@@ -63,6 +63,7 @@ export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
     return {
       bgLink: `images/results/bg/${hopeName}/${imgLink}`,
       downloadLink: `images/results/download/${hopeName}/${imgLink}`,
+      fileName: `result-${hopeName}-${imgLink}`,
     }
   }, [store])
 
