@@ -1,4 +1,4 @@
-import { IInkDetail } from './typed'
+import { IInkDetail } from '../../typed'
 
 export const INK_POS: IInkDetail[] = [
   {

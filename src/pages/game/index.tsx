@@ -13,6 +13,7 @@ import { StyledText } from 'common/components/Typography'
 import { SceneEngine } from './components/SceneEngine'
 import { BaseSprite, FadeSprite, ZoomSprite } from './components/Sprite'
 import Div100vh from 'react-div-100vh'
+import Intro from './components/Intro'
 
 const RootContainer = styled(Div100vh, {
   width: '100%',
@@ -167,6 +168,7 @@ function PixiTesting() {
           </>
         ) : (
           <>
+            <Intro />
             <SceneController />
           </>
         )}
