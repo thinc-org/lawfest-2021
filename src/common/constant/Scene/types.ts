@@ -1,7 +1,7 @@
 import { IChoice } from 'pages/game/components/Template/Choice/types'
 import { IDialogueData } from 'pages/game/components/Template/Dialogue/types'
 
-type SceneType =
+export type SceneType =
   | 'intro'
   | 'input'
   | 'image-click'

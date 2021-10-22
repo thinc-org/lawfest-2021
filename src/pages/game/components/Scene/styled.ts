@@ -1,5 +1,4 @@
 import { styled, keyframes } from 'common/config'
-import { IoMdHome } from 'react-icons/io'
 
 export const FadeIn = keyframes({
   '0%': {
@@ -44,13 +43,4 @@ export const SceneContainer = styled('div', {
   defaultVariants: {
     fade: 'none',
   },
-})
-
-export const HomeIcon = styled(IoMdHome, {
-  position: 'absolute',
-  top: '20px',
-  left: '20px',
-  cursor: 'pointer',
-  zIndex: 99,
-  transition: 'color 800ms linear',
 })
