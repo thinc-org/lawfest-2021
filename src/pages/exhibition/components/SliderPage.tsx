@@ -2,7 +2,7 @@ import 'App.css'
 import React, { useState } from 'react'
 import Slider from 'common/components/Slider'
 import TextWithLine from 'common/components/TextWithLine'
-import { StyledText } from './styled'
+import { StyledText } from 'pages/exhibition/styled'
 function SilderPage(){
   	const [value, setValue] = useState(50)
   	return( 

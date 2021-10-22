@@ -1,5 +1,5 @@
 import 'App.css'
-import {SelectorText} from './styled'
+import {SelectorText} from 'pages/exhibition/styled'
 import choice1 from 'assets/pic/Activity1.png'
 import choice2 from 'assets/pic/Activity2.png'
 import choice3 from 'assets/pic/Activity3.png'

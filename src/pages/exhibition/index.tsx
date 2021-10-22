@@ -1,12 +1,13 @@
 import 'App.css'
-import Selectors from 'pages/exhibition/Selectors'
+import Selectors from './components/Selectors'
 import home from 'assets/pic/home.png'
 import React from 'react'
 import { ContentContainer, QuoteContainer, StyledText } from './styled'
 import Footer from 'common/components/Footer'
-import Multiplechoice from './Multiplechoice'
-import SilderPage from './SliderPage'
+import Multiplechoice from './components/Multiplechoice'
+import SilderPage from './components/SliderPage'
 import TextWithLine from 'common/components/TextWithLine'
+import InputPage from './components/InputPage'
 
 class Exhibition extends React.Component<{}, { status: 0 }> {
   static data = {
@@ -33,7 +34,7 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
       text: '“Once you choose hope, anything is possible.”',
       quoteOwner: 'Christopher Reeve',
       quoteOwnerRef: 'AMERICAN ACTOR, DIRECTOR, AND ACTIVIST',
-      next: 6,
+      next: 9,
     },
     7:{
       type:'others',
@@ -44,6 +45,16 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
       type:'others',
       element:<SilderPage/>,
       next:8,
+    },
+    9:{
+      type:'textArea',
+      str:'บอกหน่อยสิ เทอมนี้เธอจะหนี F ยังไง',
+      next:10,
+    },
+    10:{
+      type:'textArea',
+      str:'มาสาธยายวิธีรอดหน่อยสิ',
+      next:10,
     }
   }
 
@@ -80,10 +91,17 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
       )
     }
     else if (data['type'] === 'others') {
-      console.log(this.state.status)
+      //console.log(this.state.status)
       content = (
         data['element']
       )
+    }
+    else if (data['type'] === 'textArea') {
+      content = (
+        <InputPage str={data['str']} onClick={()=>this.setState({status:data['next']}) }/>
+      )
+
+
     }
     return (
       <div
