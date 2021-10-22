@@ -9,7 +9,6 @@ export const HomeIcon = styled(IoMdHome, {
 })
 
 export const ContactContainer = styled('div', {
-  cursor: 'pointer',
   display: 'flex',
   marginRight: '20px',
   zIndex: 99,

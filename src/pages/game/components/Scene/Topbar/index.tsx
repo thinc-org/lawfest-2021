@@ -9,7 +9,7 @@ import {
 import LogoWhite from 'assets/images/lawfest_logo_white.png'
 import { StyledText } from 'common/components/Typography'
 
-function Topbar(props: { sceneType: SceneType | 'result' }) {
+function Topbar(props: { sceneType: SceneType }) {
   const { sceneType } = props
   const history = useHistory()
   return (
