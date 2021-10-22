@@ -27,7 +27,7 @@ const RootContainer = styled('div', {
 
 const GameContainer = styled('div', {
   display: 'flex',
-  maxWidth: '496px',
+  maxWidth: '414px',
   width: '100%',
   height: '100vh',
   maxHeight: '896px',
