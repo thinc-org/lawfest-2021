@@ -37,8 +37,7 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
       next: 9,
     },
     7:{
-      type:'others',
-      element:<Multiplechoice/>,
+      type:'multipleChoice',
       next:7,
     },
     8:{
@@ -72,8 +71,9 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
       )
     else if (data['type'] === 'text') {
       content = (
-        <div style = {{height:'100vh'}} onClick={()=>this.setState({status:data['next']})}>
-        <ContentContainer>
+        <div style={{height:'100vh'}}>
+
+        <ContentContainer onClick={()=>this.setState({status:data['next']})}>
             <StyledText>{data['text']}</StyledText>
             <p></p>
             {data['quoteOwner'] ? (
@@ -96,12 +96,13 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
         data['element']
       )
     }
+    else if (data['type'] === 'multipleChoice') {
+      content = <Multiplechoice onClick={()=>this.setState({status:data['next']})}/>
+    }
     else if (data['type'] === 'textArea') {
       content = (
         <InputPage str={data['str']} onClick={()=>this.setState({status:data['next']}) }/>
       )
-
-
     }
     return (
       <div
