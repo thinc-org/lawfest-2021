@@ -5,12 +5,12 @@ import DialogueTemplate from '../Template/Dialogue'
 import InputTemplate from '../Template/Input'
 import SliderTemplate from '../Template/Slider'
 import { IScene, SCENE } from 'common/constant/Scene'
-import { FadeOut, HomeIcon, SceneContainer, SceneRootContainer } from './styled'
+import { FadeOut, SceneContainer, SceneRootContainer } from './styled'
 import { ICallbackData } from './types'
 import ClickToContinueTemplate from '../Template/ClickToContinue'
 import DelayTransition from '../Template/Delay'
 import ResultTemplate from '../Template/Result'
-import { useHistory } from 'react-router'
+import Topbar from './Topbar'
 
 function SceneController() {
   const { nowScene, handleSetNowScene, handleSetStorage } = useMainController()
@@ -20,7 +20,6 @@ function SceneController() {
     isStoredData: false,
     nextScene: 'next',
   })
-  const history = useHistory()
 
   const [newScene, setNewScene] = useState<string>('')
   const [mode, setMode] = useState<'in' | 'out' | 'none'>('in')
@@ -71,15 +70,7 @@ function SceneController() {
           zIndex: 98,
         }}
       ></SceneContainer>
-      <HomeIcon
-        color={
-          ['input', 'slider', 'choice', 'result'].includes(sceneData.type)
-            ? 'white'
-            : 'black'
-        }
-        size="36"
-        onClick={() => history.push('/')}
-      />
+      <Topbar sceneType={sceneData.type} />
       <SceneContainer
         fade={mode}
         onAnimationEnd={(el) => {

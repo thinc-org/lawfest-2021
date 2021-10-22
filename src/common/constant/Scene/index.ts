@@ -4,7 +4,7 @@ import { MOTORCYCLE_SCENE } from './Motorcycle'
 import { AGE_DIALOGUE } from './AgeDialogue'
 import { EPILOGUE } from './Epilogue'
 
-export type { IScene } from './types'
+export type { IScene, SceneType } from './types'
 export const SCENE = {
   ...SHOP_SCENE,
   ...RAIN_SCENE,
