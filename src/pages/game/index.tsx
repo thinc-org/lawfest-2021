@@ -30,7 +30,7 @@ const GameContainer = styled('div', {
   maxWidth: '414px',
   width: '100%',
   height: '100vh',
-  maxHeight: '896px',
+  maxHeight: '833px',
   position: 'relative',
   justifyContent: 'center',
   alignItems: 'center',
@@ -58,7 +58,7 @@ function PixiTesting() {
     () =>
       new Application({
         width: 414,
-        height: 896,
+        height: 833,
         antialias: true,
         autoDensity: true,
         backgroundColor: 0xffffff,
