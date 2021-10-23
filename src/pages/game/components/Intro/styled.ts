@@ -39,7 +39,7 @@ const KeyframeTopLeft = keyframes({
     opacity: 1,
   },
   '20%': {
-    transform: 'scale(2)',
+    transform: 'scale(5)',
   },
   '80%': {
     opacity: 0.8,
@@ -114,8 +114,8 @@ export const MainBlueInk = styled('img', {
   top: '46%',
   left: '46%',
   transform: 'translate(-46%, -46%)',
-  '-webkit-animation': `${KeyframeMain} 4s forwards`,
-  animation: `${KeyframeMain} 4s forwards`,
+  '-webkit-animation': `${KeyframeMain} 3s forwards`,
+  animation: `${KeyframeMain} 3s forwards`,
 })
 
 export const BottomRightInk = styled('img', {
@@ -124,8 +124,9 @@ export const BottomRightInk = styled('img', {
   position: 'absolute',
   bottom: '35%',
   right: '20%',
-  '-webkit-animation': `${KeyframeBottomRight} 3.5s forwards`,
-  animation: `${KeyframeBottomRight} 3.5s forwards`,
+  transform: 'rotate(45deg)',
+  '-webkit-animation': `${KeyframeBottomRight} 2s forwards`,
+  animation: `${KeyframeBottomRight} 2s forwards`,
 })
 
 export const TopLeftInk = styled('img', {
@@ -134,8 +135,8 @@ export const TopLeftInk = styled('img', {
   position: 'absolute',
   top: '35%',
   left: '20%',
-  '-webkit-animation': `${KeyframeTopLeft} 4s forwards`,
-  animation: `${KeyframeTopLeft} 4s forwards`,
+  '-webkit-animation': `${KeyframeTopLeft} 3s forwards`,
+  animation: `${KeyframeTopLeft} 3s forwards`,
 })
 
 export const BottomLeftInk = styled('img', {
@@ -144,6 +145,6 @@ export const BottomLeftInk = styled('img', {
   position: 'absolute',
   bottom: '40%',
   left: '30%',
-  '-webkit-animation': `${KeyframeBottomLeft} 4s forwards`,
-  animation: `${KeyframeBottomLeft} 4s forwards`,
+  '-webkit-animation': `${KeyframeBottomLeft} 3s forwards`,
+  animation: `${KeyframeBottomLeft} 3s forwards`,
 })

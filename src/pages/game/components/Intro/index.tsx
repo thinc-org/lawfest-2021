@@ -10,9 +10,9 @@ import {
 import Logo from 'assets/logo.svg'
 import { useMainController } from 'common/context/Controller/MainController'
 import { SCENE } from 'common/constant/Scene'
-import BlueInk from 'assets/blue_ink.svg'
-import OrangeInk from 'assets/orange_ink.svg'
-import YellowInk from 'assets/yellow_ink.svg'
+import BlueInk from 'assets/images/blue_ink.svg'
+import OrangeInk from 'assets/images/orange_ink.svg'
+import YellowInk from 'assets/images/yellow_ink.svg'
 
 function Intro() {
   const [state, setState] = useState(0)
@@ -34,7 +34,7 @@ function Intro() {
           )
         }}
       ></LogoImage>
-      <TopLeftInk src={YellowInk} alt="orange" />
+      <TopLeftInk src={YellowInk} alt="yellow" />
       {state >= 1 && (
         <MainBlueInk
           src={BlueInk}
@@ -49,7 +49,7 @@ function Intro() {
           setState(state + 1)
         }}
       />
-      <BottomLeftInk src={YellowInk} alt="yellow" />
+      <BottomLeftInk src={OrangeInk} alt="orange" />
       {/* <canvas ref={canvasRef} width="496" height="896"></canvas> */}
     </LogoContainer>
   )
