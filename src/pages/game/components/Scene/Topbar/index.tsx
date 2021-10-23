@@ -8,21 +8,34 @@ import {
 } from './styled'
 import LogoWhite from 'assets/images/lawfest_logo_white.png'
 import { StyledText } from 'common/components/Typography'
+import { useEffect, useState } from 'react'
 
 function Topbar(props: { sceneType: SceneType }) {
   const { sceneType } = props
+  const [isWhite, setWhite] = useState(false)
   const history = useHistory()
+
+  useEffect(() => {
+    setWhite(['input', 'slider', 'choice', 'result'].includes(sceneType))
+  }, [sceneType])
+
   return (
     <TopbarContainer>
-      <HomeIcon
-        color={
-          ['input', 'slider', 'choice', 'result'].includes(sceneType)
-            ? 'white'
-            : 'black'
-        }
-        size="36"
-        onClick={() => history.push('/')}
-      />
+      <div style={{ position: 'relative' }}>
+        <HomeIcon
+          color="white"
+          size="36"
+          show={isWhite}
+          onClick={() => history.push('/')}
+        />
+        <HomeIcon
+          css={{ position: 'absolute', left: 0 }}
+          color="black"
+          size="36"
+          show={!isWhite}
+          onClick={() => history.push('/')}
+        />
+      </div>
       <ContactContainer show={sceneType === 'result'}>
         <TextContainer>
           <StyledText
