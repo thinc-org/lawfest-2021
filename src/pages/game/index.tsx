@@ -2,7 +2,6 @@ import {
   MainControllerProvider,
   useMainController,
 } from 'common/context/Controller/MainController'
-import { styled } from 'common/config'
 import SceneController from 'pages/game/components/Scene'
 import { SCENE } from 'common/constant/Scene'
 import SoundController from 'pages/game/components/Sound'
@@ -12,41 +11,9 @@ import { RESOURCES } from 'common/constant/Scene/Resources'
 import { StyledText } from 'common/components/Typography'
 import { SceneEngine } from './components/SceneEngine'
 import { BaseSprite, FadeSprite, ZoomSprite } from './components/Sprite'
-import Div100vh from 'react-div-100vh'
 import Intro from './components/Intro'
-
-const RootContainer = styled(Div100vh, {
-  width: '100%',
-  height: '100%',
-  position: 'relative',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexDirection: 'column',
-  backgroundColor: '$black950',
-})
-
-const GameContainer = styled('div', {
-  display: 'flex',
-  maxWidth: '414px',
-  width: '100%',
-  height: '100%',
-  maxHeight: '833px',
-  position: 'relative',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexDirection: 'column',
-  transition: 'all 3s ease-in-out',
-  '@sm': {
-    width: '100vw',
-    maxHeight: '100vh',
-  },
-})
-
-interface ISprite {
-  name: string
-  sprite: BaseSprite
-}
+import { RootContainer, GameContainer } from './styled'
+import { ISprite } from './types'
 
 function PixiTesting() {
   const { nowScene } = useMainController()
