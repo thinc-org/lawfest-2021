@@ -5,7 +5,17 @@ export const HomeIcon = styled(IoMdHome, {
   cursor: 'pointer',
   zIndex: 99,
   marginLeft: '20px',
-  transition: 'color 800ms linear',
+  transition: 'opacity 800ms linear',
+  variants: {
+    show: {
+      true: {
+        opacity: 1,
+      },
+      false: {
+        opacity: 0,
+      },
+    },
+  },
 })
 
 export const ContactContainer = styled('div', {
