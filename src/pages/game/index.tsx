@@ -12,10 +12,10 @@ import { RESOURCES } from 'common/constant/Scene/Resources'
 import { StyledText } from 'common/components/Typography'
 import { SceneEngine } from './components/SceneEngine'
 import { BaseSprite, FadeSprite, ZoomSprite } from './components/Sprite'
+import Div100vh from 'react-div-100vh'
 
-const RootContainer = styled('div', {
-  width: '100vw',
-  minHeight: '100vh',
+const RootContainer = styled(Div100vh, {
+  width: '100%',
   height: '100%',
   position: 'relative',
   display: 'flex',
@@ -29,7 +29,7 @@ const GameContainer = styled('div', {
   display: 'flex',
   maxWidth: '414px',
   width: '100%',
-  height: '100vh',
+  height: '100%',
   maxHeight: '833px',
   position: 'relative',
   justifyContent: 'center',

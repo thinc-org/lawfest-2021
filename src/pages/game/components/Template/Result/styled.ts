@@ -4,7 +4,7 @@ export const ResultContainer = styled('div', {
   height: '100%',
   width: '100%',
   display: 'flex',
-  alignItems: 'end',
+  alignItems: 'flex-end',
 })
 
 export const InnerContainer = styled('div', {

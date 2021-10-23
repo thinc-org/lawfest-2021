@@ -28,7 +28,7 @@ export const YouHopeIHope = styled('svg', {
     state: {
       before: {},
       after: {
-        fill: 0xf1e1c7,
+        fill: '#f1e1c7',
       },
     },
   },
