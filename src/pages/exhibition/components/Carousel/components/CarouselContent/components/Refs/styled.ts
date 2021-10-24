@@ -1,17 +1,18 @@
 import { styled } from 'common/config'
 export const RefConatainer = styled('div', {
-  fontSize: '15px',
+  fontSize: '12px',
   fontWeight: '$regular',
-  fontFamily: '$Mitr',
+  fontFamily: '$ChulaCharas',
 })
 export const StyledLink = styled('a', {
+  textDecoration: 'none',
   '&:visited': {
-    color: 'black',
+    color: '$primary600',
   },
   '&:focus': {
-    color: 'black',
+    color: '$primary600',
   },
   '&:active': {
-    color: 'black',
+    color: '$primary600',
   },
 })
