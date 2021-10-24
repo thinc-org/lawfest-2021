@@ -67,11 +67,10 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
 
     if (data['type'] === 'menu')
       content = (
-        <Selectors onClick={(i: any) => this.handleClick(i)}></Selectors>
+        <Selectors onClick={(i: any) => this.setState({status:i})}></Selectors>
       )
     else if (data['type'] === 'text') {
       content = (
-        <div style={{height:'100vh'}}>
 
         <ContentContainer onClick={()=>this.setState({status:data['next']})}>
             <StyledText>{data['text']}</StyledText>
@@ -87,7 +86,6 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
               <TextWithLine>แตะเพื่อไปต่อ</TextWithLine>
             </div>
           </ContentContainer>
-          </div>
       )
     }
     else if (data['type'] === 'others') {
@@ -127,9 +125,5 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
     )
   }
 
-  handleClick(i: any) {
-    //console.log("click "+i)
-    this.setState({ status: i })
-  }
 }
 export default Exhibition
