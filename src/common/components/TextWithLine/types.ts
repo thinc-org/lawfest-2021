@@ -1,3 +1,7 @@
 import { StyledText } from '../Typography'
 
-export type TextWithLineProps = React.ComponentProps<typeof StyledText>
+export interface TextWithLineProps
+  extends React.ComponentProps<typeof StyledText> {
+  leftLineColor?: string
+  rightLineColor?: string
+}

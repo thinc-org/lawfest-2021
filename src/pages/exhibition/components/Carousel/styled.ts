@@ -6,3 +6,9 @@ export const Container = styled('div', {
   alignItems: 'center',
   maxWidth: '100vw',
 })
+
+export const CarouselContainer = styled('div', {
+  display: 'block',
+  maxWidth: '70vw',
+  marginTop: '23px',
+})

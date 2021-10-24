@@ -2,7 +2,7 @@ import { styled } from 'common/config'
 
 export const Container = styled('div', {
   gap: '15px',
-  padding: '0 10px',
+  padding: '10px',
   variants: {
     imagePosition: {
       top: {
@@ -16,5 +16,11 @@ export const Container = styled('div', {
   },
   defaultVariants: {
     imagePosition: 'top',
+  },
+})
+
+export const ArrowContainer = styled('div', {
+  '&:disabled': {
+    display: 'none',
   },
 })
