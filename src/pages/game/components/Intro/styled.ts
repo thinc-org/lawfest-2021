@@ -5,9 +5,6 @@ const KeyframeMain = keyframes({
     transform: 'scale(1)',
     opacity: 0.2,
   },
-  '20%': {
-    transform: 'scale(2)',
-  },
   '80%': {
     opacity: 1,
   },
@@ -20,9 +17,6 @@ const KeyframeBottomRight = keyframes({
   '0%': {
     transform: 'scale(1)',
     opacity: 1,
-  },
-  '20%': {
-    transform: 'scale(2)',
   },
   '80%': {
     opacity: 0.4,
@@ -38,9 +32,6 @@ const KeyframeTopLeft = keyframes({
     transform: 'scale(1)',
     opacity: 1,
   },
-  '20%': {
-    transform: 'scale(5)',
-  },
   '80%': {
     opacity: 0.8,
   },
@@ -54,9 +45,6 @@ const KeyframeBottomLeft = keyframes({
   '0%': {
     transform: 'scale(1)',
     opacity: 1,
-  },
-  '20%': {
-    transform: 'scale(2)',
   },
   '100%': {
     opacity: 0,
