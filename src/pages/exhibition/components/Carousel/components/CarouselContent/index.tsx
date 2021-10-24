@@ -24,8 +24,8 @@ const CarouselContent = (props: ICarouselContent) => {
             <br />
           </>
         ))}
-        {contentRefs && <Refs title="เนื้อหา: " refs={contentRefs} />}
-        {imageRefs && <Refs title="ภาพ: " refs={imageRefs} />}
+        {imageRefs && <Refs title="ภาพ : " refs={imageRefs} />}
+        {contentRefs && <Refs title="อ้างอิง : " refs={contentRefs} />}
       </div>
     </Container>
   )
