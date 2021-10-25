@@ -7,12 +7,12 @@ export const Refs = (props: RefsProps) => {
     <RefConatainer>
       {title}
       {refs.map((ref, idx) => (
-        <>
+        <span key={idx}>
           <StyledLink href={ref.url} key={idx}>
             {ref.text}
           </StyledLink>
           {idx !== refs.length - 1 && ', '}
-        </>
+        </span>
       ))}
     </RefConatainer>
   )
