@@ -1,37 +1,25 @@
 import TextWithLine from 'common/components/TextWithLine'
 import { StyledText } from 'common/components/Typography'
 import { WhatIsHope } from 'common/constant/ExhibitionContent/WhatIsHope'
-import React, { useState } from 'react'
+import React from 'react'
 import { CarouselContainer, Container } from './styled'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import CarouselContent from './components/CarouselContent'
-import { NextArrow } from './components/NextArrow'
-import { PrevArrow } from './components/PrevArrow'
 import Button from 'common/components/Button'
 import { useHistory } from 'react-router'
+import Title from '../Title'
+import useCarousel from './hooks/useCarousel'
 
 const Carousel = () => {
   const { quote, name, contents } = WhatIsHope
-  const [currentSlide, setSlide] = useState(0)
   const history = useHistory()
-
-  const carouselSettings = {
-    dots: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    afterChange: (current: number) => {
-      setSlide(current)
-    },
-  }
+  const { carouselSettings, currentSlide } = useCarousel()
 
   return (
     <Container>
+      <Title>What is Hope</Title>
       <StyledText mobileVariant="title2" css={{ color: '$primary800' }}>
         {quote}
       </StyledText>
@@ -44,6 +32,8 @@ const Carousel = () => {
       >
         {name}
       </TextWithLine>
+
+      {/* Carousel */}
       <CarouselContainer>
         <Slider {...carouselSettings}>
           {contents.map((content, idx) => (
@@ -51,6 +41,8 @@ const Carousel = () => {
           ))}
         </Slider>
       </CarouselContainer>
+
+      {/* Back to home button */}
       {currentSlide === contents.length - 1 && (
         <Button
           variant="secondary"

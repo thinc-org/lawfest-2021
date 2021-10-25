@@ -17,12 +17,10 @@ const CarouselContent = (props: ICarouselContent) => {
       )}
       <div>
         {text.split('\n').map((line, idx) => (
-          <>
-            <StyledText mobileVariant="body" key={idx}>
-              {line}
-            </StyledText>
+          <div key={idx}>
+            <StyledText mobileVariant="body">{line}</StyledText>
             <br />
-          </>
+          </div>
         ))}
         {imageRefs && <Refs title="ภาพ : " refs={imageRefs} />}
         {contentRefs && <Refs title="อ้างอิง : " refs={contentRefs} />}
