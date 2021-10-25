@@ -7,7 +7,11 @@ const Title = ({ children }: TitleProps) => {
   return (
     <TitleBackground>
       <TitleContainer>
-        <StyledText mobileVariant="title1" css={{ color: 'white' }}>
+        <StyledText
+          variant="h1"
+          mobileVariant={{ '@md': 'title1' }}
+          css={{ color: 'white' }}
+        >
           {children}
         </StyledText>
       </TitleContainer>

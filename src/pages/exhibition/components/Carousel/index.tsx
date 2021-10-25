@@ -1,8 +1,7 @@
 import TextWithLine from 'common/components/TextWithLine'
-import { StyledText } from 'common/components/Typography'
 import { WhatIsHope } from 'common/constant/ExhibitionContent/WhatIsHope'
 import React from 'react'
-import { CarouselContainer, Container } from './styled'
+import { CarouselContainer, Container, NameStyle, Quote } from './styled'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -20,15 +19,21 @@ const Carousel = () => {
   return (
     <Container>
       <Title>What is Hope</Title>
-      <StyledText mobileVariant="title2" css={{ color: '$primary800' }}>
+      <Quote
+        variant="h3"
+        mobileVariant={{
+          '@md': 'title2',
+        }}
+      >
         {quote}
-      </StyledText>
+      </Quote>
 
       <TextWithLine
-        mobileVariant="caption2"
-        leftLineColor="linear-gradient(270deg, #FBC55C 0%, #505B89 100%)"
-        rightLineColor="linear-gradient(270deg, #505B89 0%, #FBC55C 100%)"
-        css={{ color: '#505B89' }}
+        variant="sub1"
+        mobileVariant={{
+          '@md': 'caption2',
+        }}
+        {...NameStyle}
       >
         {name}
       </TextWithLine>

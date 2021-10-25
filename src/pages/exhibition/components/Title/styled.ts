@@ -5,15 +5,22 @@ export const TitleBackground = styled('div', {
   backgroundImage: `url(${background})`,
   width: 'max-content',
   backgroundSize: '100% 100%',
-  padding: '42px 20px 25px 20px',
+  padding: '90px 50px 50px 50px',
   display: 'flex',
   justifyContent: 'center',
+  '@md': {
+    padding: '42px 20px 25px 20px',
+  },
 })
 export const TitleContainer = styled('div', {
   backgroundColor: '#00000080',
   borderRadius: '20px',
-  padding: '0 20px',
+  padding: '0 50px',
   position: 'relative',
+
+  '@md': {
+    padding: '0 20px',
+  },
 
   // Border
   '&::before': {
