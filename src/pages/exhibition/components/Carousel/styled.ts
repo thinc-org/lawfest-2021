@@ -7,6 +7,7 @@ export const Container = styled('div', {
   flexDirection: 'column',
   alignItems: 'center',
   maxWidth: '100vw',
+  paddingBottom: '50px',
 })
 
 export const CarouselContainer = styled('div', {
