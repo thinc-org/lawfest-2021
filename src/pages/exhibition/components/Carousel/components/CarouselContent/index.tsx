@@ -2,17 +2,17 @@ import { StyledText } from 'common/components/Typography'
 import { ICarouselContent } from 'common/constant/ExhibitionContent/types'
 import React from 'react'
 import { Refs } from './components/Refs'
-import { Container } from './styled'
+import { Container, StyledImage } from './styled'
 
 const CarouselContent = (props: ICarouselContent) => {
   const { text, imageUrl, imagePosition, contentRefs, imageRefs } = props
   return (
     <Container imagePosition={imagePosition}>
       {imageUrl && (
-        <img
+        <StyledImage
           src={`images/exhibition/${imageUrl}`}
           alt=""
-          style={{ width: '100%', height: '100%' }}
+          imagePosition={imagePosition}
         />
       )}
       <div>

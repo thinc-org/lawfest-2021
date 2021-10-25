@@ -24,3 +24,19 @@ export const ArrowContainer = styled('div', {
     display: 'none',
   },
 })
+
+export const StyledImage = styled('img', {
+  width: '100%',
+  height: '100%',
+  variants: {
+    imagePosition: {
+      top: {},
+      left: {
+        width: '30%',
+        '@sm': {
+          width: '40%',
+        },
+      },
+    },
+  },
+})
