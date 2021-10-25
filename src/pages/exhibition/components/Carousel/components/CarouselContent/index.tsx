@@ -18,7 +18,9 @@ const CarouselContent = (props: ICarouselContent) => {
       <div>
         {text.split('\n').map((line, idx) => (
           <div key={idx}>
-            <StyledText mobileVariant="body">{line}</StyledText>
+            <StyledText variant="body1" mobileVariant={{ '@md': 'body' }}>
+              {line}
+            </StyledText>
             <br />
           </div>
         ))}
