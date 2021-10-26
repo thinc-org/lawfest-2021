@@ -8,6 +8,7 @@ import Multiplechoice from './components/Multiplechoice'
 import SilderPage from './components/SliderPage'
 import TextWithLine from 'common/components/TextWithLine'
 import InputPage from './components/InputPage'
+import ImagePage from './components/ImagePage'
 
 class Exhibition extends React.Component<{}, { status: 0 }> {
   static data = {
@@ -38,7 +39,7 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
     },
     7: {
       type: 'multipleChoice',
-      next: 7,
+      next: 11,
       header: 'What is Hope?',
       choiceList: ['ตัวเอง', 'เพื่อน', 'จะ F ได้ไง ก็ถอนกันหมด'],
     },
@@ -57,6 +58,18 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
       type: 'textArea',
       str: 'มาสาธยายวิธีรอดหน่อยสิ',
       next: 10,
+    },
+    11: {
+      type: 'imagePage',
+      header: 'What is Hope?',
+      subheader: 'Where there is hope, there is life',
+      name: 'ANNE FRANK',
+      imgURL: '/images/01.jpg',
+      content:
+        'ก็แหม...เล่นไปลงวิชายากๆ เรียนไปได้ 2 วัน จาก Online กายก็ไป On-bed เฉยเลย จะไม่ F ได้อย่างไร แต่อย่าได้กังวลไป ถ้าถอนทันก็สิ้นเรื่อง',
+      imgRef: 'placeholder',
+      dataRef: 'placeholder',
+      next: 11,
     },
   }
 
@@ -121,6 +134,19 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
           header={data['header']}
           str={data['str']}
           onClick={() => this.setState({ status: data['next'] })}
+        />
+      )
+    } else if (data['type'] === 'imagePage') {
+      content = (
+        <ImagePage
+          onClick={() => this.setState({ status: data['next'] })}
+          header={data['header']}
+          subheader={data['subheader']}
+          name={data['name']}
+          imgURL={data['imgURL']}
+          content={data['content']}
+          imgRef={data['imgRef']}
+          dataRef={data['dataRef']}
         />
       )
     }
