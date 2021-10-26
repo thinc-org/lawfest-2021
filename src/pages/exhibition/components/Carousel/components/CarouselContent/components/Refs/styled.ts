@@ -9,6 +9,7 @@ export const RefConatainer = styled('div', {
 })
 export const StyledLink = styled('a', {
   textDecoration: 'none',
+  color: '$primary600',
   '&:visited': {
     color: '$primary600',
   },

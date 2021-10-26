@@ -12,6 +12,7 @@ export const TitleBackground = styled('div', {
     padding: '42px 20px 25px 20px',
   },
 })
+
 export const TitleContainer = styled('div', {
   backgroundColor: '#00000080',
   borderRadius: '20px',
@@ -35,7 +36,7 @@ export const TitleContainer = styled('div', {
     padding: '5px',
     '-webkit-mask':
       'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
-    '-webkit-mask-composite': 'destination-out',
+    '-webkit-mask-composite': 'xor',
     'mask-composite': 'exclude',
   },
 })
