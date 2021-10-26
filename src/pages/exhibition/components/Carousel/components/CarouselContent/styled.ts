@@ -26,11 +26,16 @@ export const ArrowContainer = styled('div', {
 })
 
 export const StyledImage = styled('img', {
-  width: '100%',
   height: '100%',
+  margin: 'auto',
   variants: {
     imagePosition: {
-      top: {},
+      top: {
+        width: 'max(50%, 300px)',
+        '@md': {
+          width: '100%',
+        },
+      },
       left: {
         width: '30%',
         '@sm': {
