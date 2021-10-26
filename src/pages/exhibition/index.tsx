@@ -9,6 +9,8 @@ import SilderPage from './components/SliderPage'
 import TextWithLine from 'common/components/TextWithLine'
 import InputPage from './components/InputPage'
 import ImagePage from './components/ImagePage'
+import Div100vh from 'react-div-100vh'
+import { Link } from 'react-router-dom'
 
 class Exhibition extends React.Component<{}, { status: 0 }> {
   static data = {
@@ -80,7 +82,6 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
   render() {
     var content
     const data: any = Exhibition.data[this.state.status]
-
     if (data['type'] === 'menu')
       content = (
         <Selectors
@@ -151,29 +152,29 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
       )
     }
     return (
-      <div
+      <Div100vh
         style={{
           backgroundColor: '#f1e1c7',
-          height: '100vh',
-          position: 'relative',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
-        <img
-          src={home}
-          width="30px"
-          onClick={() => this.setState({ status: 0 })}
-          alt="home-icon"
-          style={{
-            paddingTop: '5px',
-            paddingLeft: '10px',
-            position: 'absolute',
-          }}
-        ></img>
-        {content}
-        <div style={{ position: 'absolute', bottom: '0', width: '100%' }}>
-          <Footer />
-        </div>
-      </div>
+        <Link to="/">
+          <img
+            src={home}
+            width="30px"
+            alt="home-icon"
+            style={{
+              marginTop: '15px',
+              marginLeft: '15px',
+              position: 'absolute',
+            }}
+          />
+        </Link>
+        <div style={{ flexGrow: 1, marginBottom: '20px' }}>{content}</div>
+        <Footer />
+      </Div100vh>
     )
   }
 }

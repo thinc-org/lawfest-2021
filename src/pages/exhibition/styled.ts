@@ -1,24 +1,11 @@
-import {styled} from 'common/config'
-
-export const SelectorText = styled('div', {
-  color: '$secondary900',
-  fontSize: '20px',
-  fontWeight: 'bold',
-  fontFamily: '$Mitr',
-  textAlign:'center',
-  cursor: 'pointer',
-  userSelect: 'none',
-  '@sm': {
-    fontSize: '16px',
-  },
-})
+import { styled } from 'common/config'
 
 export const StyledText = styled('div', {
   color: 'black',
   fontSize: '20px',
   fontWeight: 'bold',
   fontFamily: '$Mitr',
-  textAlign:'center',
+  textAlign: 'center',
   cursor: 'pointer',
   userSelect: 'none',
   '@sm': {
@@ -27,7 +14,7 @@ export const StyledText = styled('div', {
   },
 })
 
-export const ContentContainer = styled('div',{
+export const ContentContainer = styled('div', {
   height: '100vh',
   display: 'flex',
   justifyContent: 'center',
@@ -35,7 +22,7 @@ export const ContentContainer = styled('div',{
   flexDirection: 'column',
 })
 
-export const QuoteContainer = styled('div',{
+export const QuoteContainer = styled('div', {
   paddingLeft: '20%',
   paddingTop: '2%',
   display: 'flex',
