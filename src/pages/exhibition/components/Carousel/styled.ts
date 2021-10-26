@@ -13,10 +13,9 @@ export const Container = styled('div', {
 export const CarouselContainer = styled('div', {
   display: 'block',
   maxWidth: '50vw',
-  marginTop: '23px',
+  marginTop: '16px',
   '@md': {
     maxWidth: '70vw',
-    marginTop: '16px',
   },
 })
 
