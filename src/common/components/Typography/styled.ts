@@ -45,7 +45,7 @@ export const StyledText = styled('div', {
         fontFamily: '$Mitr',
       },
       body1: {
-        fontSize: '$4',
+        fontSize: '1.125rem',
         fontWeight: '$regular',
         fontFamily: '$ChulaCharas',
       },
