@@ -10,7 +10,7 @@ export const AGE_DIALOGUE: { [x: string]: IScene } = {
     dialog: [
       {
         name: 'แปะ',
-        text: '“เป็นวัยกำลังเติบโตเลยนะ”',
+        text: '“ เป็นวัยกำลังเติบโตเลยนะ ”',
         variant: 'secondary',
       },
     ],
@@ -24,7 +24,7 @@ export const AGE_DIALOGUE: { [x: string]: IScene } = {
     dialog: [
       {
         name: 'แปะ',
-        text: '“เป็นวัยกำลังฝันเลยนะ”',
+        text: '“ เป็นวัยกำลังฝันเลยนะ ”',
         variant: 'secondary',
       },
     ],
@@ -38,7 +38,7 @@ export const AGE_DIALOGUE: { [x: string]: IScene } = {
     dialog: [
       {
         name: 'แปะ',
-        text: '“เป็นวัยกำลังเผชิญโลกเลยนะ”',
+        text: '“ เป็นวัยกำลังเผชิญโลกเลยนะ ”',
         variant: 'secondary',
       },
     ],
@@ -52,7 +52,7 @@ export const AGE_DIALOGUE: { [x: string]: IScene } = {
     dialog: [
       {
         name: 'แปะ',
-        text: '“เป็นวัยกำลังไล่ตามสิ่งที่เคยฝันเลยนะ”',
+        text: '“ เป็นวัยกำลังไล่ตามสิ่งที่เคยฝันเลยนะ ”',
         variant: 'secondary',
       },
     ],
@@ -66,7 +66,7 @@ export const AGE_DIALOGUE: { [x: string]: IScene } = {
     dialog: [
       {
         name: 'แปะ',
-        text: '“เป็นวัยที่ก้าวผ่านความเปลี่ยนแปลงมามากมายเลยสินะ”',
+        text: '“ เป็นวัยที่ก้าวผ่านความเปลี่ยนแปลงมามากมายเลยสินะ ”',
         variant: 'secondary',
       },
     ],

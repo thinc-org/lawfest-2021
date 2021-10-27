@@ -15,7 +15,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
     bgImageSrc: 'zoom_in_author',
     isStoredData: false,
     nextScene: 'before-shop-dialogue-delay',
-    question: 'จะทำอย่างไรกับเหตุการณ์ที่เกิดขึ้น ?',
+    question: '',
     choices: [
       {
         text: 'ชวนแปะคุย',
@@ -71,7 +71,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
       },
       {
         name: 'แปะ',
-        text: '“ ถึงจะไม่เจริญเท่าที่นี่ แต่ก็คงพอมีช่องทางทำมาหากิน อยู่บ้าง ”',
+        text: '“ ถึงจะไม่เจริญเท่าที่นี่ แต่ก็คงพอมีช่องทางทำมาหากินอยู่บ้าง ”',
         variant: 'secondary',
       },
       {
@@ -116,7 +116,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
     dialog: [
       {
         name: 'แปะ',
-        text: '“เดี๋ยวแปะไปหยิบผ้ามาให้เช็ดดีกว่า เปียกไปหมดเลยนี่ ”',
+        text: '“ เดี๋ยวแปะไปหยิบผ้ามาให้เช็ดดีกว่า เปียกไปหมดเลยนี่ ”',
         variant: 'secondary',
       },
     ],
@@ -129,8 +129,8 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
     nextScene: 'towel-pick',
     dialog: [
       {
-        name: 'ผู้ประกาศข่าว',
-        text: '“... รายงานสดจากหน้า…. การชุมนุมของ… เพื่อเรียกร้อง….”',
+        name: 'เสียงจากโทรทัศน์',
+        text: '“ ... รายงานสดจากหน้า…. การชุมนุมของ… เพื่อเรียกร้อง…. ”',
         variant: 'secondary',
       },
     ],
@@ -150,26 +150,26 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
     isStoredData: true,
     dataKey: 'age',
     nextScene: '',
-    question: '"ว่าแต่เราอายุเท่าไหร่ล่ะ ?"',
+    question: '" ว่าแต่เราอายุเท่าไหร่ล่ะ ? "',
     choices: [
       {
         nextScene: 'age-1-12',
-        text: '1-12 ปี',
+        text: '1 - 12 ปี',
         value: '1-12',
       },
       {
         nextScene: 'age-13-24',
-        text: '13-24 ปี',
+        text: '13 - 24 ปี',
         value: '13-24',
       },
       {
         nextScene: 'age-25-40',
-        text: '25-40 ปี',
+        text: '25 - 40 ปี',
         value: '25-59',
       },
       {
         nextScene: 'age-41-60',
-        text: '41-59 ปี',
+        text: '41 - 59 ปี',
         value: '25-59',
       },
       {
@@ -188,32 +188,32 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
     dialog: [
       {
         name: 'แปะ',
-        text: '“แปะยังอยากเห็นประเทศไปได้ไกลกว่านี้”',
+        text: '“ แปะยังอยากเห็นประเทศไปได้ไกลกว่านี้ ”',
         variant: 'secondary',
       },
       {
         name: 'แปะ',
-        text: '“คิดว่าเขาเองก็เหมือนกัน”',
+        text: '“ คิดว่าเขาเองก็เหมือนกัน ”',
         variant: 'secondary',
       },
       {
         name: 'แปะ',
-        text: '“จากวันนั้นจนถึงวันนี้ เรามาได้ไกลเกินกว่าที่เคยคิดไว้ เสียอีก”',
+        text: '“ จากวันนั้นจนถึงวันนี้ เรามาได้ไกลเกินกว่าที่เคยคิดไว้ เสียอีก ”',
         variant: 'secondary',
       },
       {
         name: 'แปะ',
-        text: '“ถ้าเขายังอยู่ ไม่แน่นะ เราอาจจะได้จดทะเบียนสมรส ถูกต้องตามกฎหมายในชั่วชีวิตนี้ก็ได้”',
+        text: '“ ถ้าเขายังอยู่ ไม่แน่นะ เราอาจจะได้จดทะเบียนสมรสถูกต้องตามกฎหมายในชั่วชีวิตนี้ก็ได้ ”',
         variant: 'secondary',
       },
       {
         name: 'แปะ',
-        text: '“แปะเชื่อว่าเขาก็คงคิดเหมือนกัน”',
+        text: '“ แปะเชื่อว่าเขาก็คงคิดเหมือนกัน ”',
         variant: 'secondary',
       },
       {
         name: 'แปะ',
-        text: '“แล้วเราล่ะ”',
+        text: '“ แล้วเราล่ะ ”',
         variant: 'secondary',
       },
     ],
@@ -224,7 +224,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
     bgImageSrc: 'in_shop_brighter',
     nextScene: 'after-dream-dialogue',
     isStoredData: false,
-    question: '“มีฝันที่อยากจะเห็นมันเป็นจริงหรือเปล่า?”',
+    question: '“ มีฝันที่อยากจะเห็นมันเป็นจริงหรือเปล่า? ”',
   },
   'after-dream-dialogue': {
     type: 'dialog',

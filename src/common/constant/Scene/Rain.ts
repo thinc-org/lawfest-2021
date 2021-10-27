@@ -25,7 +25,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
     dialog: [
       {
         name: '$name',
-        text: '“อา… เดินไปทางไหนดี”',
+        text: '“ อา… เดินไปทางไหนดี ”',
         variant: 'primary',
       },
     ],
@@ -44,7 +44,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
       },
       {
         name: '$name',
-        text: '“เฮ้อ ไม่รอดอยู่ดี”',
+        text: '“ เฮ้อ ไม่รอดอยู่ดี ”',
         variant: 'primary',
       },
     ],
@@ -72,7 +72,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
       },
       {
         name: '$name',
-        text: '“หาที่หลบฝนดีกว่า”',
+        text: '“ หาที่หลบฝนดีกว่า ”',
         variant: 'primary',
       },
     ],
@@ -85,7 +85,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
     nextScene: 'rain-4',
     dialog: [
       {
-        name: 'ผู้นำทาง',
+        name: '',
         text: 'ซ่า',
         variant: 'secondary',
       },
@@ -100,7 +100,7 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
     dialog: [
       {
         name: 'ผู้นำทาง',
-        text: 'รถเมล์เก่า ๆ แล่นผ่านแอ่งน้ำขังริมถนน น้ำสกปรกกระเด็น เลอะตัวคุณ',
+        text: 'รถเมล์เก่า ๆ แล่นผ่านแอ่งน้ำขังริมถนน น้ำสกปรกกระเด็นเลอะตัวคุณ',
         variant: 'secondary',
       },
     ],
@@ -137,8 +137,8 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
         variant: 'secondary',
       },
       {
-        name: 'คนแปลกหน้า',
-        text: '“มาหลบฝนก่อนมา ๆ”',
+        name: '???',
+        text: '“ มาหลบฝนก่อนมา ๆ ”',
         variant: 'secondary',
       },
       {
