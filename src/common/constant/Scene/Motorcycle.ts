@@ -5,6 +5,13 @@ export const MOTORCYCLE_SCENE: { [x: string]: IScene } = {
     type: 'intro',
     bgType: 'color',
     bgColor: 0xe9dfde,
+    nextScene: 'before-name-input',
+    isStoredData: false,
+  },
+  'before-name-input': {
+    type: 'image-click',
+    bgType: 'color',
+    bgColor: 0xe9dfde,
     nextScene: 'name-input',
     isStoredData: false,
   },

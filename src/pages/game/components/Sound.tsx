@@ -7,11 +7,9 @@ function SoundController() {
   const { nowScene } = useMainController()
 
   useEffect(() => {
-    Loader.shared.onComplete.add(() => {
-      if (nowScene === 'name-input') {
-        sound.play('bg', { loop: true })
-      }
-    })
+    if (nowScene === 'name-input') {
+      if (!Loader.shared.loading) sound.play('bg', { loop: true })
+    }
   }, [nowScene])
 
   useEffect(() => {

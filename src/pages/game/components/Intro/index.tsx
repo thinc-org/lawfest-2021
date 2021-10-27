@@ -21,7 +21,11 @@ function Intro() {
   return (
     <LogoContainer
       css={{ overflow: 'hidden' }}
-      show={nowScene === 'intro' ? 'open' : 'close'}
+      show={
+        nowScene === 'intro' || nowScene === 'before-name-input'
+          ? 'open'
+          : 'close'
+      }
     >
       <LogoImage
         show={state >= 2 ? 'open' : 'close'}

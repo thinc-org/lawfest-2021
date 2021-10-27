@@ -59,7 +59,7 @@ function SceneController() {
       setSceneData(SCENE[nowScene])
     }
 
-    if (nowScene === 'name-input') {
+    if (nowScene === 'before-name-input') {
       setMode('in')
       setSceneData(SCENE[nowScene])
     }
