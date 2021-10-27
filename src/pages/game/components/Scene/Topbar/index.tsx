@@ -48,7 +48,7 @@ function Topbar(props: { sceneType: SceneType }) {
             css={{ color: '$text_white_primary' }}
             mobileVariant="callout"
           >
-            FB: fb.com/RaphiCU
+            FB: fb.com/LawChulaFest
           </StyledText>
         </TextContainer>
         <img src={LogoWhite} alt="logo_white"></img>
