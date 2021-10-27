@@ -14,7 +14,10 @@ function DelayTransition(props: IDelayTransitionProps) {
 
   return (
     <RootContainer>
-      <StyledText css={{ maxWidth: '250px' }} mobileVariant="title2">
+      <StyledText
+        css={{ maxWidth: '250px', color: 'DarkBlue' }}
+        mobileVariant="title2"
+      >
         {text || ''}
       </StyledText>
     </RootContainer>

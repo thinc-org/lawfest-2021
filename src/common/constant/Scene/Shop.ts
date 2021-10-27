@@ -229,7 +229,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
   'after-dream-dialogue': {
     type: 'dialog',
     bgType: 'image',
-    bgImageSrc: 'zoom_in_author',
+    bgImageSrc: 'in_shop_brighter',
     nextScene: 'before-raining-stop',
     isStoredData: false,
     dialog: [

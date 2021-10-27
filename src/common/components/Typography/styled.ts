@@ -120,9 +120,9 @@ export const StyledText = styled('div', {
       },
 
       callout: {
-        fontSize: '16px',
-        fontWeight: '$regular',
-        fontFamily: '$ChulaCharas',
+        fontSize: '12px',
+        fontWeight: '$light',
+        fontFamily: '$Mitr',
       },
 
       button: {

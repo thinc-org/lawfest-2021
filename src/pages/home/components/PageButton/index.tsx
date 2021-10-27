@@ -23,7 +23,7 @@ const PageButton = () => {
           }}
         >
           <StyledImage alt="game" src={gameIcon} />
-          <ButtonText>เข้าสู่เกมส์</ButtonText>
+          <ButtonText>เข้าสู่เกม</ButtonText>
         </StyledButton>
         <StyledButton
           onClick={() => {
