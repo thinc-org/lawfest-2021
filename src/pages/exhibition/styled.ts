@@ -13,21 +13,3 @@ export const StyledText = styled('div', {
     marginBottom: '17px',
   },
 })
-
-export const ContentContainer = styled('div', {
-  height: '100vh',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexDirection: 'column',
-})
-
-export const QuoteContainer = styled('div', {
-  paddingLeft: '20%',
-  paddingTop: '2%',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexDirection: 'column',
-  fontSize: '12px',
-})

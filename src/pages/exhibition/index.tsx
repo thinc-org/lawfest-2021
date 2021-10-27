@@ -2,13 +2,12 @@ import 'App.css'
 import Selectors from './components/Selectors'
 import home from 'assets/pic/home.png'
 import React from 'react'
-import { ContentContainer, QuoteContainer, StyledText } from './styled'
 import Footer from 'common/components/Footer'
 import Multiplechoice from './components/Multiplechoice'
 import SilderPage from './components/SliderPage'
-import TextWithLine from 'common/components/TextWithLine'
 import InputPage from './components/InputPage'
 import ImagePage from './components/ImagePage'
+import Text from './components/Text'
 import Div100vh from 'react-div-100vh'
 import { Link } from 'react-router-dom'
 
@@ -83,40 +82,13 @@ class Exhibition extends React.Component<{}, { status: 0 }> {
     var content
     const data: any = Exhibition.data[this.state.status]
     if (data['type'] === 'menu')
-      content = (
-        <Selectors
-          onClick={(i: any) => this.setState({ status: i })}
-        ></Selectors>
-      )
+      content = <Selectors onClick={(i: any) => this.setState({ status: i })} />
     else if (data['type'] === 'text') {
       content = (
-        <ContentContainer
+        <Text
+          {...data}
           onClick={() => this.setState({ status: data['next'] })}
-        >
-          <StyledText>{data['text']}</StyledText>
-          <p></p>
-          {data['quoteOwner'] ? (
-            <QuoteContainer>
-              <p style={{ fontWeight: 'bold', lineHeight: 0 }}>
-                {data['quoteOwner']}
-              </p>
-              <p style={{ fontWeight: 'normal', lineHeight: 0 }}>
-                {data['quoteOwnerRef']}
-              </p>
-            </QuoteContainer>
-          ) : null}
-
-          <div
-            style={{
-              width: '70%',
-              marginTop: '5%',
-              display: 'flex',
-              justifyContent: 'center',
-            }}
-          >
-            <TextWithLine>แตะเพื่อไปต่อ</TextWithLine>
-          </div>
-        </ContentContainer>
+        />
       )
     } else if (data['type'] === 'others') {
       //console.log(this.state.status)
