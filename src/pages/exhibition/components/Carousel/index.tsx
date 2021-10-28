@@ -1,5 +1,4 @@
 import TextWithLine from 'common/components/TextWithLine'
-import { WhatIsHope } from 'common/constant/ExhibitionContent/WhatIsHope'
 import React from 'react'
 import { CarouselContainer, Container, NameStyle, Quote } from './styled'
 import Slider from 'react-slick'
@@ -10,9 +9,10 @@ import Button from 'common/components/Button'
 import { useHistory } from 'react-router'
 import Title from '../Title'
 import useCarousel from './hooks/useCarousel'
+import { ICarousel } from 'common/constant/ExhibitionContent/types'
 
-const Carousel = () => {
-  const { quote, name, contents } = WhatIsHope
+const Carousel = (props: ICarousel) => {
+  const { quote, quoteOwner, contents } = props
   const history = useHistory()
   const { carouselSettings, currentSlide } = useCarousel()
 
@@ -35,7 +35,7 @@ const Carousel = () => {
         }}
         {...NameStyle}
       >
-        {name}
+        {quoteOwner}
       </TextWithLine>
 
       {/* Carousel */}

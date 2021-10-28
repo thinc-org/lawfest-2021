@@ -1,9 +1,32 @@
-export interface ICarousel {
-  quote: string
-  name: string
-  contents: ICarouselContent[]
+export interface IContent {
+  type: 'text' | 'multipleChoice' | 'slider' | 'textArea' | 'carousel'
+  data: IText | IMultipleChoice | ITextArea | ISlider | ICarousel
 }
 
+export interface IText {
+  quote: string
+  quoteOwner?: string
+  quoteOwnerRef?: string
+}
+
+export interface IMultipleChoice {
+  choiceList: string[]
+}
+
+export interface ITextArea {
+  question: string
+}
+
+export interface ISlider {
+  question: string
+  quote: string
+  quoteOwner: string
+}
+export interface ICarousel {
+  quote: string
+  quoteOwner: string
+  contents: ICarouselContent[]
+}
 export interface ICarouselContent {
   text: string
   imageUrl?: string

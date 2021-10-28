@@ -5,7 +5,7 @@ import { ContentContainer, QuoteContainer } from './styled'
 import { TextProps } from './types'
 
 const Text = (props: TextProps) => {
-  const { text, quoteOwner, quoteOwnerRef, onClick } = props
+  const { quote, quoteOwner, quoteOwnerRef, onClick } = props
   return (
     <ContentContainer onClick={onClick}>
       <StyledText
@@ -13,7 +13,7 @@ const Text = (props: TextProps) => {
         variant="h1"
         css={{ textAlign: 'center' }}
       >
-        {text}
+        {quote}
       </StyledText>
       {quoteOwner && (
         <QuoteContainer>

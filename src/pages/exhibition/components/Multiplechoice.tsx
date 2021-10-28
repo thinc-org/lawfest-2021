@@ -4,7 +4,7 @@ import Choice from 'pages/exhibition/components/Choice'
 import Button from 'common/components/Button'
 import React from 'react'
 class Multiplechoice extends React.Component<
-  { onClick: any; choiceList: Array<String>; header: string },
+  { onClick: any; choiceList: Array<String>; title: string },
   { selected: 10 }
 > {
   constructor(props: any) {
@@ -37,7 +37,7 @@ class Multiplechoice extends React.Component<
           flexDirection: 'column',
         }}
       >
-        <TextWithLine mobileVariant="subhead">{this.props.header}</TextWithLine>
+        <TextWithLine mobileVariant="subhead">{this.props.title}</TextWithLine>
         <p></p>
         {choices}
         <p></p>

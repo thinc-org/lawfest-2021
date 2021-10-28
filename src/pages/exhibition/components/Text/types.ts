@@ -1,6 +1,6 @@
 export interface TextProps {
-  text: string
-  quoteOwner: string
-  quoteOwnerRef: string
+  quote: string
+  quoteOwner?: string
+  quoteOwnerRef?: string
   onClick?: () => void
 }
