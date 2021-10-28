@@ -10,6 +10,7 @@ export const RootContainer = styled(Div100vh, {
   alignItems: 'center',
   flexDirection: 'column',
   backgroundColor: '$black950',
+  userSelect: 'none',
 })
 
 export const GameContainer = styled('div', {
