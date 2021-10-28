@@ -1,13 +1,10 @@
 import 'App.css'
-import home from 'assets/pic/home.png'
 import React from 'react'
-import Footer from 'common/components/Footer'
 import Multiplechoice from './components/Multiplechoice'
 import SilderPage from './components/SliderPage'
 import InputPage from './components/InputPage'
 import Text from './components/Text'
-import Div100vh from 'react-div-100vh'
-import { Link, Redirect, useParams } from 'react-router-dom'
+import { Redirect, useParams } from 'react-router-dom'
 import {
   ICarousel,
   IMultipleChoice,
@@ -18,6 +15,7 @@ import {
 import Carousel from './components/Carousel'
 import useExhibitionData from './hooks/useExhibitionData'
 import { IExhibitionParams } from './types'
+import ExhibitionLayout from '../components/ExhibitionLayout'
 
 const Exhibition = () => {
   const { pageType } = useParams() as IExhibitionParams
@@ -64,30 +62,6 @@ const Exhibition = () => {
       content = <Carousel {...(contentData as ICarousel)} />
   }
 
-  return (
-    <Div100vh
-      style={{
-        backgroundColor: '#f1e1c7',
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-      }}
-    >
-      <Link to="/">
-        <img
-          src={home}
-          width="30px"
-          alt="home-icon"
-          style={{
-            marginTop: '15px',
-            marginLeft: '15px',
-            position: 'absolute',
-          }}
-        />
-      </Link>
-      <div style={{ flexGrow: 1 }}>{content}</div>
-      <Footer />
-    </Div100vh>
-  )
+  return <ExhibitionLayout>{content}</ExhibitionLayout>
 }
 export default Exhibition

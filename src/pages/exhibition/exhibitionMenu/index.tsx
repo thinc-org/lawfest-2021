@@ -2,6 +2,7 @@ import 'App.css'
 import choice1 from 'assets/pic/Activity1.png'
 import choice2 from 'assets/pic/Activity2.png'
 import choice3 from 'assets/pic/Activity3.png'
+import ExhibitionLayout from '../components/ExhibitionLayout'
 import {
   SelectorContainer,
   SelectorsConatiner,
@@ -31,17 +32,27 @@ function Selector(props: { no: number; name: string; link: string }) {
 
 function Selectors(props: { onClick: any }) {
   return (
-    <div style={{ height: '100%', display: 'flex' }}>
-      <SelectorsConatiner>
-        <Selector name="What is Hope?" no={0} link="/exhibition/what-is-hope" />
-        <Selector name="Hope ignited" no={1} link="/exhibition/hope-ignited" />
-        <Selector
-          name="Hopeless but Hoping"
-          no={2}
-          link="/exhibition/hopeless-but-hoping"
-        />
-      </SelectorsConatiner>
-    </div>
+    <ExhibitionLayout>
+      <div style={{ height: '100%', display: 'flex' }}>
+        <SelectorsConatiner>
+          <Selector
+            name="What is Hope?"
+            no={0}
+            link="/exhibition/what-is-hope"
+          />
+          <Selector
+            name="Hope ignited"
+            no={1}
+            link="/exhibition/hope-ignited"
+          />
+          <Selector
+            name="Hopeless but Hoping"
+            no={2}
+            link="/exhibition/hopeless-but-hoping"
+          />
+        </SelectorsConatiner>
+      </div>
+    </ExhibitionLayout>
   )
 }
 
