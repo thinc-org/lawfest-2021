@@ -12,8 +12,17 @@ export const MOTORCYCLE_SCENE: { [x: string]: IScene } = {
     type: 'image-click',
     bgType: 'color',
     bgColor: 0xe9dfde,
+    nextScene: 'sound-warning',
+    isStoredData: false,
+  },
+  'sound-warning': {
+    type: 'delay',
+    bgType: 'color',
+    bgColor: 0xe9dfde,
     nextScene: 'name-input',
     isStoredData: false,
+    delay: 5000,
+    text: 'อย่าลืมเปิดเสียงเพื่อสัมผัสประสบการณ์เต็มรูปแบบ',
   },
   'name-input': {
     type: 'input',
