@@ -46,7 +46,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
     dialog: [
       {
         name: '$name',
-        text: '“ ช่วงนี้เป็นไงบ้างแปะ ขายดีไหม? ”',
+        text: '“ ช่วงนี้เป็นไงบ้างแปะ ขายดีไหม ? ”',
         variant: 'primary',
       },
       {
@@ -61,7 +61,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
       },
       {
         name: '$name',
-        text: '“ อ้าว แล้วแปะจะไปทำอะไรต่อล่ะ ”',
+        text: '“ อ้าว แล้วแปะจะไปทำอะไรต่อล่ะ ? ”',
         variant: 'primary',
       },
       {
@@ -198,7 +198,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
       },
       {
         name: 'แปะ',
-        text: '“ จากวันนั้นจนถึงวันนี้ เรามาได้ไกลเกินกว่าที่เคยคิดไว้ เสียอีก ”',
+        text: '“ จากวันนั้นจนถึงวันนี้ เรามาได้ไกลเกินกว่าที่เคยคิดไว้เสียอีก ”',
         variant: 'secondary',
       },
       {
@@ -224,7 +224,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
     bgImageSrc: 'in_shop_brighter',
     nextScene: 'after-dream-dialogue',
     isStoredData: false,
-    question: '“ มีฝันที่อยากจะเห็นมันเป็นจริงหรือเปล่า? ”',
+    question: '“ มีฝันที่อยากจะเห็นมันเป็นจริงหรือเปล่า ? ”',
   },
   'after-dream-dialogue': {
     type: 'dialog',

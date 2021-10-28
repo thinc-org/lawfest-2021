@@ -21,6 +21,20 @@ export const RAIN_SCENE: { [x: string]: IScene } = {
     bgColor: 0xe9dfde,
     bgImageSrc: 'footpath',
     isStoredData: false,
+    nextScene: 'walking-2-1',
+    dialog: [
+      {
+        name: '$name',
+        text: '“ อา… เดินไปทางไหนดี ”',
+        variant: 'primary',
+      },
+    ],
+  },
+  'walking-2-1': {
+    type: 'image-click',
+    bgType: 'image',
+    bgImageSrc: 'footpath',
+    isStoredData: false,
     nextScene: 'rain-1',
     dialog: [
       {

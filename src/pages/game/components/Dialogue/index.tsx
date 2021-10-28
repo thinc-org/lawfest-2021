@@ -15,9 +15,11 @@ const Dialogue = (props: DialogueProps) => {
 
   return (
     <DialogueContainer onClick={onDialogueClick}>
-      <NameContainer variant={variant}>
-        <StyledText mobileVariant="footnote">{parsingData(name)}</StyledText>
-      </NameContainer>
+      {name && (
+        <NameContainer variant={variant}>
+          <StyledText mobileVariant="footnote">{parsingData(name)}</StyledText>
+        </NameContainer>
+      )}
       <StyledText mobileVariant="body" css={{ textAlign: 'left' }}>
         {!isChanging && (
           <>
