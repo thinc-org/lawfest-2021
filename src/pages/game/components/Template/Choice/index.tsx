@@ -20,7 +20,7 @@ function ChoiceTemplate(props: IChoiceTemplate) {
   return (
     <RootContainer css={{ background: 'rgba(0, 0, 0, 0.5)' }}>
       <DialogueContainer>
-        <Question>{question}</Question>
+        {question && <Question>{question}</Question>}
         {choices.map((val, idx) => {
           return (
             <ChoiceButton
