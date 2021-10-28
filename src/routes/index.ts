@@ -21,7 +21,7 @@ const routes: RouteProps[] = [
     exact: true,
   },
   {
-    path: '/exhibition',
+    path: '/exhibition/:pageType',
     component: Exhibition,
     exact: true,
   },

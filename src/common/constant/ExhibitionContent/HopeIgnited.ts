@@ -1,23 +1,27 @@
 import { IContent } from './types'
 
-export const WhatIsHope: IContent[] = [
+export const HopeIgnited: IContent[] = [
   {
     type: 'text',
     data: {
-      quote: 'What is Hope?',
+      quote: 'Hope ignited',
     },
   },
   {
     type: 'text',
     data: {
-      quote: 'Where there is hope, there is life',
-      quoteOwner: 'Anne Frank',
-      quoteOwnerRef: 'JEWISH’S DIARIST DURING WW2',
+      quote: 'If justice takes place, there shall be hope.',
+      quoteOwner: 'Alberto Manguel',
+      quoteOwnerRef: 'Canadian novelist',
     },
   },
   {
-    type: 'multipleChoice',
-    data: { choiceList: ['ตัวเอง', 'เพื่อน', 'จะ F ได้ไง ก็ถอนกันหมด'] },
+    type: 'slider',
+    data: {
+      question: 'ตอนนี้ตังค์ของคุณมีมากแค่ไหน',
+      quote: 'If justice takes place, there shall be hope.',
+      quoteOwner: 'Alberto Manguel',
+    },
   },
   {
     type: 'carousel',
