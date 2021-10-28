@@ -1,6 +1,6 @@
 import 'App.css'
 import TextWithLine from 'common/components/TextWithLine'
-import Choice from 'pages/exhibition/components/Choice'
+import Choice from 'pages/exhibition/exhibitionContent/components/Choice'
 import Button from 'common/components/Button'
 import React from 'react'
 class Multiplechoice extends React.Component<

@@ -1,7 +1,7 @@
 import 'App.css'
 import TextWithLine from 'common/components/TextWithLine'
 import React from 'react'
-import { StyledText } from 'pages/exhibition/styled'
+import { StyledText } from '../styled'
 class ImagePage extends React.Component<{
   onClick: any
   header: string

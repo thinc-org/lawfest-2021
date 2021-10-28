@@ -1,4 +1,5 @@
 import { styled } from 'common/config'
+import { Link } from 'react-router-dom'
 
 export const SelectorText = styled('div', {
   color: '$secondary900',
@@ -35,12 +36,13 @@ export const TextConatainer = styled('div', {
   },
 })
 
-export const SelectorContainer = styled('div', {
+export const SelectorContainer = styled(Link, {
   display: 'flex',
   alignItems: 'center',
   flexDirection: 'column',
   flex: '1 1 0',
   cursor: 'pointer',
+  textDecoration: 'none',
 })
 
 export const SelectorsConatiner = styled('div', {

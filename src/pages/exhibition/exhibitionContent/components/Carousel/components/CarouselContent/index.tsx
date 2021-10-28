@@ -6,6 +6,7 @@ import { Container, StyledImage } from './styled'
 
 const CarouselContent = (props: ICarouselContent) => {
   const { text, imageUrl, imagePosition, contentRefs, imageRefs } = props
+  console.log(`images/exhibition/${imageUrl}`)
   return (
     <Container imagePosition={imagePosition}>
       {imageUrl && (

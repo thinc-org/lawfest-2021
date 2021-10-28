@@ -2,7 +2,7 @@ import 'App.css'
 import React, { useState } from 'react'
 import Slider from 'common/components/Slider'
 import TextWithLine from 'common/components/TextWithLine'
-import { StyledText } from 'pages/exhibition/styled'
+import { StyledText } from '../styled'
 import Button from 'common/components/Button'
 function SilderPage(props: {
   title: string

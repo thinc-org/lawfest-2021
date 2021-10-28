@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { StyledText } from 'common/components/Typography'
 import Footer from 'common/components/Footer'
-import Choice from 'pages/exhibition/components/Choice'
+import Choice from 'pages/exhibition/exhibitionContent/components/Choice'
 import { default as GameChoice } from 'pages/game/components/Choice'
 import Question from 'pages/game/components/Question'
 import Dialogue from 'pages/game/components/Dialogue'
