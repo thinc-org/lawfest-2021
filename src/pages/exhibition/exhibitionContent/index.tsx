@@ -8,6 +8,7 @@ import { Redirect, useParams } from 'react-router-dom'
 import {
   ICarousel,
   IMultipleChoice,
+  IParagraph,
   ISlider,
   IText,
   ITextArea,
@@ -16,6 +17,7 @@ import Carousel from './components/Carousel'
 import useExhibitionData from './hooks/useExhibitionData'
 import { IExhibitionParams } from './types'
 import ExhibitionLayout from '../components/ExhibitionLayout'
+import ParagraphPage from './components/ParagraphPage'
 
 const Exhibition = () => {
   const { pageType } = useParams() as IExhibitionParams
@@ -30,6 +32,9 @@ const Exhibition = () => {
   switch (type) {
     case 'text':
       content = <Text {...(contentData as IText)} onClick={changePage} />
+      break
+    case 'paragraph':
+      content = <ParagraphPage {...(contentData as IParagraph)} title={title} onClick = {changePage}/>
       break
     case 'multipleChoice':
       content = (

@@ -1,12 +1,16 @@
 export interface IContent {
-  type: 'text' | 'multipleChoice' | 'slider' | 'textArea' | 'carousel'
-  data: IText | IMultipleChoice | ITextArea | ISlider | ICarousel
+  type: 'text' | 'paragraph' | 'multipleChoice' | 'slider' | 'textArea' | 'carousel'
+  data: IText | IParagraph | IMultipleChoice | ITextArea | ISlider | ICarousel
 }
 
 export interface IText {
   quote: string
   quoteOwner?: string
   quoteOwnerRef?: string
+}
+
+export interface IParagraph {
+  content: string[]
 }
 
 export interface IMultipleChoice {
