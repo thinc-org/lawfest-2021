@@ -1,5 +1,5 @@
 import 'App.css'
-import { StyledText } from '../../styled'
+import { StyledText } from './styled'
 import { ParagraphProps } from './types'
 import { Refs } from '../Carousel/components/CarouselContent/components/Refs'
 const ParagraphPage = (props:ParagraphProps) => {
@@ -10,12 +10,11 @@ const ParagraphPage = (props:ParagraphProps) => {
 		contents.push(<StyledText>{i}</StyledText>)
 	}
 	return (
-	<div onClick = {onClick}
+	    <div onClick = {onClick}
         style={{
           height: '100%',
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center',
           flexDirection: 'column',
 		      marginLeft:'5%',
 		      marginRight:'5%',
