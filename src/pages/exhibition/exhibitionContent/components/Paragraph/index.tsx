@@ -1,12 +1,16 @@
 import 'App.css'
-import { StyledText } from '../styled'
-function ParagraphPage (props:{ onClick: any; content: Array<string>; title: string }) {
+import { StyledText } from '../../styled'
+import { ParagraphProps } from './types'
+import { Refs } from '../Carousel/components/CarouselContent/components/Refs'
+const ParagraphPage = (props:ParagraphProps) => {
+  const { content, contentRef, onClick } = props
+
 	var contents = []
-	for(let i of props.content){
+	for(let i of content){
 		contents.push(<StyledText>{i}</StyledText>)
 	}
 	return (
-	<div onClick = {props.onClick}
+	<div onClick = {onClick}
         style={{
           height: '100%',
           display: 'flex',
@@ -18,6 +22,7 @@ function ParagraphPage (props:{ onClick: any; content: Array<string>; title: str
         }}
       >
         {contents}
+        {contentRef && <Refs title="อ้างอิง : " refs={contentRef} />}
       </div>
     )
   }

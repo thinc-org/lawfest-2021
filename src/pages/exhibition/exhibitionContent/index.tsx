@@ -17,7 +17,7 @@ import Carousel from './components/Carousel'
 import useExhibitionData from './hooks/useExhibitionData'
 import { IExhibitionParams } from './types'
 import ExhibitionLayout from '../components/ExhibitionLayout'
-import ParagraphPage from './components/ParagraphPage'
+import ParagraphPage from './components/Paragraph'
 
 const Exhibition = () => {
   const { pageType } = useParams() as IExhibitionParams
@@ -34,7 +34,7 @@ const Exhibition = () => {
       content = <Text {...(contentData as IText)} onClick={changePage} />
       break
     case 'paragraph':
-      content = <ParagraphPage {...(contentData as IParagraph)} title={title} onClick = {changePage}/>
+      content = <ParagraphPage {...(contentData as IParagraph)} onClick = {changePage}/>
       break
     case 'multipleChoice':
       content = (
