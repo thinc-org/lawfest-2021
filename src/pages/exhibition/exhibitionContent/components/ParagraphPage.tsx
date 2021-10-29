@@ -6,20 +6,18 @@ function ParagraphPage (props:{ onClick: any; content: Array<string>; title: str
 		contents.push(<StyledText>{i}</StyledText>)
 	}
 	return (
-	<div
+	<div onClick = {props.onClick}
         style={{
           height: '100%',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           flexDirection: 'column',
-		  marginLeft:'5%',
-		  marginRight:'5%',
+		      marginLeft:'5%',
+		      marginRight:'5%',
         }}
       >
-        <p></p>
         {contents}
-        <p></p>
       </div>
     )
   }

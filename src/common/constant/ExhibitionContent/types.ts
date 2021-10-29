@@ -7,6 +7,7 @@ export interface IText {
   quote: string
   quoteOwner?: string
   quoteOwnerRef?: string
+  translation?: string
 }
 
 export interface IParagraph {

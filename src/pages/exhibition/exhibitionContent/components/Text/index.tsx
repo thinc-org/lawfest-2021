@@ -5,7 +5,7 @@ import { ContentContainer, QuoteContainer } from './styled'
 import { TextProps } from './types'
 
 const Text = (props: TextProps) => {
-  const { quote, quoteOwner, quoteOwnerRef, onClick } = props
+  const { quote, quoteOwner, quoteOwnerRef,translation, onClick } = props
   return (
     <ContentContainer onClick={onClick}>
       <StyledText
@@ -28,6 +28,16 @@ const Text = (props: TextProps) => {
             {quoteOwnerRef}
           </StyledText>
         </QuoteContainer>
+      )}
+      
+      {translation && (
+        <StyledText
+          mobileVariant={{ '@md': 'title2' }}
+          variant="h2"
+          css={{ textAlign: 'center' }}
+        >
+          {translation}
+        </StyledText>
       )}
 
       <TextWithLine
