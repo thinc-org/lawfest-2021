@@ -1,5 +1,5 @@
 import 'App.css'
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import Multiplechoice from './components/Multiplechoice'
 import SilderPage from './components/SliderPage'
 import InputPage from './components/InputPage'
@@ -18,10 +18,16 @@ import useExhibitionData from './hooks/useExhibitionData'
 import { IExhibitionParams } from './types'
 import ExhibitionLayout from '../components/ExhibitionLayout'
 import ParagraphPage from './components/Paragraph'
+import { FadeContainer, FadeIn, FadeOut } from './styled'
 
 const Exhibition = () => {
   const { pageType } = useParams() as IExhibitionParams
   const { type, contentData, changePage, title } = useExhibitionData(pageType)
+  const [isFadeIn, setFadeIn] = useState(true)
+
+  const triggerChangePage = useCallback(() => {
+    setFadeIn(false)
+  }, [])
 
   if (!type || !title) {
     return <Redirect to="/exhibition" />
@@ -31,16 +37,21 @@ const Exhibition = () => {
 
   switch (type) {
     case 'text':
-      content = <Text {...(contentData as IText)} onClick={changePage} />
+      content = <Text {...(contentData as IText)} onClick={triggerChangePage} />
       break
     case 'paragraph':
-      content = <ParagraphPage {...(contentData as IParagraph)} onClick = {changePage}/>
+      content = (
+        <ParagraphPage
+          {...(contentData as IParagraph)}
+          onClick={triggerChangePage}
+        />
+      )
       break
     case 'multipleChoice':
       content = (
         <Multiplechoice
           {...(contentData as IMultipleChoice)}
-          onClick={changePage}
+          onClick={triggerChangePage}
           title={title}
         />
       )
@@ -50,7 +61,7 @@ const Exhibition = () => {
         <InputPage
           {...(contentData as ITextArea)}
           title={title}
-          onClick={changePage}
+          onClick={triggerChangePage}
         />
       )
       break
@@ -59,14 +70,30 @@ const Exhibition = () => {
         <SilderPage
           {...(contentData as ISlider)}
           title={title}
-          onClick={changePage}
+          onClick={triggerChangePage}
         />
       )
       break
     case 'carousel':
-      content = <Carousel {...(contentData as ICarousel)} onClick={changePage} />
+      content = (
+        <Carousel {...(contentData as ICarousel)} onClick={triggerChangePage} />
+      )
   }
 
-  return <ExhibitionLayout>{content}</ExhibitionLayout>
+  return (
+    <ExhibitionLayout>
+      <FadeContainer
+        fadeIn={isFadeIn}
+        onAnimationEnd={(ev) => {
+          if (ev.animationName === FadeOut.name) {
+            setFadeIn(true)
+            changePage()
+          }
+        }}
+      >
+        {content}
+      </FadeContainer>
+    </ExhibitionLayout>
+  )
 }
 export default Exhibition
