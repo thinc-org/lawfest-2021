@@ -64,7 +64,7 @@ const Exhibition = () => {
       )
       break
     case 'carousel':
-      content = <Carousel {...(contentData as ICarousel)} />
+      content = <Carousel {...(contentData as ICarousel)} onClick={changePage} />
   }
 
   return <ExhibitionLayout>{content}</ExhibitionLayout>

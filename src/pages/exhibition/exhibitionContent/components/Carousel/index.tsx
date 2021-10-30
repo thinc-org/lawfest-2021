@@ -12,13 +12,13 @@ import useCarousel from './hooks/useCarousel'
 import { ICarousel } from 'common/constant/ExhibitionContent/types'
 
 const Carousel = (props: ICarousel) => {
-  const { quote, quoteOwner, contents } = props
+  const { quote, quoteOwner, contents, onClick } = props
   const history = useHistory()
   const { carouselSettings, currentSlide } = useCarousel()
 
   return (
     <Container>
-      <Title>What is Hope</Title>
+      <Title>Hopeless but Hoping</Title>
       <Quote
         variant="h3"
         mobileVariant={{
@@ -51,12 +51,10 @@ const Carousel = (props: ICarousel) => {
       {currentSlide === contents.length - 1 && (
         <Button
           variant="secondary"
-          onClick={() => {
-            history.push('/')
-          }}
+          onClick={onClick}
           css={{ marginTop: '40px' }}
         >
-          กลับหน้าแรก
+          ไปต่อ
         </Button>
       )}
     </Container>

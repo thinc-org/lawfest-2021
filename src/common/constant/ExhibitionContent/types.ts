@@ -32,6 +32,7 @@ export interface ICarousel {
   quote: string
   quoteOwner: string
   contents: ICarouselContent[]
+  onClick:any
 }
 export interface ICarouselContent {
   text: string

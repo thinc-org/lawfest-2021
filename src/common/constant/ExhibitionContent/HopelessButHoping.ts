@@ -110,7 +110,7 @@ export const HopelessButHoping: IContent[] = [
       contents:[
         {
           text:'',
-          imageUrl: '3-2.jpeg',
+          imageUrl:'3-2.jpeg',
           imagePosition: 'top',
         },
       ]
