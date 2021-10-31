@@ -7,7 +7,6 @@ export const HopelessButHoping: IContent[] = [
       quote: 'Hopeless but Hoping',
     },
   },
-  
   {
     type: 'carousel',
     data: {
@@ -31,6 +30,7 @@ export const HopelessButHoping: IContent[] = [
       ],
     },
   },
+  /*
   {
     type: 'paragraph',
     data: {
@@ -102,6 +102,7 @@ export const HopelessButHoping: IContent[] = [
       ]
     },
   },
+  */
   {
     type: 'carousel',
     data: {
@@ -109,7 +110,7 @@ export const HopelessButHoping: IContent[] = [
       quoteOwner:'โจชัว หว่อง',
       contents:[
         {
-          text:'',
+          text:'“ความหวัง คือ ผลลัพธ์จากการลงแรงเคลื่อนไหวเปลี่ยนแปลงสังคม”',
           imageUrl:'3-2.jpeg',
           imagePosition: 'top',
         },

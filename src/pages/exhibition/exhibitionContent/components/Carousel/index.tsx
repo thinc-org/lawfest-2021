@@ -17,7 +17,7 @@ const Carousel = (props: ICarousel) => {
   const { carouselSettings, currentSlide } = useCarousel()
 
   return (
-    <Container>
+    <Container style={{marginTop:'50px'}}>
       <Title>Hopeless but Hoping</Title>
       <Quote
         variant="h3"
@@ -28,7 +28,7 @@ const Carousel = (props: ICarousel) => {
         {quote}
       </Quote>
 
-      <TextWithLine
+      {quoteOwner&&<TextWithLine
         variant="sub1"
         mobileVariant={{
           '@md': 'caption2',
@@ -37,7 +37,7 @@ const Carousel = (props: ICarousel) => {
       >
         {quoteOwner}
       </TextWithLine>
-
+      }
       {/* Carousel */}
       <CarouselContainer>
         <Slider {...carouselSettings}>
@@ -47,7 +47,7 @@ const Carousel = (props: ICarousel) => {
         </Slider>
       </CarouselContainer>
 
-      {/* Back to home button */}
+      {/* Next button */}
       {currentSlide === contents.length - 1 && (
         <Button
           variant="secondary"
