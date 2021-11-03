@@ -25,7 +25,7 @@ function Credit(props: ICreditProps) {
   }, [onFinish])
 
   const generateCredit = () => {
-    return CREDIT.map((val, idx) => {
+    return CREDIT.map((val) => {
       const firstState = val.name[0].state
       const lastState = val.name[val.name.length - 1].state
       return (
@@ -49,7 +49,9 @@ function Credit(props: ICreditProps) {
 
   return (
     <RootContainer css={{ flexDirection: 'column' }}>
-      <StyledText variant="h3">Credit</StyledText>
+      <StyledText css={{ color: 'Darkblue' }} variant="h2">
+        Credit
+      </StyledText>
       {generateCredit()}
     </RootContainer>
   )
