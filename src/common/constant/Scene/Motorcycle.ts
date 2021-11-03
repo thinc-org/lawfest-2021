@@ -19,10 +19,17 @@ export const MOTORCYCLE_SCENE: { [x: string]: IScene } = {
     type: 'delay',
     bgType: 'color',
     bgColor: 0xe9dfde,
-    nextScene: 'name-input',
+    nextScene: 'credit',
     isStoredData: false,
     delay: 5000,
     text: 'อย่าลืมเปิดเสียงเพื่อสัมผัสประสบการณ์เต็มรูปแบบ',
+  },
+  credit: {
+    type: 'credit',
+    bgType: 'color',
+    bgColor: 0xe9dfde,
+    nextScene: 'name-input',
+    isStoredData: false,
   },
   'name-input': {
     type: 'input',
