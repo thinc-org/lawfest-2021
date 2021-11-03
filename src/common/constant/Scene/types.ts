@@ -11,6 +11,7 @@ export type SceneType =
   | 'standby'
   | 'delay'
   | 'result'
+  | 'credit'
 
 export interface IScene {
   type: SceneType

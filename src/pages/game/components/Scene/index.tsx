@@ -11,6 +11,7 @@ import ClickToContinueTemplate from '../Template/ClickToContinue'
 import DelayTransition from '../Template/Delay'
 import ResultTemplate from '../Template/Result'
 import Topbar from './Topbar'
+import Credit from '../Template/Credit'
 
 function SceneController() {
   const { nowScene, handleSetNowScene, handleSetStorage } = useMainController()
@@ -86,6 +87,7 @@ function SceneController() {
           }
         }}
       >
+        {sceneData.type === 'credit' && <Credit onFinish={handleSubmit} />}
         {sceneData.type === 'input' && (
           <InputTemplate
             onSubmit={handleSubmit}
