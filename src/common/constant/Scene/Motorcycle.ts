@@ -1,4 +1,6 @@
 import { IScene } from '.'
+import Headphones from 'assets/images/headphone.svg'
+import Candle from 'assets/images/candle.svg'
 
 export const MOTORCYCLE_SCENE: { [x: string]: IScene } = {
   intro: {
@@ -19,10 +21,24 @@ export const MOTORCYCLE_SCENE: { [x: string]: IScene } = {
     type: 'delay',
     bgType: 'color',
     bgColor: 0xe9dfde,
+    nextScene: 'inspiration',
+    isStoredData: false,
+    img: Headphones,
+    delay: 4000,
+    forceFade: true,
+    textColor: '#683F19',
+    text: 'อย่าลืมเปิดเสียงเพื่อสัมผัสประสบการณ์เต็มรูปแบบ',
+  },
+  inspiration: {
+    type: 'delay',
+    bgType: 'color',
+    bgColor: 0xe9dfde,
     nextScene: 'credit',
     isStoredData: false,
-    delay: 5000,
-    text: 'อย่าลืมเปิดเสียงเพื่อสัมผัสประสบการณ์เต็มรูปแบบ',
+    img: Candle,
+    delay: 4000,
+    textColor: '#683F19',
+    text: 'แด่ผู้สร้างความหวังให้งานนี้',
   },
   credit: {
     type: 'credit',

@@ -13,7 +13,7 @@ const MainControllerContext = React.createContext<IMainController>({
 
 export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
   const [store, setStore] = useState<{ [x: string]: any }>({})
-  const [nowScene, setNowScene] = useState<string>('intro')
+  const [nowScene, setNowScene] = useState<string>('before-raining-stop')
 
   const handleSetStorage = useCallback(
     (key: string, value: any) => {

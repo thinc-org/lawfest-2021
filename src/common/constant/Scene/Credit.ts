@@ -5,7 +5,6 @@ const CREDIT = [
       {
         thai: 'วิรินทร มณีนิล',
         eng: 'Virintorn Maneenin',
-        state: 0,
       },
     ],
   },
@@ -15,17 +14,14 @@ const CREDIT = [
       {
         thai: 'กษมา ศิริมุกตากุล',
         eng: 'Kasama Sirimukdakul',
-        state: 1,
       },
       {
         thai: 'ธนพล ตีรชาติ',
         eng: 'Thanapon Teerachat',
-        state: 2,
       },
       {
         thai: 'วิรินทร มณีนิล',
         eng: 'Virintorn Maneenin',
-        state: 3,
       },
     ],
   },
@@ -35,12 +31,10 @@ const CREDIT = [
       {
         thai: 'ธรรญกร วัดละเอียด',
         eng: 'Thanayakorn Watlaiad',
-        state: 4,
       },
       {
         thai: 'ณัฐวุฒิ ภูมีกอง',
         eng: 'Nattawut Phumeekong',
-        state: 5,
       },
     ],
   },
