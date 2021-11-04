@@ -20,7 +20,7 @@ export const CarouselContainer = styled('div', {
 })
 
 export const Quote = styled(StyledText, {
-  color: '$primary800',
+  color: '$seconary800',
   textAlign: 'center',
   marginTop: '10px',
   marginBottom: '10px',

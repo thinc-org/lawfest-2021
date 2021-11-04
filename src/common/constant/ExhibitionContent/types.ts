@@ -29,6 +29,7 @@ export interface ISlider {
   quoteOwner: string
 }
 export interface ICarousel {
+  title:string,
   quote: string
   quoteOwner: string
   contents: ICarouselContent[]

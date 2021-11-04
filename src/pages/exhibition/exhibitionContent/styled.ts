@@ -38,10 +38,10 @@ export const FadeContainer = styled('div', {
   variants: {
     fadeIn: {
       true: {
-        animation: `${FadeIn} 1500ms ease-in-out`,
+        animation: `${FadeIn} 100ms ease-in-out`,
       },
       false: {
-        animation: `${FadeOut} 1500ms ease-in-out`,
+        animation: `${FadeOut} 100ms ease-in-out`,
       },
     },
   },

@@ -12,13 +12,13 @@ import useCarousel from './hooks/useCarousel'
 import { ICarousel } from 'common/constant/ExhibitionContent/types'
 
 const Carousel = (props: ICarousel) => {
-  const { quote, quoteOwner, contents, onClick } = props
+  const {title, quote, quoteOwner, contents, onClick } = props
   const history = useHistory()
   const { carouselSettings, currentSlide } = useCarousel()
 
   return (
     <Container style={{marginTop:'50px'}}>
-      <Title>Hopeless but Hoping</Title>
+      <Title>{title}</Title>
       <Quote
         variant="h3"
         mobileVariant={{
