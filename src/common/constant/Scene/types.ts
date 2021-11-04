@@ -28,4 +28,7 @@ export interface IScene {
   forceFade?: boolean
   delay?: number
   text?: string
+  img?: string
+  alt?: string
+  textColor?: string
 }

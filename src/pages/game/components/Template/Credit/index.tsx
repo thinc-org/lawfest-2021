@@ -12,12 +12,12 @@ function Credit(props: ICreditProps) {
   useEffect(() => {
     let nowState = 0
     const interval = window.setInterval(() => {
-      if (nowState === 5) {
+      if (nowState === 2) {
         onFinish({})
         return
       }
       setState(++nowState)
-    }, 3000)
+    }, 4000)
 
     return () => {
       window.clearInterval(interval)
@@ -25,20 +25,20 @@ function Credit(props: ICreditProps) {
   }, [onFinish])
 
   const generateCredit = () => {
-    return CREDIT.map((val) => {
-      const firstState = val.name[0].state
-      const lastState = val.name[val.name.length - 1].state
+    return CREDIT.map((val, idx) => {
       return (
-        <FadeContainer show={state >= firstState && state <= lastState}>
-          <StyledText variant="h5">{val.topic}</StyledText>
+        <FadeContainer show={state === idx}>
+          <StyledText mobileVariant="title1" css={{ color: '$secondary900' }}>
+            {val.topic}
+          </StyledText>
           {val.name.map((_val) => {
             return (
               <FadeContainer
-                show={state === _val.state}
+                show={true}
                 css={{ marginTop: '10px', width: '100%' }}
               >
-                <StyledText variant="h6">{_val.thai}</StyledText>
-                <StyledText variant="h6">{_val.eng}</StyledText>
+                <StyledText mobileVariant="title2">{_val.thai}</StyledText>
+                <StyledText mobileVariant="title2">{_val.eng}</StyledText>
               </FadeContainer>
             )
           })}
@@ -49,9 +49,6 @@ function Credit(props: ICreditProps) {
 
   return (
     <RootContainer css={{ flexDirection: 'column' }}>
-      <StyledText css={{ color: 'Darkblue' }} variant="h2">
-        Credit
-      </StyledText>
       {generateCredit()}
     </RootContainer>
   )

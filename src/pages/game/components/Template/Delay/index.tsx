@@ -5,7 +5,7 @@ import { RootContainer } from '../Container'
 import { IDelayTransitionProps } from './types'
 
 function DelayTransition(props: IDelayTransitionProps) {
-  const { delay, onFinish, text } = props
+  const { delay, onFinish, text, img, alt, textColor } = props
   useEffect(() => {
     setTimeout(() => {
       onFinish({})
@@ -13,9 +13,10 @@ function DelayTransition(props: IDelayTransitionProps) {
   }, [delay, onFinish])
 
   return (
-    <RootContainer>
+    <RootContainer css={{ flexDirection: 'column' }}>
+      <img src={img} alt={alt} style={{ marginBottom: '20px' }} />
       <StyledText
-        css={{ maxWidth: '250px', color: 'DarkBlue' }}
+        css={{ maxWidth: '300px', color: textColor }}
         mobileVariant="title2"
       >
         {text || ''}

@@ -120,9 +120,12 @@ function SceneController() {
         )}
         {sceneData.type === 'delay' && (
           <DelayTransition
+            img={sceneData.img}
+            alt={sceneData.alt}
             delay={sceneData.delay || 500}
             onFinish={handleSubmit}
             text={sceneData.text}
+            textColor={sceneData.textColor}
           />
         )}
         {sceneData.type === 'result' && <ResultTemplate />}
