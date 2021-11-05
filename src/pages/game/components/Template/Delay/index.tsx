@@ -14,7 +14,7 @@ function DelayTransition(props: IDelayTransitionProps) {
 
   return (
     <RootContainer css={{ flexDirection: 'column' }}>
-      <img src={img} alt={alt} style={{ marginBottom: '20px' }} />
+      {img && <img src={img} alt={alt} style={{ marginBottom: '20px' }} />}
       <StyledText
         css={{ maxWidth: '300px', color: textColor }}
         mobileVariant="title2"
