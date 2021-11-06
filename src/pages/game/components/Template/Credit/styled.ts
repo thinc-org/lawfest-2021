@@ -1,4 +1,4 @@
-import { styled } from 'common/config'
+import { styled, keyframes } from 'common/config'
 
 export const FadeContainer = styled('div', {
   transition: 'opacity 800ms linear',
@@ -16,5 +16,33 @@ export const FadeContainer = styled('div', {
   },
   defaultVariants: {
     show: false,
+  },
+})
+
+const ScrollKeyFrame = keyframes({
+  '0%': {
+    transform: 'translateY(0%)',
+  },
+  '100%': {
+    transform: 'translateY(-370%)',
+  },
+})
+
+export const ScrollContainer = styled('div', {
+  position: 'absolute',
+  height: '100%',
+  display: 'grid',
+  placeContent: 'center',
+  variants: {
+    start: {
+      true: {
+        animation: `${ScrollKeyFrame} 25s linear forwards`,
+      },
+      false: {},
+    },
+  },
+
+  defaultVariants: {
+    start: false,
   },
 })
