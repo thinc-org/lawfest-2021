@@ -20,7 +20,16 @@ function Topbar(props: { sceneType: SceneType }) {
   }, [sceneType])
 
   return (
-    <TopbarContainer>
+    <TopbarContainer
+      css={{
+        marginTop:
+          sceneType === 'delay' || sceneType === 'result' ? '15px' : '24px',
+        width:
+          sceneType === 'delay' || sceneType === 'result'
+            ? '100%'
+            : 'fit-content',
+      }}
+    >
       <div style={{ position: 'relative' }}>
         <HomeIcon
           color="white"
@@ -36,7 +45,13 @@ function Topbar(props: { sceneType: SceneType }) {
           onClick={() => history.push('/')}
         />
       </div>
-      <ContactContainer show={sceneType === 'result'}>
+      <ContactContainer
+        show={sceneType === 'result'}
+        css={{
+          display:
+            sceneType === 'delay' || sceneType === 'result' ? 'flex' : 'none',
+        }}
+      >
         <TextContainer>
           <StyledText
             css={{ color: '$text_white_primary' }}

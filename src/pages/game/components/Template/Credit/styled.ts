@@ -24,7 +24,7 @@ const ScrollKeyFrame = keyframes({
     transform: 'translateY(0%)',
   },
   '100%': {
-    transform: 'translateY(-370%)',
+    transform: 'translateY(-250%)',
   },
 })
 
@@ -36,7 +36,7 @@ export const ScrollContainer = styled('div', {
   variants: {
     start: {
       true: {
-        animation: `${ScrollKeyFrame} 25s linear forwards`,
+        animation: `${ScrollKeyFrame} 17s linear forwards`,
       },
       false: {},
     },
