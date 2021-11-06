@@ -5,16 +5,18 @@ import { FadeContainer, ScrollContainer } from './styled'
 import CREDIT from 'common/constant/Scene/Credit'
 import { ICreditProps } from './types'
 import Candle from 'assets/images/candle.svg'
-import TextWithLine from 'common/components/TextWithLine'
 
 function Credit(props: ICreditProps) {
   const { onFinish } = props
   const [isStart, setStart] = useState(false)
   const [showSkip, setShowSkip] = useState(false)
+  const [alreadySkip, setAlreadySkip] = useState(false)
 
   const handleOnFinish = useCallback(() => {
+    if (alreadySkip) return
+    setAlreadySkip(true)
     onFinish({})
-  }, [onFinish])
+  }, [onFinish, alreadySkip])
 
   useEffect(() => {
     window.setTimeout(() => {
@@ -31,8 +33,8 @@ function Credit(props: ICreditProps) {
       return (
         <ScrollContainer
           css={{
-            top: `${(idx + 1) * 100}%`,
-            bottom: `${(idx + 2) * 100}%`,
+            top: `${(idx + 1) * 60}%`,
+            bottom: `${(idx + 2) * 60}%`,
           }}
           start={isStart}
         >
@@ -101,9 +103,12 @@ function Credit(props: ICreditProps) {
           if (showSkip) handleOnFinish()
         }}
       >
-        <TextWithLine css={{ position: 'absolute', bottom: '70px' }}>
-          <StyledText mobileVariant="button">แตะเพื่อข้าม</StyledText>
-        </TextWithLine>
+        <StyledText
+          mobileVariant="subhead"
+          css={{ position: 'absolute', top: '30px', right: '50px' }}
+        >
+          {'ข้าม >>>'}
+        </StyledText>
       </RootContainer>
     </RootContainer>
   )
