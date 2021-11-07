@@ -19,6 +19,9 @@ export const HopeIgnited: IContent[] = [
   {
     type: 'paragraph',
     data: {
+      title:'Hope Ignited',
+      quote:'If justice takes place, there shall be hope.',
+      quoteOwner:'ALBERTO MAGUEL',
       content:[
         '“กฎหมาย” คืออะไร ?',
         'กฎหมาย คือ กฎเกณฑ์ คำสั่ง หรือข้อบังคับของสังคม ซึ่งเป็นกติกาของรัฐหรือประเทศ กฎหมายเป็นสิ่งที่ถูกนำมาใช้ควบคุมความประพฤติในชีวิตประจำวันของผู้คนเพื่อสร้างความสงบสุขและความเท่าเทียมในสังคม หรือเรียกได้ว่า การมีกฎหมายถือเป็นการจัดระเบียบสังคมอย่างหนึ่ง เนื่องจากกฎหมายเป็นสิ่งที่ผู้คนต้องปฏิบัติตาม หากฝ่าฝืนจะมีบทลงโทษ',
@@ -41,6 +44,9 @@ export const HopeIgnited: IContent[] = [
   {
     type: 'paragraph',
     data: {
+      title:'Hope Ignited',
+      quote:'If justice takes place, there shall be hope.',
+      quoteOwner:'ALBERTO MAGUEL',
       content:[
         'กฎหมายส่งเสริมความหวัง',
         '1. รัฐธรรมนูญแห่งราชอาณาจักรไทย พ.ศ. 2540', 
@@ -57,6 +63,9 @@ export const HopeIgnited: IContent[] = [
   {
     type: 'paragraph',
     data: {
+      title:'Hope Ignited',
+      quote:'If justice takes place, there shall be hope.',
+      quoteOwner:'ALBERTO MAGUEL',
       content:[
         '2. กฎหมายอื่น ๆ',
         'ข้อกฎหมายที่น่าสนใจต่อไปนี้มีความเกี่ยวข้องกับวัยเรียนและวัยทำงาน ถือเป็นเรื่องใกล้ตัวทุกคน และเป็นตัวอย่างที่ดีในการแสดงให้เห็นถึงผลของการเรียกร้อง อันนำมาซึ่งกฎหมายที่ช่วยสร้างความหวังให้แก่ประชาชน',
@@ -129,6 +138,9 @@ export const HopeIgnited: IContent[] = [
   {
     type: 'paragraph',
     data: {
+      title:'Hope Ignited',
+      quote:'If justice takes place, there shall be hope.',
+      quoteOwner:'ALBERTO MAGUEL',
       content:[
         '1.2 ขั้นตอนการแก้ไขเพิ่มเติมรัฐธรรมนูญ',
         'ในวันที่ 17 มีนาคม 2564 ร่างแก้ไขรัฐธรรมนูญวาระสามล่ม เนื่องจากได้รับเสียงเห็นชอบจากสมาชิกรัฐสภาไม่ถึงครึ่ง และได้รับเสียงเห็นชอบจากสมาชิกวุฒิสภาน้อยกว่าหนึ่งในสาม ดังนั้น จึงจำเป็นต้องพิจารณาถึงขั้นตอนการแก้ไขรัฐธรรมนูญฉบับปี พ.ศ. 2560 ว่ามีปัญหาอย่างไร',
@@ -151,6 +163,9 @@ export const HopeIgnited: IContent[] = [
   {
     type: 'paragraph',
     data: {
+      title:'Hope Ignited',
+      quote:'If justice takes place, there shall be hope.',
+      quoteOwner:'ALBERTO MAGUEL',
       content:[
         '2. ร่างพระราชบัญญัติข้อมูลข่าวสารของราชการ พ.ศ. 2564',
         'พระราชบัญญัติข้อมูลข่าวสารของราชการ พ.ศ. 2540 ที่ใช้อยู่ในปัจจุบันถูกจัดทำขึ้นเพื่อให้ประชาชนสามารถเข้าถึงข้อมูลของราชการได้มากขึ้น แต่แล้วร่างพระราชบัญญัติข้อมูลข่าวสารของราชการฉบับใหม่ที่คณะรัฐมนตรีมีมติเห็นชอบในช่วงต้นปี พ.ศ. 2564 กลับมีเนื้อหามุ่งที่จะ “ปกปิด” มากกว่า “เปิดเผย” ข้อมูล',

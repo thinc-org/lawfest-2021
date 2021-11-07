@@ -11,6 +11,9 @@ export interface IText {
 }
 
 export interface IParagraph {
+  title: string
+  quote: string
+  quoteOwner: string
   content: string[]
   contentRef?: IReference[]
 }
