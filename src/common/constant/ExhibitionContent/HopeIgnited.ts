@@ -190,7 +190,8 @@ export const HopeIgnited: IContent[] = [
           url:'https://112story.com/112',
         }
 
-      ]
+      ],
+      final:true,
     },
   }
 

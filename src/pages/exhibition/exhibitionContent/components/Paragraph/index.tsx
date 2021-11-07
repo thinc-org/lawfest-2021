@@ -6,8 +6,10 @@ import Button from 'common/components/Button'
 import Title from '../Title'
 import TextWithLine from 'common/components/TextWithLine'
 import { Quote } from '../Carousel/styled'
+import { useHistory } from 'react-router'
 const ParagraphPage = (props:ParagraphProps) => {
-  const {title, quote, quoteOwner, content, contentRef, onClick } = props
+  const {title, quote, quoteOwner, content, contentRef,final, onClick } = props
+  const history = useHistory()
 
 	var contents = []
 	for(let i of content){
@@ -40,13 +42,24 @@ const ParagraphPage = (props:ParagraphProps) => {
 
         {contents}
         {contentRef && <Refs title="อ้างอิง : " refs={contentRef} />}
-        <Button
-          variant="secondary"
-          onClick={onClick}
-          style={{ marginTop: '10px',marginBottom:'40px',alignSelf:'center'}}
-        >
-          ไปต่อ
-        </Button>
+        {!final &&
+          <Button
+            variant="secondary"
+            onClick={onClick}
+            style={{ marginTop: '10px',marginBottom:'40px',alignSelf:'center'}}
+          >
+            ไปต่อ
+          </Button>
+        }
+        {final &&
+          <Button
+            variant="secondary"
+            onClick={()=>{history.push('/')}}
+            style={{ marginTop: '10px',marginBottom:'40px',alignSelf:'center'}}
+          >
+            กลับหน้าแรก
+          </Button>
+        }
       </div>
     )
   }

@@ -12,7 +12,7 @@ import useCarousel from './hooks/useCarousel'
 import { ICarousel } from 'common/constant/ExhibitionContent/types'
 
 const Carousel = (props: ICarousel) => {
-  const {title, quote, quoteOwner, contents, onClick } = props
+  const {title, quote, quoteOwner, contents, onClick, final } = props
   const history = useHistory()
   const { carouselSettings, currentSlide } = useCarousel()
 
@@ -48,7 +48,7 @@ const Carousel = (props: ICarousel) => {
       </CarouselContainer>
 
       {/* Next button */}
-      {currentSlide === contents.length - 1 && (
+      {!final&& (
         <Button
           variant="secondary"
           onClick={onClick}
@@ -57,6 +57,15 @@ const Carousel = (props: ICarousel) => {
           ไปต่อ
         </Button>
       )}
+      {final&&
+        <Button
+          variant="secondary"
+          onClick={()=>history.push('/')}
+          css={{ marginTop: '40px' }}
+        >
+          กลับหน้าแรก
+        </Button>
+      }
     </Container>
   )
 }

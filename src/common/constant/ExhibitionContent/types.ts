@@ -16,6 +16,7 @@ export interface IParagraph {
   quoteOwner: string
   content: string[]
   contentRef?: IReference[]
+  final?:boolean
 }
 
 export interface IMultipleChoice {
@@ -39,6 +40,7 @@ export interface ICarousel {
   quoteOwner: string
   contents: ICarouselContent[]
   onClick:any
+  final?: boolean
 }
 export interface ICarouselContent {
   text: string

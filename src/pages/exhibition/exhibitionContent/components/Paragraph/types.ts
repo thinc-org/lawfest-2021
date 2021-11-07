@@ -6,5 +6,6 @@ export interface ParagraphProps {
   quoteOwner: string
   content: string[]
   contentRef?: IReference[]
+  final?: boolean
   onClick?: () => void
 }
