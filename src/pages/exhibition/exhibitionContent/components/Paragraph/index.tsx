@@ -18,23 +18,25 @@ const ParagraphPage = (props:ParagraphProps) => {
         style={{
           height: '100%',
           display: 'flex',
-          justifyContent: 'center',
           flexDirection: 'column',
 		      marginLeft:'5%',
 		      marginRight:'5%',
           paddingTop:'30px'
         }}
       >
+        <div style={{alignSelf:'center'}}>
+
         <Title>{title}</Title>
         <Quote
           variant="h3"
           mobileVariant={{
             '@md': 'title2',
           }}
-        >
+          >
           {quote}
         </Quote>
         <TextWithLine variant="sub1" mobileVariant={{'@md': 'caption2',}}>{quoteOwner}</TextWithLine>
+        </div>
 
         {contents}
         {contentRef && <Refs title="อ้างอิง : " refs={contentRef} />}

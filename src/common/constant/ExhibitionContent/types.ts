@@ -24,6 +24,8 @@ export interface IMultipleChoice {
 
 export interface ITextArea {
   question: string
+  quote: string
+  quoteOwner: string
 }
 
 export interface ISlider {

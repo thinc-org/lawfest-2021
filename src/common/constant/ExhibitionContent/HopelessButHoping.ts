@@ -11,6 +11,8 @@ export const HopelessButHoping: IContent[] = [
     type:'textArea',
     data:{
       question:'คุณหวังว่าจะเห็นประเทศไทยเป็นอย่างไร',
+      quote:'Once you choose hope,anything is possible.',
+      quoteOwner:'CHRISTOPHER REEVE',
     }
   },
   {
