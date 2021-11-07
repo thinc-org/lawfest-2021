@@ -1,8 +1,9 @@
 import 'App.css'
-import TextWithLine from 'common/components/TextWithLine'
 import Choice from 'pages/exhibition/exhibitionContent/components/Choice'
 import Button from 'common/components/Button'
 import React from 'react'
+import Title from './Title'
+import { StyledText } from '../styled'
 class Multiplechoice extends React.Component<
   { onClick: any; choiceList: Array<String>; title: string },
   { selected: 10 }
@@ -37,7 +38,8 @@ class Multiplechoice extends React.Component<
           flexDirection: 'column',
         }}
       >
-        <TextWithLine mobileVariant="subhead">{this.props.title}</TextWithLine>
+        <Title>{this.props.title}</Title>
+        <StyledText>เมื่อพูดถึงกฎหมายไทย คุณรู้สึกอย่างไร</StyledText>
         <p></p>
         {choices}
         <p></p>

@@ -8,6 +8,12 @@ export const WhatIsHope: IContent[] = [
     },
   },
   {
+    type:'textArea',
+    data:{
+      question:'สำหรับคุณแล้ว ความหวังคืออะไร',
+    }
+  },
+  {
     type:'carousel',
     data:{
       title:'What is Hope?',

@@ -8,6 +8,12 @@ export const HopelessButHoping: IContent[] = [
     },
   },
   {
+    type:'textArea',
+    data:{
+      question:'คุณหวังว่าจะเห็นประเทศไทยเป็นอย่างไร',
+    }
+  },
+  {
     type: 'carousel',
     data: {
       title: 'Hopeless but Hoping',

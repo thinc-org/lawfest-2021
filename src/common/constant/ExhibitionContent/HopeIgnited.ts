@@ -8,6 +8,15 @@ export const HopeIgnited: IContent[] = [
     },
   },
   {
+    type: 'multipleChoice',
+    data:{
+      choiceList:[
+        'มีความหวัง',
+        'สิ้นหวัง',
+      ]
+    }
+  },
+  {
     type: 'paragraph',
     data: {
       content:[

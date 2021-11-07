@@ -2,6 +2,7 @@ import 'App.css'
 import { StyledText } from '../styled'
 import TextArea from 'common/components/TextArea'
 import Button from 'common/components/Button'
+import Title from './Title'
 
 function InputPage(props: { question: string; title: string; onClick: any }) {
   return (
@@ -14,16 +15,7 @@ function InputPage(props: { question: string; title: string; onClick: any }) {
         flexDirection: 'column',
       }}
     >
-      <h2
-        style={{
-          padding: '10px',
-          color: '#FFFFFF',
-          backgroundColor: '#00000099',
-          borderRadius: '15px',
-        }}
-      >
-        {props.title}
-      </h2>
+      <Title>{props.title}</Title>
       <StyledText>{props.question}</StyledText>
       <TextArea placeholder="เล่าให้ฟังหน่อยสิ...." />
       <p></p>
