@@ -9,18 +9,17 @@ const ParagraphPage = (props: ParagraphProps) => {
   const { content, contentRef, final, onClick } = props
   const history = useHistory()
 
-  var contents = []
-  for (let i of content) {
-    contents.push(
-      <StyledText
-        variant="body1"
-        mobileVariant={{ '@md': 'body' }}
-        css={{ padding: '10px 0', width: '100%' }}
-      >
-        &nbsp;&nbsp;&nbsp;&nbsp;{i}
-      </StyledText>
-    )
-  }
+  const contents = content.map((paragraph, idx) => (
+    <StyledText
+      variant="body1"
+      mobileVariant={{ '@md': 'body' }}
+      css={{ padding: '10px 0', width: '100%' }}
+      key={idx}
+    >
+      &nbsp;&nbsp;&nbsp;&nbsp;{paragraph}
+    </StyledText>
+  ))
+
   return (
     <div
       style={{
