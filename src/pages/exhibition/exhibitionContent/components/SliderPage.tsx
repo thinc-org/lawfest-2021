@@ -1,17 +1,11 @@
 import 'App.css'
 import React, { useState } from 'react'
 import Slider from 'common/components/Slider'
-import TextWithLine from 'common/components/TextWithLine'
 import { StyledText } from '../styled'
 import Button from 'common/components/Button'
-function SilderPage(props: {
-  title: string
-  quote: string
-  quoteOwner: string
-  question: string
-  onClick: () => void
-}) {
-  const { title, quote, quoteOwner, question, onClick } = props
+import Title from './Title'
+function SilderPage(props: { question: string; onClick: () => void }) {
+  const { question, onClick } = props
   const [value, setValue] = useState(50)
   return (
     <div
@@ -23,9 +17,7 @@ function SilderPage(props: {
         flexDirection: 'column',
       }}
     >
-      <h2>{title}</h2>
-      <StyledText>{quote}</StyledText>
-      <TextWithLine>{quoteOwner}</TextWithLine>
+      <Title />
       <Slider
         value={value}
         onChange={(value) => {

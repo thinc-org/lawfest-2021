@@ -9,16 +9,13 @@ const useExhibitionData = (pageType: IExhibitionPage) => {
   }, [])
 
   let data = null
-  let title = null
   try {
     data = ExhibitionData[pageType].data
-    title = ExhibitionData[pageType].text
   } catch {}
 
   return {
     type: data ? data[page].type : null,
     contentData: data ? data[page].data : null,
-    title,
     changePage,
   }
 }

@@ -1,21 +1,51 @@
+import TextWithLine from 'common/components/TextWithLine'
 import { StyledText } from 'common/components/Typography'
 import React from 'react'
-import { TitleBackground, TitleContainer } from './styled'
+import { useParams } from 'react-router-dom'
+import { ExhibitionData } from '../../constants'
+import { IExhibitionParams } from '../../types'
+import { NameStyle, Quote, TitleContainer } from './styled'
 import { TitleProps } from './types'
 
-const Title = ({ children }: TitleProps) => {
+const Title = ({ hideQuote }: TitleProps) => {
+  const { pageType } = useParams() as IExhibitionParams
+
+  const { title, quote, quoteOwner } = ExhibitionData[pageType]
+
   return (
-    <TitleBackground>
-      <TitleContainer>
-        <StyledText
-          variant="h1"
-          mobileVariant={{ '@md': 'title1' }}
-          css={{ color: 'white' }}
-        >
-          {children}
-        </StyledText>
-      </TitleContainer>
-    </TitleBackground>
+    <TitleContainer>
+      <StyledText
+        variant="h1"
+        mobileVariant={{ '@md': 'title1' }}
+        css={{ color: '$secondary800' }}
+      >
+        {title}
+      </StyledText>
+      {!hideQuote && (
+        <>
+          <Quote
+            variant="h3"
+            mobileVariant={{
+              '@md': 'title2',
+            }}
+          >
+            {quote}
+          </Quote>
+
+          {quoteOwner && (
+            <TextWithLine
+              variant="sub1"
+              mobileVariant={{
+                '@md': 'caption2',
+              }}
+              {...NameStyle}
+            >
+              {quoteOwner}
+            </TextWithLine>
+          )}
+        </>
+      )}
+    </TitleContainer>
   )
 }
 

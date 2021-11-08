@@ -5,7 +5,7 @@ import { ContentContainer, QuoteContainer } from './styled'
 import { TextProps } from './types'
 
 const Text = (props: TextProps) => {
-  const { quote, quoteOwner, quoteOwnerRef,translation, onClick } = props
+  const { quote, quoteOwner, quoteOwnerRef, translation, onClick } = props
   return (
     <ContentContainer onClick={onClick}>
       <StyledText
@@ -29,7 +29,7 @@ const Text = (props: TextProps) => {
           </StyledText>
         </QuoteContainer>
       )}
-      
+
       {translation && (
         <StyledText
           mobileVariant={{ '@md': 'title2' }}
@@ -43,7 +43,12 @@ const Text = (props: TextProps) => {
       <TextWithLine
         mobileVariant="headline"
         textColor="$black600"
-        css={{ marginTop: '40px' }}
+        css={{
+          marginTop: '80px',
+          '@sm': {
+            marginTop: '40px',
+          },
+        }}
       >
         แตะเพื่อไปต่อ
       </TextWithLine>

@@ -22,14 +22,14 @@ import { FadeContainer, FadeOut } from './styled'
 
 const Exhibition = () => {
   const { pageType } = useParams() as IExhibitionParams
-  const { type, contentData, changePage, title } = useExhibitionData(pageType)
+  const { type, contentData, changePage } = useExhibitionData(pageType)
   const [isFadeIn, setFadeIn] = useState(true)
 
   const triggerChangePage = useCallback(() => {
     setFadeIn(false)
   }, [])
 
-  if (!type || !title) {
+  if (!type) {
     return <Redirect to="/exhibition" />
   }
 
@@ -52,7 +52,6 @@ const Exhibition = () => {
         <Multiplechoice
           {...(contentData as IMultipleChoice)}
           onClick={triggerChangePage}
-          title={title}
         />
       )
       break
@@ -60,18 +59,13 @@ const Exhibition = () => {
       content = (
         <InputPage
           {...(contentData as ITextArea)}
-          title={title}
           onClick={triggerChangePage}
         />
       )
       break
     case 'slider':
       content = (
-        <SilderPage
-          {...(contentData as ISlider)}
-          title={title}
-          onClick={triggerChangePage}
-        />
+        <SilderPage {...(contentData as ISlider)} onClick={triggerChangePage} />
       )
       break
     case 'carousel':

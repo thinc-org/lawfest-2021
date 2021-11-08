@@ -3,10 +3,22 @@ import { HopelessButHoping } from 'common/constant/ExhibitionContent/HopelessBut
 import { WhatIsHope } from 'common/constant/ExhibitionContent/WhatIsHope'
 
 export const ExhibitionData = {
-  'what-is-hope': { data: WhatIsHope, text: 'What is Hope' },
-  'hope-ignited': { data: HopeIgnited, text: 'Hope Ignited' },
+  'what-is-hope': {
+    data: WhatIsHope,
+    title: 'What is Hope?',
+    quote: 'Where there is hope, there is life',
+    quoteOwner: 'Anne frank',
+  },
+  'hope-ignited': {
+    data: HopeIgnited,
+    title: 'Hope Ignited',
+    quote: 'If justice takes place, there shall be hope.',
+    quoteOwner: 'Alberto Manguel',
+  },
   'hopeless-but-hoping': {
     data: HopelessButHoping,
-    text: 'Hopeless but Hoping',
+    title: 'Hopeless but Hoping',
+    quote: 'Once you choose hope, anything is possible.',
+    quoteOwner: 'Christopher reeve',
   },
 }

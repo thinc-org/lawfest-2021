@@ -1,6 +1,5 @@
-import TextWithLine from 'common/components/TextWithLine'
 import React from 'react'
-import { CarouselContainer, Container, NameStyle, Quote } from './styled'
+import { CarouselContainer, Container } from './styled'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -12,33 +11,13 @@ import useCarousel from './hooks/useCarousel'
 import { ICarousel } from 'common/constant/ExhibitionContent/types'
 
 const Carousel = (props: ICarousel) => {
-  const { title, quote, quoteOwner, contents, onClick, final } = props
+  const { contents, onClick, final } = props
   const history = useHistory()
   const { carouselSettings } = useCarousel()
 
   return (
     <Container style={{ marginTop: '50px' }}>
-      <Title>{title}</Title>
-      <Quote
-        variant="h3"
-        mobileVariant={{
-          '@md': 'title2',
-        }}
-      >
-        {quote}
-      </Quote>
-
-      {quoteOwner && (
-        <TextWithLine
-          variant="sub1"
-          mobileVariant={{
-            '@md': 'caption2',
-          }}
-          {...NameStyle}
-        >
-          {quoteOwner}
-        </TextWithLine>
-      )}
+      <Title />
       {/* Carousel */}
       <CarouselContainer>
         <Slider {...carouselSettings}>

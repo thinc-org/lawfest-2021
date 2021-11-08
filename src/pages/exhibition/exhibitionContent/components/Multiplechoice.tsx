@@ -4,10 +4,8 @@ import Button from 'common/components/Button'
 import React from 'react'
 import Title from './Title'
 import { StyledText } from '../styled'
-import { Quote } from './Carousel/styled'
-import TextWithLine from 'common/components/TextWithLine'
 class Multiplechoice extends React.Component<
-  { onClick: any; choiceList: Array<String>; title: string },
+  { onClick: any; choiceList: Array<String> },
   { selected: 10 }
 > {
   constructor(props: any) {
@@ -37,20 +35,11 @@ class Multiplechoice extends React.Component<
           display: 'flex',
           alignItems: 'center',
           flexDirection: 'column',
-          paddingTop:'30px',
-          paddingBottom:'40px',
+          paddingTop: '30px',
+          paddingBottom: '40px',
         }}
       >
-        <Title>{this.props.title}</Title>
-        <Quote
-          variant="h3"
-          mobileVariant={{
-            '@md': 'title2',
-          }}
-          >
-          If justice takes place,ther shall be hope.
-        </Quote>
-        <TextWithLine variant="sub1" mobileVariant={{'@md': 'caption2',}}>ALBERTO MANGUEL</TextWithLine>
+        <Title />
         <p></p>
         <StyledText>เมื่อพูดถึงกฎหมายไทย คุณรู้สึกอย่างไร</StyledText>
         {choices}

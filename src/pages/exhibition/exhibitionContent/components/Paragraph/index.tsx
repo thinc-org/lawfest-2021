@@ -4,13 +4,10 @@ import { ParagraphProps } from './types'
 import { Refs } from '../Carousel/components/CarouselContent/components/Refs'
 import Button from 'common/components/Button'
 import Title from '../Title'
-import TextWithLine from 'common/components/TextWithLine'
-import { Quote } from '../Carousel/styled'
 import { useHistory } from 'react-router'
 
 const ParagraphPage = (props: ParagraphProps) => {
-  const { title, quote, quoteOwner, content, contentRef, final, onClick } =
-    props
+  const { content, contentRef, final, onClick } = props
   const history = useHistory()
 
   var contents = []
@@ -35,18 +32,7 @@ const ParagraphPage = (props: ParagraphProps) => {
           flexDirection: 'column',
         }}
       >
-        <Title>{title}</Title>
-        <Quote
-          variant="h3"
-          mobileVariant={{
-            '@md': 'title2',
-          }}
-        >
-          {quote}
-        </Quote>
-        <TextWithLine variant="sub1" mobileVariant={{ '@md': 'caption2' }}>
-          {quoteOwner}
-        </TextWithLine>
+        <Title />
       </div>
 
       {contents}
