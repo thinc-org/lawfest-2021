@@ -7,6 +7,7 @@ import Title from '../Title'
 import TextWithLine from 'common/components/TextWithLine'
 import { Quote } from '../Carousel/styled'
 import { useHistory } from 'react-router'
+import { createEnumDeclaration } from 'typescript'
 const ParagraphPage = (props:ParagraphProps) => {
   const {title, quote, quoteOwner, content, contentRef,final, onClick } = props
   const history = useHistory()
@@ -26,18 +27,24 @@ const ParagraphPage = (props:ParagraphProps) => {
           paddingTop:'30px'
         }}
       >
-        <div style={{alignSelf:'center'}}>
-
-        <Title>{title}</Title>
-        <Quote
-          variant="h3"
-          mobileVariant={{
-            '@md': 'title2',
+        <div
+          style={{
+            display:'flex',
+            alignItems:'center',
+            flexDirection:'column',
           }}
-          >
-          {quote}
-        </Quote>
-        <TextWithLine variant="sub1" mobileVariant={{'@md': 'caption2',}}>{quoteOwner}</TextWithLine>
+        >
+
+          <Title>{title}</Title>
+          <Quote
+            variant="h3"
+            mobileVariant={{
+              '@md': 'title2',
+            }}
+            >
+            {quote}
+          </Quote>
+          <TextWithLine variant="sub1" mobileVariant={{'@md': 'caption2',}}>{quoteOwner}</TextWithLine>
         </div>
 
         {contents}
