@@ -42,10 +42,11 @@ function Credit(props: ICreditProps) {
             <StyledText mobileVariant="title1" css={{ color: '$secondary900' }}>
               {val.topic}
             </StyledText>
-            {val.name.map((_val) => {
+            {val.name.map((_val, _key) => {
               return (
                 <FadeContainer
                   show={true}
+                  key={`section-${val.topic}-${_key}`}
                   css={{ marginTop: '10px', width: '100%' }}
                 >
                   <StyledText mobileVariant="title2">{_val.thai}</StyledText>
