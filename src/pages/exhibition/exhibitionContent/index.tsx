@@ -18,7 +18,7 @@ import useExhibitionData from './hooks/useExhibitionData'
 import { IExhibitionParams } from './types'
 import ExhibitionLayout from '../components/ExhibitionLayout'
 import ParagraphPage from './components/Paragraph'
-import { FadeContainer, FadeOut } from './styled'
+import { ContentContainer, FadeContainer, FadeOut } from './styled'
 
 const Exhibition = () => {
   const { pageType } = useParams() as IExhibitionParams
@@ -85,7 +85,7 @@ const Exhibition = () => {
           }
         }}
       >
-        {content}
+        <ContentContainer>{content}</ContentContainer>
       </FadeContainer>
     </ExhibitionLayout>
   )

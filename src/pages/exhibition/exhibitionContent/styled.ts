@@ -49,3 +49,14 @@ export const FadeContainer = styled('div', {
     fadeIn: true,
   },
 })
+
+export const ContentContainer = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: '40px 40px 0 40px',
+  backgroundColor: '#f1e1c7',
+  boxSizing: 'border-box',
+  height: '100%',
+})
