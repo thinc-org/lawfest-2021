@@ -19,7 +19,7 @@ function ClickToContinueTemplate(props: IClickToContinue) {
       css={{ cursor: 'pointer' }}
       onClick={(ev) => handleSubmit(ev)}
     >
-      <TextWithLine css={{ position: 'absolute', bottom: '100px' }}>
+      <TextWithLine css={{ position: 'absolute', bottom: '70px' }}>
         <StyledText mobileVariant="button">แตะเพื่อไปต่อ</StyledText>
       </TextWithLine>
     </RootContainer>
