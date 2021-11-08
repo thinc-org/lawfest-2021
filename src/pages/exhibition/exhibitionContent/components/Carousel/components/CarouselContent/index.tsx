@@ -15,7 +15,7 @@ const CarouselContent = (props: ICarouselContent) => {
           imagePosition={imagePosition}
         />
       )}
-      <div>
+      <div style={{ flexGrow: 1 }}>
         {text.split('\n').map((line, idx) => (
           <div key={idx}>
             <StyledText variant="body1" mobileVariant={{ '@md': 'body' }}>

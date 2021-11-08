@@ -8,7 +8,6 @@ export const TitleContainer = styled('div', {
   alignItems: 'center',
 })
 export const Quote = styled(StyledText, {
-  width: '80%',
   color: '$primary800',
   textAlign: 'center',
   marginTop: '10px',

@@ -16,7 +16,7 @@ const Carousel = (props: ICarousel & { onClick: () => void }) => {
   const { carouselSettings } = useCarousel()
 
   return (
-    <Container style={{ marginTop: '50px' }}>
+    <Container>
       <Title />
       {/* Carousel */}
       <CarouselContainer>
@@ -31,7 +31,7 @@ const Carousel = (props: ICarousel & { onClick: () => void }) => {
       <Button
         variant="secondary"
         onClick={final ? () => history.push('/') : onClick}
-        css={{ marginTop: '40px', '@sm': { width: '100%' } }}
+        css={{ marginTop: '40px', width: '100%' }}
       >
         {final ? 'กลับหน้าแรก' : 'ไปต่อ'}
       </Button>

@@ -6,17 +6,20 @@ export const Container = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  maxWidth: '100vw',
+  width: '50%',
   paddingBottom: '50px',
+  '@lg': {
+    width: '80%',
+  },
+  '@sm': {
+    width: '100%',
+  },
 })
 
 export const CarouselContainer = styled('div', {
   display: 'block',
-  maxWidth: '50vw',
+  width: '100%',
   marginTop: '16px',
-  '@md': {
-    minWidth: '100%',
-  },
 })
 
 export const Quote = styled(StyledText, {
