@@ -18,7 +18,11 @@ function DelayTransition(props: IDelayTransitionProps) {
         <img
           src={img}
           alt={alt}
-          style={{ marginBottom: '20px', height: '157px' }}
+          style={{
+            marginBottom: '20px',
+            height: '140px',
+            maxWidth: '280px',
+          }}
         />
       )}
       <StyledText
