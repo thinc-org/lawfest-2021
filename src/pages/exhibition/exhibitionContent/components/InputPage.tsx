@@ -12,7 +12,6 @@ function InputPage(props: { question: string; title: string; quote: string; quot
       style={{
         height: '100%',
         display: 'flex',
-        justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
         paddingTop:'30px',
@@ -29,7 +28,7 @@ function InputPage(props: { question: string; title: string; quote: string; quot
           {props.quote}
       </Quote>
       <TextWithLine variant="sub1" mobileVariant={{'@md': 'caption2',}}>{props.quoteOwner}</TextWithLine>
-      <StyledText style={{marginTop:'5%'}}>{props.question}</StyledText>
+      <StyledText style={{marginTop:'20px'}}>{props.question}</StyledText>
       <TextArea placeholder="เล่าให้ฟังหน่อยสิ...." />
       <p></p>
       <Button onClick={props.onClick}>ยืนยันคำตอบ</Button>

@@ -35,7 +35,6 @@ class Multiplechoice extends React.Component<
         style={{
           height: '100%',
           display: 'flex',
-          justifyContent: 'center',
           alignItems: 'center',
           flexDirection: 'column',
           paddingTop:'30px',
@@ -54,7 +53,6 @@ class Multiplechoice extends React.Component<
         <TextWithLine variant="sub1" mobileVariant={{'@md': 'caption2',}}>ALBERTO MANGUEL</TextWithLine>
         <p></p>
         <StyledText>เมื่อพูดถึงกฎหมายไทย คุณรู้สึกอย่างไร</StyledText>
-        <p></p>
         {choices}
         <p></p>
         <Button onClick={this.props.onClick}>ยืนยันคำตอบ</Button>
