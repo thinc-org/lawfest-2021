@@ -2,7 +2,8 @@ import { styled } from 'common/config'
 
 export const Container = styled('div', {
   gap: '15px',
-  padding: '10px',
+  padding: '10px 0',
+  width: '100%',
   variants: {
     imagePosition: {
       top: {

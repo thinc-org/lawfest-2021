@@ -15,7 +15,7 @@ export const CarouselContainer = styled('div', {
   maxWidth: '50vw',
   marginTop: '16px',
   '@md': {
-    maxWidth: '70vw',
+    minWidth: '100%',
   },
 })
 

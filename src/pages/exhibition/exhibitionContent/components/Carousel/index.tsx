@@ -28,24 +28,13 @@ const Carousel = (props: ICarousel) => {
       </CarouselContainer>
 
       {/* Next button */}
-      {!final && (
-        <Button
-          variant="secondary"
-          onClick={onClick}
-          css={{ marginTop: '40px' }}
-        >
-          ไปต่อ
-        </Button>
-      )}
-      {final && (
-        <Button
-          variant="secondary"
-          onClick={() => history.push('/')}
-          css={{ marginTop: '40px' }}
-        >
-          กลับหน้าแรก
-        </Button>
-      )}
+      <Button
+        variant="secondary"
+        onClick={final ? () => history.push('/') : onClick}
+        css={{ marginTop: '40px', '@sm': { width: '100%' } }}
+      >
+        {final ? 'กลับหน้าแรก' : 'ไปต่อ'}
+      </Button>
     </Container>
   )
 }
