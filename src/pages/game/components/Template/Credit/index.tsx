@@ -20,7 +20,7 @@ function Credit(props: ICreditProps) {
 
   useEffect(() => {
     window.setTimeout(() => {
-      // setStart(true)
+      setStart(true)
     }, 2500)
 
     window.setTimeout(() => {
@@ -75,7 +75,7 @@ function Credit(props: ICreditProps) {
         }}
       >
         <img
-          src="images/candle.svg"
+          src={Candle}
           alt="candle"
           style={{
             marginBottom: '20px',
