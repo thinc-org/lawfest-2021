@@ -14,6 +14,15 @@ import { BaseSprite, FadeSprite, ZoomSprite } from './components/Sprite'
 import Intro from './components/Intro'
 import { RootContainer, GameContainer } from './styled'
 import { ISprite } from './types'
+import OrangeInk from 'assets/images/orange_ink.svg'
+import BlueInk from 'assets/images/blue_ink.svg'
+import YellowInk from 'assets/images/yellow_ink.svg'
+import Candle from 'assets/images/candle.svg'
+import Headphone from 'assets/images/headphone.svg'
+import Logo from 'assets/logo.svg'
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const img = [OrangeInk, BlueInk, YellowInk, Candle, Headphone, Logo]
 
 function PixiTesting() {
   const { nowScene } = useMainController()
@@ -132,6 +141,14 @@ function PixiTesting() {
             <StyledText mobileVariant="title3" css={{ zIndex: 1 }}>
               Loading... {progress}%
             </StyledText>
+            {img.map((val, key) => {
+              return (
+                <div
+                  style={{ backgroundImage: `url(${val})` }}
+                  key={`cache-${key}`}
+                ></div>
+              )
+            })}
           </>
         ) : (
           <>
