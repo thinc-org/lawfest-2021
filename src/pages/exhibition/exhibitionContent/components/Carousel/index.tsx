@@ -10,7 +10,7 @@ import Title from '../Title'
 import useCarousel from './hooks/useCarousel'
 import { ICarousel } from 'common/constant/ExhibitionContent/types'
 
-const Carousel = (props: ICarousel) => {
+const Carousel = (props: ICarousel & { onClick: () => void }) => {
   const { contents, onClick, final } = props
   const history = useHistory()
   const { carouselSettings } = useCarousel()

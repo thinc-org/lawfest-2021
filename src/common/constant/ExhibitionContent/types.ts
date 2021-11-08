@@ -1,5 +1,11 @@
 export interface IContent {
-  type: 'text' | 'paragraph' | 'multipleChoice' | 'slider' | 'textArea' | 'carousel'
+  type:
+    | 'text'
+    | 'paragraph'
+    | 'multipleChoice'
+    | 'slider'
+    | 'textArea'
+    | 'carousel'
   data: IText | IParagraph | IMultipleChoice | ITextArea | ISlider | ICarousel
 }
 
@@ -11,12 +17,9 @@ export interface IText {
 }
 
 export interface IParagraph {
-  title: string
-  quote: string
-  quoteOwner: string
   content: string[]
   contentRef?: IReference[]
-  final?:boolean
+  final?: boolean
 }
 
 export interface IMultipleChoice {
@@ -35,11 +38,7 @@ export interface ISlider {
   quoteOwner: string
 }
 export interface ICarousel {
-  title:string,
-  quote: string
-  quoteOwner: string
   contents: ICarouselContent[]
-  onClick:any
   final?: boolean
 }
 export interface ICarouselContent {
