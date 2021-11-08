@@ -12,12 +12,12 @@ import useCarousel from './hooks/useCarousel'
 import { ICarousel } from 'common/constant/ExhibitionContent/types'
 
 const Carousel = (props: ICarousel) => {
-  const {title, quote, quoteOwner, contents, onClick, final } = props
+  const { title, quote, quoteOwner, contents, onClick, final } = props
   const history = useHistory()
-  const { carouselSettings, currentSlide } = useCarousel()
+  const { carouselSettings } = useCarousel()
 
   return (
-    <Container style={{marginTop:'50px'}}>
+    <Container style={{ marginTop: '50px' }}>
       <Title>{title}</Title>
       <Quote
         variant="h3"
@@ -28,16 +28,17 @@ const Carousel = (props: ICarousel) => {
         {quote}
       </Quote>
 
-      {quoteOwner&&<TextWithLine
-        variant="sub1"
-        mobileVariant={{
-          '@md': 'caption2',
-        }}
-        {...NameStyle}
-      >
-        {quoteOwner}
-      </TextWithLine>
-      }
+      {quoteOwner && (
+        <TextWithLine
+          variant="sub1"
+          mobileVariant={{
+            '@md': 'caption2',
+          }}
+          {...NameStyle}
+        >
+          {quoteOwner}
+        </TextWithLine>
+      )}
       {/* Carousel */}
       <CarouselContainer>
         <Slider {...carouselSettings}>
@@ -48,7 +49,7 @@ const Carousel = (props: ICarousel) => {
       </CarouselContainer>
 
       {/* Next button */}
-      {!final&& (
+      {!final && (
         <Button
           variant="secondary"
           onClick={onClick}
@@ -57,15 +58,15 @@ const Carousel = (props: ICarousel) => {
           ไปต่อ
         </Button>
       )}
-      {final&&
+      {final && (
         <Button
           variant="secondary"
-          onClick={()=>history.push('/')}
+          onClick={() => history.push('/')}
           css={{ marginTop: '40px' }}
         >
           กลับหน้าแรก
         </Button>
-      }
+      )}
     </Container>
   )
 }

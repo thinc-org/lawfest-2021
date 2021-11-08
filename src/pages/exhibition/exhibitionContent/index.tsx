@@ -18,7 +18,7 @@ import useExhibitionData from './hooks/useExhibitionData'
 import { IExhibitionParams } from './types'
 import ExhibitionLayout from '../components/ExhibitionLayout'
 import ParagraphPage from './components/Paragraph'
-import { FadeContainer, FadeIn, FadeOut } from './styled'
+import { FadeContainer, FadeOut } from './styled'
 
 const Exhibition = () => {
   const { pageType } = useParams() as IExhibitionParams
