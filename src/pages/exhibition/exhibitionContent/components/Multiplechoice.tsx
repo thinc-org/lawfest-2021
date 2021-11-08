@@ -38,6 +38,8 @@ class Multiplechoice extends React.Component<
           justifyContent: 'center',
           alignItems: 'center',
           flexDirection: 'column',
+          paddingTop:'30px',
+          paddingBottom:'40px',
         }}
       >
         <Title>{this.props.title}</Title>
@@ -50,7 +52,7 @@ class Multiplechoice extends React.Component<
           If justice takes place,ther shall be hope.
         </Quote>
         <TextWithLine variant="sub1" mobileVariant={{'@md': 'caption2',}}>ALBERTO MANGUEL</TextWithLine>
-        
+        <p></p>
         <StyledText>เมื่อพูดถึงกฎหมายไทย คุณรู้สึกอย่างไร</StyledText>
         <p></p>
         {choices}

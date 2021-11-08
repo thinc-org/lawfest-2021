@@ -19,7 +19,8 @@ export const HopelessButHoping: IContent[] = [
     type: 'carousel',
     data: {
       title: 'Hopeless but Hoping',
-      quote:'',
+      quote:'Once you choose hope,anything is possible.',
+      quoteOwner:'CHRISTOPHER REEVE',
       contents:[
         /*how should I put these ref lol.
           รูป 1
@@ -157,11 +158,11 @@ export const HopelessButHoping: IContent[] = [
     type: 'carousel',
     data: {
       title:'Hopeless but Hoping',
-      quote: '“ความหวัง คือ ผลลัพธ์จากการลงแรงเคลื่อนไหวเปลี่ยนแปลงสังคม”',
-      quoteOwner:'โจชัว หว่อง',
+      quote:'Once you choose hope,anything is possible.',
+      quoteOwner:'CHRISTOPHER REEVE',
       contents:[
         {
-          text:'“ความหวัง คือ ผลลัพธ์จากการลงแรงเคลื่อนไหวเปลี่ยนแปลงสังคม”',
+          text:'“ความหวัง คือ ผลลัพธ์จากการลงแรงเคลื่อนไหวเปลี่ยนแปลงสังคม”\nโจชัว หว่อง',
           imageUrl:'3-2.jpeg',
           imagePosition: 'top',
           imageRefs:[

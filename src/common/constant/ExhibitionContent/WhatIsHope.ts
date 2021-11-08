@@ -19,11 +19,13 @@ export const WhatIsHope: IContent[] = [
     type:'carousel',
     data:{
       title:'What is Hope?',
-      quote: 'Faith is the bird that feels the light when the dawn is still dark',
-      quoteOwner: 'Rabindranath Tagore (Indian poet)',
+      //quote: 'Faith is the bird that feels the light when the dawn is still dark',
+      //quoteOwner: 'Rabindranath Tagore (Indian poet)',
+      quote:'When there is hope, there is life',
+      quoteOwner:'ANNE FRANK',
       contents:[
         {
-          text: 'ศรัทธา คือ วิหกเหินเวหา เพื่อรับแสงแห่งทิวาก่อนรุ่งอรุณ',
+          text: 'Faith is the bird that feels the light when the dawn is still dark\nRabindranath Tagore (Indian poet)\nศรัทธา คือ วิหกเหินเวหา เพื่อรับแสงแห่งทิวาก่อนรุ่งอรุณ',
           imageUrl: '1-1.png',
           imagePosition: 'left',
           imageRefs:[
@@ -87,7 +89,8 @@ export const WhatIsHope: IContent[] = [
     type:'carousel',
     data:{
       title:'What is Hope?',
-      quote:'',
+      quote:'When there is hope, there is life',
+      quoteOwner:'ANNE FRANK',
       contents:[
       {
         text:'รัฐธรรมนูญแห่งราชอาณาจักรไทย พ.ศ. 2560 มีบทบัญญัติที่รับรองสิทธิต่าง ๆ ของประชาชน เช่น มาตรา 27 ที่มีสาระสำคัญว่า บุคคลมีสิทธิและเสรีภาพและได้รับการคุ้มครองทางกฎหมายเท่าเทียมกัน ซึ่งเป็นหลักประกันในการคุ้มครองสิทธิและเสรีภาพของปวงชนชาวไทย และมาตรา 47 ที่มีสาระสำคัญว่า บุคคลมีสิทธิได้รับบริการสาธารณสุขของรัฐ ในสถานการณ์การระบาดของโรคโควิด-19เช่นนี้ วัคซีนก็ถือเป็นสิทธิขั้นพื้นฐานที่ประชาชนควรได้รับเช่นกัน\nนอกจากนี้ยังมีกฎหมายเฉพาะที่เกี่ยวกับเรื่องวัคซีน คือ พระราชบัญญัติความมั่นคงด้านวัคซีนแห่งชาติ พ.ศ.2561 ซึ่งมีสาระสำคัญเกี่ยวกับการส่งเสริมและสนับสนุนเพื่อให้มีการวิจัย การพัฒนา การผลิต การประกัน การควบคุมคุณภาพ การจัดหา และการกระจายวัคซีนที่เหมาะสมและเพียงพอ โดยมีคณะกรรมการที่กำหนดนโยบายและแผนยุทธศาสตร์ความมั่นคงด้านวัคซีนแห่งชาติ มีองค์กรและคณะกรรมการบริหารซึ่งทำหน้าที่ขับเคลื่อนนโยบายและแผนยุทธศาสตร์',
