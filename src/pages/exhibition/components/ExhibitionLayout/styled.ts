@@ -6,4 +6,5 @@ export const ExhibitionContainer = styled(Div100vh, {
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
+  position: 'relative',
 })

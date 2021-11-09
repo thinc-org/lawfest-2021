@@ -8,6 +8,9 @@ export const Container = styled('div', {
   alignItems: 'center',
   width: '50%',
   paddingBottom: '50px',
+  '@xl': {
+    width: '70%',
+  },
   '@lg': {
     width: '80%',
   },

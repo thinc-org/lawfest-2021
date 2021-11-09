@@ -14,16 +14,19 @@ export const SelectorText = styled('div', {
 })
 
 export const StyledImage = styled('img', {
-  width: 'min(28vw, 360px)',
+  width: 'min(28vw, min(360px, 55vh))',
+  height: 'min(28vw, min(360px, 55vh))',
   borderRadius: '10px',
   boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
   marginBottom: '17px',
   '@md': {
     width: 'max(35vw, 160px)',
+    height: 'max(35vw, 160px)',
     marginBottom: '8px',
   },
   '@xs': {
     width: '130px',
+    height: '130px',
     marginBottom: '8px',
   },
 })
@@ -43,6 +46,7 @@ export const SelectorContainer = styled(Link, {
   flex: '1 1 0',
   cursor: 'pointer',
   textDecoration: 'none',
+  width: 'min-content',
 })
 
 export const SelectorsConatiner = styled('div', {
@@ -52,4 +56,5 @@ export const SelectorsConatiner = styled('div', {
   alignSelf: 'center',
   rowGap: '40px',
   width: '100%',
+  margin: '60px 10px 20px 10px',
 })
