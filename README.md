@@ -3,7 +3,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Deploy Environment
-Dev: https://lawfest-2021--dev-rzupxbry.web.app
+Dev: https://lawfest-2021--dev-yfqj1wxi.web.app
 
 Production: https://lawfest-2021.web.app/
 
