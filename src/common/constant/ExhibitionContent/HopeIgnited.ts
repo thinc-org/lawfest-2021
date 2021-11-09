@@ -14,7 +14,7 @@ export const HopeIgnited: IContent[] = [
     },
   },
   {
-    type: 'paragraph',
+    type: 'carousel',
     data: {
       content: [
         '“กฎหมาย” คืออะไร ?',
@@ -36,7 +36,7 @@ export const HopeIgnited: IContent[] = [
     },
   },
   {
-    type: 'paragraph',
+    type: 'carousel',
     data: {
       content: [
         'กฎหมายส่งเสริมความหวัง',
@@ -51,7 +51,7 @@ export const HopeIgnited: IContent[] = [
     },
   },
   {
-    type: 'paragraph',
+    type: 'carousel',
     data: {
       content: [
         '2. กฎหมายอื่น ๆ',
@@ -119,7 +119,7 @@ export const HopeIgnited: IContent[] = [
     },
   },
   {
-    type: 'paragraph',
+    type: 'carousel',
     data: {
       content: [
         '1.2 ขั้นตอนการแก้ไขเพิ่มเติมรัฐธรรมนูญ',
@@ -140,7 +140,7 @@ export const HopeIgnited: IContent[] = [
     },
   },
   {
-    type: 'paragraph',
+    type: 'carousel',
     data: {
       content: [
         '2. ร่างพระราชบัญญัติข้อมูลข่าวสารของราชการ พ.ศ. 2564',

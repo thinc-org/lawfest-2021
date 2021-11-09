@@ -5,7 +5,9 @@ import { Refs } from './components/Refs'
 import { Container, StyledImage } from './styled'
 
 const CarouselContent = (props: ICarouselContent) => {
-  const { text, imageUrl, imagePosition, contentRefs, imageRefs } = props
+  const { imageUrl, imagePosition, contentRefs, imageRefs } = props
+  const text = Array.isArray(props.text) ? props.text : props.text.split('\n')
+
   return (
     <Container imagePosition={imagePosition}>
       {imageUrl && (
@@ -16,10 +18,10 @@ const CarouselContent = (props: ICarouselContent) => {
         />
       )}
       <div style={{ flexGrow: 1 }}>
-        {text.split('\n').map((line, idx) => (
+        {text.map((line, idx) => (
           <div key={idx}>
             <StyledText variant="body1" mobileVariant={{ '@md': 'body' }}>
-              {line}
+              &nbsp;&nbsp;&nbsp;&nbsp;{line}
             </StyledText>
             <br />
           </div>

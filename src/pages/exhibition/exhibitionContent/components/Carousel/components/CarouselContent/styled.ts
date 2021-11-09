@@ -1,8 +1,9 @@
 import { styled } from 'common/config'
 
 export const Container = styled('div', {
+  boxSizing: 'border-box',
   gap: '15px',
-  padding: '10px 0',
+  padding: '10px 2px',
   width: '100%',
   variants: {
     imagePosition: {
