@@ -24,7 +24,7 @@ const Title = ({ hideQuote }: TitleProps) => {
         <TitleContainer>
           <StyledText
             variant="h1"
-            mobileVariant={{ '@md': 'title1' }}
+            mobileVariant={{ '@md': 'title1', '@xs': 'title2' }}
             css={{ color: 'white' }}
           >
             {title}

@@ -33,14 +33,21 @@ export const StyledImage = styled('img', {
   variants: {
     imagePosition: {
       top: {
-        width: 'max(50%, 300px)',
+        height: '225px',
         '@md': {
           width: '100%',
+          height: 'auto',
         },
       },
       left: {
-        width: '30%',
+        height: '377px',
+        width: '212px',
+        '@md': {
+          height: '260px',
+          width: '146px',
+        },
         '@sm': {
+          height: 'auto',
           width: '40%',
         },
       },
