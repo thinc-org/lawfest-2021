@@ -16,6 +16,7 @@ const useCarousel = () => {
     afterChange: (current: number) => {
       setSlide(current)
     },
+    adaptiveHeight: true,
   }
 
   return { carouselSettings, currentSlide }

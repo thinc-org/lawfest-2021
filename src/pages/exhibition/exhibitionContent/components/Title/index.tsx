@@ -4,7 +4,13 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import { ExhibitionData } from '../../../../../common/constant/ExhibitionContent'
 import { IExhibitionParams } from '../../types'
-import { NameStyle, Quote, TitleContainer } from './styled'
+import {
+  NameStyle,
+  Quote,
+  Container,
+  TitleContainer,
+  TitleBackground,
+} from './styled'
 import { TitleProps } from './types'
 
 const Title = ({ hideQuote }: TitleProps) => {
@@ -13,14 +19,18 @@ const Title = ({ hideQuote }: TitleProps) => {
   const { title, quote, quoteOwner } = ExhibitionData[pageType]
 
   return (
-    <TitleContainer>
-      <StyledText
-        variant="h1"
-        mobileVariant={{ '@md': 'title1' }}
-        css={{ color: '$secondary800' }}
-      >
-        {title}
-      </StyledText>
+    <Container>
+      <TitleBackground>
+        <TitleContainer>
+          <StyledText
+            variant="h1"
+            mobileVariant={{ '@md': 'title1' }}
+            css={{ color: 'white' }}
+          >
+            {title}
+          </StyledText>
+        </TitleContainer>
+      </TitleBackground>
       {!hideQuote && (
         <>
           <Quote
@@ -45,7 +55,7 @@ const Title = ({ hideQuote }: TitleProps) => {
           )}
         </>
       )}
-    </TitleContainer>
+    </Container>
   )
 }
 
