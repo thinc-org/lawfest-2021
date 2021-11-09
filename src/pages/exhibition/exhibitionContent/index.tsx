@@ -8,7 +8,6 @@ import { Redirect, useParams } from 'react-router-dom'
 import {
   ICarousel,
   IMultipleChoice,
-  IParagraph,
   ISlider,
   IText,
   ITextArea,
@@ -17,7 +16,6 @@ import Carousel from './components/Carousel'
 import useExhibitionData from './hooks/useExhibitionData'
 import { IExhibitionParams } from './types'
 import ExhibitionLayout from '../components/ExhibitionLayout'
-import ParagraphPage from './components/Paragraph'
 import { ContentContainer, FadeContainer, FadeOut } from './styled'
 
 const Exhibition = () => {
@@ -38,14 +36,6 @@ const Exhibition = () => {
   switch (type) {
     case 'text':
       content = <Text {...(contentData as IText)} onClick={triggerChangePage} />
-      break
-    case 'paragraph':
-      content = (
-        <ParagraphPage
-          {...(contentData as IParagraph)}
-          onClick={triggerChangePage}
-        />
-      )
       break
     case 'multipleChoice':
       content = (

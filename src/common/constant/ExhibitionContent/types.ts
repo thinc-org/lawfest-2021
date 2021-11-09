@@ -6,7 +6,7 @@ export interface IContent {
     | 'slider'
     | 'textArea'
     | 'carousel'
-  data: IText | IParagraph | IMultipleChoice | ITextArea | ISlider | ICarousel
+  data: IText | IMultipleChoice | ITextArea | ISlider | ICarousel
 }
 
 export interface IText {
@@ -14,12 +14,6 @@ export interface IText {
   quoteOwner?: string
   quoteOwnerRef?: string
   translation?: string
-}
-
-export interface IParagraph {
-  content: string[]
-  contentRef?: IReference[]
-  final?: boolean
 }
 
 export interface IMultipleChoice {
