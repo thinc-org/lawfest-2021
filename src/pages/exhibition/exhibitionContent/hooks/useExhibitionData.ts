@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react'
-import { ExhibitionData } from '../constants'
+import { ExhibitionData } from '../../../../common/constant/ExhibitionContent'
 import { IExhibitionPage } from '../types'
 
 const useExhibitionData = (pageType: IExhibitionPage) => {
