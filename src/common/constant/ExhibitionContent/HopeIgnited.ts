@@ -10,6 +10,7 @@ export const HopeIgnited: IContent[] = [
   {
     type: 'multipleChoice',
     data: {
+      question: 'เมื่อพูดถึงกฎหมายไทย คุณรู้สึกอย่างไร',
       choiceList: ['มีความหวัง', 'สิ้นหวัง'],
     },
   },

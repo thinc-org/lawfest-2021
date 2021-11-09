@@ -6,8 +6,8 @@ export const StyledButton = styled('button', {
   fontFamily: '$ChulaCharas',
   padding: '5px',
   minHeight: '40px',
-  width: '80%',
   border: 'none',
+  width: '80%',
   borderRadius: '5px',
   boxShadow: '2px 2px 4px 0px #00000040',
   cursor: 'pointer',
@@ -15,7 +15,7 @@ export const StyledButton = styled('button', {
   color: '$black10',
   backgroundColor: '#02030380',
   overflowWrap: 'break-word',
-
+  '@sm': { width: '100%' },
   variants: {
     selected: {
       true: {

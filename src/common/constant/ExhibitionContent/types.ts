@@ -17,6 +17,7 @@ export interface IText {
 }
 
 export interface IMultipleChoice {
+  question: string
   choiceList: string[]
 }
 
