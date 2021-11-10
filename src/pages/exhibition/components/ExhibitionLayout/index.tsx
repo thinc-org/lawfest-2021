@@ -1,23 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import home from 'assets/pic/home.png'
 import Footer from 'common/components/Footer'
-import { ExhibitionContainer } from './styled'
+import { ExhibitionContainer, HomeIcon } from './styled'
 
 const Layout = ({ children }: React.PropsWithChildren<{}>) => {
   return (
     <ExhibitionContainer>
       <Link to="/">
-        <img
-          src={home}
-          width="30px"
-          alt="home-icon"
-          style={{
-            marginTop: '15px',
-            marginLeft: '15px',
-            position: 'absolute',
-          }}
-        />
+        <HomeIcon size="36" />
       </Link>
       <div style={{ flexGrow: 1 }}>{children}</div>
       <Footer />
