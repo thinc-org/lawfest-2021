@@ -1,10 +1,10 @@
-import React, { ReactChild } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import home from 'assets/pic/home.png'
 import Footer from 'common/components/Footer'
 import { ExhibitionContainer } from './styled'
 
-const Layout = ({ children }: { children: ReactChild }) => {
+const Layout = ({ children }: React.PropsWithChildren<{}>) => {
   return (
     <ExhibitionContainer>
       <Link to="/">

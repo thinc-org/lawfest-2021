@@ -4,13 +4,10 @@ import Button from 'common/components/Button'
 import React, { useState } from 'react'
 import Title from '../Title'
 import { StyledText } from 'common/components/Typography'
-import { IMultipleChoice } from 'common/constant/ExhibitionContent/types'
 import { ChoicesContainer } from './styled'
-const Multiplechoice = ({
-  question,
-  choiceList,
-  onClick,
-}: IMultipleChoice & { onClick: () => void }) => {
+import { MultiplechoiceProps } from './props'
+const Multiplechoice = (props: MultiplechoiceProps) => {
+  const { question, choiceList, onClick } = props
   const [selected, setSelected] = useState(-1)
 
   return (

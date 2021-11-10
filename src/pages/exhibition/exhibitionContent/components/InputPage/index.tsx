@@ -4,8 +4,9 @@ import Button from 'common/components/Button'
 import Title from '../Title'
 import { StyledText } from 'common/components/Typography'
 import { useState } from 'react'
+import { InputProps } from './types'
 
-function InputPage(props: { question: string; onClick: any }) {
+function InputPage(props: InputProps) {
   const [text, setText] = useState('')
   return (
     <>
