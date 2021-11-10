@@ -15,4 +15,5 @@ export const HomeIcon = styled(IoMdHome, {
   marginLeft: '15px',
   position: 'absolute',
   color: '$secondary950',
+  zIndex: '99',
 })
