@@ -11,8 +11,6 @@ export const WhatIsHope: IContent[] = [
     type: 'textArea',
     data: {
       question: 'สำหรับคุณแล้ว ความหวังคืออะไร',
-      quote: 'When there is hope, there is life',
-      quoteOwner: 'ANNE FRANK',
     },
   },
   {
