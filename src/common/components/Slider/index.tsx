@@ -9,9 +9,9 @@ import {
 } from './styled'
 import { SliderProps } from './types'
 
-const Slider = ({ value, onChange }: SliderProps) => {
+const Slider = ({ value, onChange, css }: SliderProps) => {
   return (
-    <Container>
+    <Container css={css}>
       <TrackContainer>
         <StyledFilledTrack />
         <ReactSlider

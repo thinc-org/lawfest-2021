@@ -29,8 +29,6 @@ export interface ITextArea {
 
 export interface ISlider {
   question: string
-  quote: string
-  quoteOwner: string
 }
 export interface ICarousel {
   contents: ICarouselContent[]

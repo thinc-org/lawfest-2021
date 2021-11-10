@@ -1,10 +1,10 @@
 import 'App.css'
 import React, { useState } from 'react'
 import Slider from 'common/components/Slider'
-import { StyledText } from '../../styled'
 import Button from 'common/components/Button'
 import Title from '../Title'
 import { SliderPageProps } from './types'
+import { StyledText } from 'common/components/Typography'
 
 function SilderPage(props: SliderPageProps) {
   const { question, onClick } = props
@@ -25,9 +25,17 @@ function SilderPage(props: SliderPageProps) {
         onChange={(value) => {
           setValue(value)
         }}
+        css={{ marginTop: '20px' }}
       />
-      <p></p>
-      <StyledText>{question}</StyledText>
+      <StyledText
+        css={{
+          margin: '20px 0',
+        }}
+        mobileVariant={{ '@md': 'subhead' }}
+        variant="h4"
+      >
+        {question}
+      </StyledText>
       <Button onClick={onClick}>ยืนยันคำตอบ</Button>
     </div>
   )
