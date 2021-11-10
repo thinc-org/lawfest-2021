@@ -1,5 +1,4 @@
 import TextWithLine from 'common/components/TextWithLine'
-import { StyledText } from 'common/components/Typography'
 import { styled } from 'common/config'
 
 export const Container = styled('div', {
@@ -23,13 +22,6 @@ export const CarouselContainer = styled('div', {
   display: 'block',
   width: '100%',
   marginTop: '16px',
-})
-
-export const Quote = styled(StyledText, {
-  color: '$seconary800',
-  textAlign: 'center',
-  marginTop: '10px',
-  marginBottom: '10px',
 })
 
 export const Name = styled(TextWithLine, {
