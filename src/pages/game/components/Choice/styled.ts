@@ -8,7 +8,7 @@ export const StyledButton = styled('button', {
   minHeight: '40px',
   overflowWrap: 'break-word',
   width: '80%',
-  border: '4px solid #8A5627',
+  border: '4px solid $secondary800',
   borderRadius: '5px',
   boxShadow: '2px 2px 4px 0px #00000040',
   boxSizing: 'border-box',

@@ -145,7 +145,7 @@ function GameComponent() {
                 <div
                   style={{ backgroundImage: `url(${val})` }}
                   key={`cache-${key}`}
-                ></div>
+                />
               )
             })}
           </>

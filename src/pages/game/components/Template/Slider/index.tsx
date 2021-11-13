@@ -32,7 +32,7 @@ function SliderTemplate(props: ISliderQuestion) {
     <RootContainer css={{ background: 'rgba(0, 0, 0, 0.5)' }}>
       <QuestionContainer>
         <QuestionWrapper>
-          <Question>{question || 'sdads'}</Question>
+          <Question>{question || ''}</Question>
         </QuestionWrapper>
         <Slider value={input} onChange={handleSetInput}></Slider>
         <Button

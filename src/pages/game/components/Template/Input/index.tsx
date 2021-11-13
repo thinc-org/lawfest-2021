@@ -30,7 +30,7 @@ function InputTemplate(props: IInputQuestion) {
           css={{ marginTop: '20px', marginBottom: '20px' }}
           value={input}
           onChange={(el) => setInput(el.currentTarget.value)}
-        ></StyledInput>
+        />
         <Button
           variant="secondary"
           css={{

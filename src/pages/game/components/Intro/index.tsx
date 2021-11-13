@@ -54,7 +54,6 @@ function Intro() {
         }}
       />
       <BottomLeftInk src={OrangeInk} alt="orange" />
-      {/* <canvas ref={canvasRef} width="496" height="896"></canvas> */}
     </LogoContainer>
   )
 }

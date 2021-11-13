@@ -94,26 +94,26 @@ function SceneController() {
             question={sceneData.question!}
             placeholder={sceneData.placeholder || ''}
             nextScene={sceneData.nextScene}
-          ></InputTemplate>
+          />
         )}
         {sceneData.type === 'dialog' && (
           <DialogueTemplate
             dialogues={sceneData.dialog!}
             onFinish={handleSubmit}
-          ></DialogueTemplate>
+          />
         )}
         {sceneData.type === 'choice' && (
           <ChoiceTemplate
             choices={sceneData.choices!}
             question={sceneData.question!}
             handleSubmit={handleSubmit}
-          ></ChoiceTemplate>
+          />
         )}
         {sceneData.type === 'slider' && (
           <SliderTemplate
             question={sceneData.question || ''}
             onSubmit={handleSubmit}
-          ></SliderTemplate>
+          />
         )}
         {sceneData.type === 'image-click' && (
           <ClickToContinueTemplate onSubmit={handleSubmit} />
