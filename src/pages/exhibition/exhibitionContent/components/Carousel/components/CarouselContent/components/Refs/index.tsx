@@ -8,7 +8,12 @@ export const Refs = (props: RefsProps) => {
       {title}
       {refs.map((ref, idx) => (
         <span key={idx}>
-          <StyledLink href={ref.url} key={idx} target="_blank">
+          <StyledLink
+            href={ref.url}
+            disabled={ref.url === ''}
+            key={idx}
+            target="_blank"
+          >
             {ref.text}
           </StyledLink>
           {idx !== refs.length - 1 && ', '}

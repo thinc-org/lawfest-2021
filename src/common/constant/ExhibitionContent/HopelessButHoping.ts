@@ -19,22 +19,6 @@ export const HopelessButHoping: IContent[] = [
       final: true,
       contents: [
         {
-          /*how should I put these ref lol.
-          รูป 1
-        - https://freerangestock.com/photos/52618/democracy-monument-bangkok.html
-
-        - ชื่อรูป vehicles on road near buildings
-        ที่มา: Peerapon Chantharainthron @peerapon01 on Unsplash.com
- 
-        - ชื่อรูป ขอให้เป็นดั่งราษฎร์ประสงค์
-        ที่มา: Benya T. 
-
-        - ชื่อรูป people standing between store buildings at nighttime 
-        ที่มา: Lin Kiu @kappapipi on Unsplash.com
-
-        - ชื่อรูป closeup photo of multicolored stripe flag
-        ที่มา: Sharon McCutcheon @sharonmccutcheon on Unsplash.com 
-        */
           text: 'การมีความหวัง คือ การต้องการผลลัพธ์ที่ทำให้ชีวิตดีขึ้นไม่ทางใดก็ทางหนึ่ง ไม่เพียงแต่สามารถช่วยให้ก้าวข้ามความยากลำบากไป แต่มันยังสามารถพัฒนาชีวิตของเราได้ เพราะการจินตนาถึงภาพแห่งอนาคตที่ดีกว่าสามารถกระตุ้นให้บุคคลทำตามเส้นทางเพื่อทำให้ความประสงค์นั้นเกิดขึ้น\nไม่ว่าเราจะนึกถึงมันหรือไม่ก็ตาม แต่ความหวังก็เป็นส่วนหนึ่งในชีวิต มันเป็นความจริงที่ปฏิเสธได้ยากว่า ทุกคนมักจะหวังอะไรบางอย่าง นั่นก็เพราะความหวังเป็นส่วนหนึ่งของการดำรงอยู่ของมนุษย์\nด้วยสภาพสังคมที่มีการเปลี่ยนแปลงตลอดเวลา ความคาดหวังของผู้คนในหลาย ๆ ด้านก็เปลี่ยนแปลงไปด้วย ไม่ว่าจะเป็นความคาดหวังต่อประชาธิปไตย คุณภาพชีวิตที่ดี หรือความเท่าเทียม ทุกคนล้วนอยากให้สังคมหลุดพ้นจากปัญหาและพัฒนาต่อไปได้',
           imageUrl: '3-1.jpeg',
           imagePosition: 'top',
@@ -48,9 +32,8 @@ export const HopelessButHoping: IContent[] = [
               url: 'https://unsplash.com/@peerapon01',
             },
             {
-              //TODO fix this shit.
-              text: 'ขอให้เป็นดั่งราษฎร์ประสงค์',
-              url: 'Benya T.',
+              text: 'Benya T.',
+              url: '',
             },
             {
               text: 'unsplash.com',

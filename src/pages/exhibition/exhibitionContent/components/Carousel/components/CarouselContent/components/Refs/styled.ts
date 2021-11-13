@@ -19,4 +19,11 @@ export const StyledLink = styled('a', {
   '&:active': {
     color: '$primary600',
   },
+  variants: {
+    disabled: {
+      true: {
+        pointerEvents: 'none',
+      },
+    },
+  },
 })
