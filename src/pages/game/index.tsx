@@ -21,10 +21,9 @@ import Candle from 'assets/images/candle.svg'
 import Headphone from 'assets/images/headphone.svg'
 import Logo from 'assets/logo.svg'
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const img = [OrangeInk, BlueInk, YellowInk, Candle, Headphone, Logo]
 
-function PixiTesting() {
+function GameComponent() {
   const { nowScene } = useMainController()
   const [isLoading, setLoading] = useState<boolean>(true)
   const [progress, setProgress] = useState<number>(0)
@@ -166,7 +165,7 @@ function PixiTesting() {
             height: '100%',
             zIndex: 0,
           }}
-        ></div>
+        />
       </GameContainer>
       <SoundController />
     </RootContainer>
@@ -176,7 +175,7 @@ function PixiTesting() {
 function Wrapper() {
   return (
     <MainControllerProvider>
-      <PixiTesting />
+      <GameComponent />
     </MainControllerProvider>
   )
 }
