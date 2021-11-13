@@ -19,4 +19,5 @@ export const Image = styled('div', {
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   backgroundImage: `url(${desktopImage})`,
+  marginBottom: '10px',
 })

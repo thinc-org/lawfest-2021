@@ -37,7 +37,6 @@ export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
   )
 
   const getBgFilePath = useCallback(() => {
-    console.log(store)
     if (typeof store['age'] === 'undefined')
       throw new Error('Age is not defined yet')
     if (typeof store['hope'] === 'undefined')

@@ -7,6 +7,7 @@ const TextWithLine = ({
   children,
   leftLineColor,
   rightLineColor,
+  textColor,
   ...props
 }: TextWithLineProps) => {
   return (
@@ -17,7 +18,9 @@ const TextWithLine = ({
           background: leftLineColor || css?.color,
         }}
       />
-      <Text {...props}>{children}</Text>
+      <Text {...props} css={{ color: textColor }}>
+        {children}
+      </Text>
       <Line
         css={{
           marginLeft: '15px',

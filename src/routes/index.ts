@@ -1,18 +1,13 @@
 import { RouteProps } from 'react-router-dom'
-import ComponentsDemo from 'pages/componentsDemo'
 import PixiTesting from 'pages/game'
 import Home from 'pages/home'
-import Exhibition from 'pages/exhibition'
+import ExhibitionContent from 'pages/exhibition/exhibitionContent'
+import ExhibitionMenu from 'pages/exhibition/exhibitionMenu'
 
 const routes: RouteProps[] = [
   {
     path: '/',
     component: Home,
-    exact: true,
-  },
-  {
-    path: '/componentsDemo',
-    component: ComponentsDemo,
     exact: true,
   },
   {
@@ -22,7 +17,12 @@ const routes: RouteProps[] = [
   },
   {
     path: '/exhibition',
-    component: Exhibition,
+    component: ExhibitionMenu,
+    exact: true,
+  },
+  {
+    path: '/exhibition/:pageType',
+    component: ExhibitionContent,
     exact: true,
   },
 ]

@@ -4,7 +4,7 @@ export const StyledButton = styled('button', {
   fontSize: '$5',
   fontWeight: '$medium',
   fontFamily: '$Mitr',
-  padding: '10px',
+  padding: '7px 10px',
   width: '80%',
   border: 'none',
   borderRadius: '5px',
@@ -12,7 +12,12 @@ export const StyledButton = styled('button', {
   cursor: 'pointer',
   color: '$black10',
   overflowWrap: 'break-word',
-
+  '&:disabled': {
+    backgroundColor: '$black400',
+    '&:hover': {
+      backgroundColor: '$black400',
+    },
+  },
   variants: {
     variant: {
       primary: {
