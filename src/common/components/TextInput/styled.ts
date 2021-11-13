@@ -2,7 +2,7 @@ import { styled } from 'common/config'
 
 export const StyledInput = styled('input', {
   width: '80%',
-  border: '2px solid #8A5627',
+  border: '2px solid $secondary800',
   borderRadius: '5px',
   backgroundColor: '$light_primary',
   height: '40px',

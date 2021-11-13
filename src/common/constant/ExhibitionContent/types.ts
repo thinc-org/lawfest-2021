@@ -1,11 +1,5 @@
 export interface IContent {
-  type:
-    | 'text'
-    | 'paragraph'
-    | 'multipleChoice'
-    | 'slider'
-    | 'textArea'
-    | 'carousel'
+  type: 'text' | 'multipleChoice' | 'slider' | 'textArea' | 'carousel'
   data: IText | IMultipleChoice | ITextArea | ISlider | ICarousel
 }
 

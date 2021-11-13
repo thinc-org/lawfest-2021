@@ -21,12 +21,6 @@ export const Container = styled('div', {
   },
 })
 
-export const ArrowContainer = styled('div', {
-  '&:disabled': {
-    display: 'none',
-  },
-})
-
 export const StyledImage = styled('img', {
   height: '100%',
   margin: 'auto',

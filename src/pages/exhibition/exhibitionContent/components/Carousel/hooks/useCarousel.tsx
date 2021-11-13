@@ -3,7 +3,7 @@ import { NextArrow } from '../components/NextArrow'
 import { PrevArrow } from '../components/PrevArrow'
 
 const useCarousel = () => {
-  const [currentSlide, setSlide] = useState(0)
+  const [, setSlide] = useState(0)
 
   const carouselSettings = {
     dots: true,
@@ -19,7 +19,7 @@ const useCarousel = () => {
     adaptiveHeight: true,
   }
 
-  return { carouselSettings, currentSlide }
+  return { carouselSettings }
 }
 
 export default useCarousel
