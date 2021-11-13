@@ -2,20 +2,20 @@ import { styled, keyframes } from 'common/config/'
 
 const KeyframeMain = keyframes({
   '0%': {
-    transform: 'scale(1)',
+    transform: 'scale(0.1)',
     opacity: 0.2,
   },
   '80%': {
     opacity: 1,
   },
   '100%': {
-    transform: 'scale(9)',
+    transform: 'scale(1)',
   },
 })
 
 const KeyframeBottomRight = keyframes({
   '0%': {
-    transform: 'scale(1)',
+    transform: 'scale(0.25)',
     opacity: 1,
   },
   '80%': {
@@ -23,13 +23,13 @@ const KeyframeBottomRight = keyframes({
   },
   '100%': {
     opacity: 0.4,
-    transform: 'scale(4)',
+    transform: 'scale(1)',
   },
 })
 
 const KeyframeTopLeft = keyframes({
   '0%': {
-    transform: 'scale(1)',
+    transform: 'scale(0.11)',
     opacity: 1,
   },
   '80%': {
@@ -37,18 +37,18 @@ const KeyframeTopLeft = keyframes({
   },
   '100%': {
     opacity: 0.8,
-    transform: 'scale(11)',
+    transform: 'scale(1)',
   },
 })
 
 const KeyframeBottomLeft = keyframes({
   '0%': {
-    transform: 'scale(1)',
+    transform: 'scale(0.142)',
     opacity: 1,
   },
   '100%': {
     opacity: 0,
-    transform: 'scale(7)',
+    transform: 'scale(1)',
   },
 })
 
@@ -76,7 +76,7 @@ export const LogoImage = styled('img', {
   left: '50%',
   transition: 'opacity 1s ease-in',
   zIndex: '99',
-  width: '200px',
+  width: '50%',
   variants: {
     show: {
       open: {
@@ -97,21 +97,22 @@ export const LogoImage = styled('img', {
 
 export const MainBlueInk = styled('img', {
   transformOrigin: 'center center',
-  height: 'auto',
   position: 'absolute',
-  top: '46%',
-  left: '46%',
-  transform: 'translate(-46%, -46%)',
-  '-webkit-animation': `${KeyframeMain} 3s forwards`,
+  left: '2%',
+  bottom: '1%',
+  width: '100%',
+  height: '100%',
   animation: `${KeyframeMain} 3s forwards`,
+  '-webkit-animation': `${KeyframeMain} 3s forwards`,
 })
 
 export const BottomRightInk = styled('img', {
   transformOrigin: 'center center',
-  height: 'auto',
   position: 'absolute',
-  bottom: '35%',
-  right: '20%',
+  top: '40%',
+  left: '55%',
+  width: '50%',
+  height: '50%',
   transform: 'rotate(45deg)',
   '-webkit-animation': `${KeyframeBottomRight} 2s forwards`,
   animation: `${KeyframeBottomRight} 2s forwards`,
@@ -119,20 +120,22 @@ export const BottomRightInk = styled('img', {
 
 export const TopLeftInk = styled('img', {
   transformOrigin: 'center center',
-  height: 'auto',
   position: 'absolute',
-  top: '35%',
-  left: '20%',
+  top: '5%',
+  left: '-10%',
+  width: '60%',
+  height: '60%',
   '-webkit-animation': `${KeyframeTopLeft} 3s forwards`,
   animation: `${KeyframeTopLeft} 3s forwards`,
 })
 
 export const BottomLeftInk = styled('img', {
   transformOrigin: 'center center',
-  height: 'auto',
   position: 'absolute',
-  bottom: '40%',
-  left: '30%',
+  top: '30%',
+  left: '5%',
+  width: '60%',
+  height: '60%',
   '-webkit-animation': `${KeyframeBottomLeft} 3s forwards`,
   animation: `${KeyframeBottomLeft} 3s forwards`,
 })
