@@ -155,22 +155,22 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
       {
         nextScene: 'age-1-12',
         text: '0 - 14 ปี',
-        value: '1-12',
+        value: '0-14',
       },
       {
         nextScene: 'age-13-24',
         text: '15 - 22 ปี',
-        value: '13-24',
+        value: '15-22',
       },
       {
         nextScene: 'age-25-40',
         text: '23 - 40 ปี',
-        value: '25-59',
+        value: '23-59',
       },
       {
         nextScene: 'age-41-60',
         text: '41 - 59 ปี',
-        value: '25-59',
+        value: '23-59',
       },
       {
         nextScene: 'age-60+',

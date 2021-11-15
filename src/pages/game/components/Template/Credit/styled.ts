@@ -24,7 +24,7 @@ const ScrollKeyFrame = keyframes({
     transform: 'translateY(0%)',
   },
   '100%': {
-    transform: 'translateY(-370%)',
+    transform: 'translateY(-300%)',
   },
 })
 
