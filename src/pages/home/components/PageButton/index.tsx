@@ -44,11 +44,15 @@ const PageButton = () => {
           <ButtonText>เข้าสู่นิทรรศการ</ButtonText>
         </StyledButton>
       </ButtonConatiner>
-
-      <StyledText>
-        <MdKeyboardArrowLeft />
-        กลับสู่เว็บไซต์งานรพีฯ
-      </StyledText>
+      <a
+        style={{ textDecoration: 'none' }}
+        href="https://www.lawchulafest.com/"
+      >
+        <StyledText>
+          <MdKeyboardArrowLeft />
+          กลับสู่เว็บไซต์งานรพีฯ
+        </StyledText>
+      </a>
     </Container>
   )
 }
