@@ -11,6 +11,10 @@ export const Container = styled('div', {
         display: 'flex',
         flexDirection: 'column',
       },
+      center: {
+        display: 'flex',
+        flexDirection: 'column',
+      },
       left: {
         display: 'flex',
       },
@@ -43,6 +47,12 @@ export const StyledImage = styled('img', {
         '@sm': {
           height: 'auto',
           width: '40%',
+        },
+      },
+      center: {
+        width: '35%',
+        '@md': {
+          width: '60%',
         },
       },
     },
