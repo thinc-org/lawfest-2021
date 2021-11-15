@@ -37,6 +37,7 @@ function Credit(props: ICreditProps) {
             bottom: `${(idx + 2) * 60}%`,
           }}
           start={isStart}
+          key={`scroll-${idx}`}
         >
           <FadeContainer show={true}>
             <StyledText mobileVariant="title1" css={{ color: '$secondary900' }}>

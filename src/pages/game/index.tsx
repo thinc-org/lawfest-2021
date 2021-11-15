@@ -21,10 +21,10 @@ import Candle from 'assets/images/candle.svg'
 import Headphone from 'assets/images/headphone.svg'
 import Logo from 'assets/logo.svg'
 
-const img = [OrangeInk, BlueInk, YellowInk, Candle, Headphone, Logo]
+const img = [OrangeInk, BlueInk, YellowInk, Headphone, Logo]
 
 function GameComponent() {
-  const { nowScene } = useMainController()
+  const { nowScene, lastImg } = useMainController()
   const [isLoading, setLoading] = useState<boolean>(true)
   const [progress, setProgress] = useState<number>(0)
   const containerRef = useRef<HTMLDivElement | null>()
@@ -135,6 +135,12 @@ function GameComponent() {
           containerRef.current = el
         }}
       >
+        {nowScene.includes('epilogue') && (
+          <div style={{ backgroundImage: `url(${lastImg.bgLink})` }} />
+        )}
+        {nowScene === 'sound-warning' && (
+          <div style={{ backgroundImage: `url(${Candle})` }} />
+        )}
         {isLoading ? (
           <>
             <StyledText mobileVariant="title3" css={{ zIndex: 1 }}>

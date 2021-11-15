@@ -12,5 +12,6 @@ export interface IMainController {
   handleSetStorage: (key: string, val: void) => void
   handleSetNowScene: (x: string) => void
   parsingData: (x: string) => string
-  getBgFilePath: () => IBackgroundLink
+  getBgFilePath: () => void
+  lastImg: IBackgroundLink
 }

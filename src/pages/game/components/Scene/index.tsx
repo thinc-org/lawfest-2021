@@ -14,7 +14,8 @@ import Topbar from './Topbar'
 import Credit from '../Template/Credit'
 
 function SceneController() {
-  const { nowScene, handleSetNowScene, handleSetStorage } = useMainController()
+  const { nowScene, handleSetNowScene, handleSetStorage, getBgFilePath } =
+    useMainController()
   const [sceneData, setSceneData] = useState<IScene>({
     type: 'standby',
     bgType: 'color',
@@ -65,6 +66,12 @@ function SceneController() {
       setSceneData(SCENE[nowScene])
     }
   }, [nowScene, sceneData.type])
+
+  useEffect(() => {
+    if (nowScene === 'epilogue-1') {
+      getBgFilePath()
+    }
+  }, [getBgFilePath, nowScene])
 
   return (
     <SceneRootContainer>

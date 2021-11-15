@@ -8,12 +8,18 @@ const MainControllerContext = React.createContext<IMainController>({
   handleSetStorage: (key: string, value: any) => {},
   handleSetNowScene: () => {},
   parsingData: (x: string) => '',
-  getBgFilePath: () => ({ bgLink: '', downloadLink: '', fileName: '' }),
+  lastImg: { bgLink: '', downloadLink: '', fileName: '' },
+  getBgFilePath: () => {},
 })
 
 export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
   const [store, setStore] = useState<{ [x: string]: any }>({})
   const [nowScene, setNowScene] = useState<string>('intro')
+  const [lastImg, setLastImg] = useState({
+    bgLink: '',
+    downloadLink: '',
+    fileName: '',
+  })
 
   const handleSetStorage = useCallback(
     (key: string, value: any) => {
@@ -59,11 +65,11 @@ export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
 
     const imgLink = RESULT_MAP[ageRange][idx]
 
-    return {
+    setLastImg({
       bgLink: `images/results/bg/${hopeName}/${imgLink}`,
       downloadLink: `images/results/download/${hopeName}/${imgLink}`,
       fileName: `result-${hopeName}-${imgLink}`,
-    }
+    })
   }, [store])
 
   const value = {
@@ -73,6 +79,7 @@ export function MainControllerProvider(props: React.PropsWithChildren<{}>) {
     handleSetNowScene,
     parsingData,
     getBgFilePath,
+    lastImg,
   }
 
   return (

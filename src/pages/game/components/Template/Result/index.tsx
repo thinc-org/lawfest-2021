@@ -1,28 +1,16 @@
 import StyledButton from 'common/components/Button'
 import { useMainController } from 'common/context/Controller/MainController'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useRef } from 'react'
 import { RootContainer } from '../Container'
 import { ButtonText, InnerContainer, ResultContainer } from './styled'
 import { AiOutlineDownload } from 'react-icons/ai'
 import { useHistory } from 'react-router'
 
 function ResultTemplate() {
-  const [bgLink, setBgLink] = useState<string>('')
-  const [downloadLink, setDownloadLink] = useState<string>('')
-  const [fileName, setFileName] = useState<string>('')
   const downloadRef = useRef<HTMLAnchorElement | null>()
-
   const router = useHistory()
 
-  const { getBgFilePath } = useMainController()
-
-  useEffect(() => {
-    const { bgLink, downloadLink, fileName } = getBgFilePath()
-
-    setBgLink(bgLink)
-    setDownloadLink(downloadLink)
-    setFileName(fileName)
-  }, [getBgFilePath])
+  const { lastImg } = useMainController()
 
   const handleDownload = useCallback(() => {
     if (!downloadRef.current) return
@@ -33,7 +21,7 @@ function ResultTemplate() {
     <RootContainer padding={false}>
       <ResultContainer
         css={{
-          backgroundImage: `url(${bgLink})`,
+          backgroundImage: `url(${lastImg.bgLink})`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           boxSizing: 'border-box',
@@ -48,9 +36,9 @@ function ResultTemplate() {
           <InnerContainer>
             <AiOutlineDownload size="20" />
             <a
-              download={fileName}
+              download={lastImg.fileName}
               ref={(el) => (downloadRef.current = el)}
-              href={downloadLink}
+              href={lastImg.downloadLink}
               style={{ display: 'none' }}
             >
               Download
