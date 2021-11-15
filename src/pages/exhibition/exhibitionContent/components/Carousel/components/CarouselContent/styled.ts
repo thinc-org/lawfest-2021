@@ -5,6 +5,7 @@ export const Container = styled('div', {
   gap: '15px',
   padding: '10px 2px',
   width: '100%',
+  pointerEvents: 'none',
   variants: {
     imagePosition: {
       top: {

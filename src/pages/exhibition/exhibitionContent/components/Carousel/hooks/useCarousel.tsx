@@ -1,10 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { NextArrow } from '../components/NextArrow'
 import { PrevArrow } from '../components/PrevArrow'
 
 const useCarousel = () => {
-  const [, setSlide] = useState(0)
-
   const carouselSettings = {
     dots: true,
     infinite: false,
@@ -13,9 +11,6 @@ const useCarousel = () => {
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    afterChange: (current: number) => {
-      setSlide(current)
-    },
     adaptiveHeight: true,
   }
 

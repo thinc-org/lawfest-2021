@@ -35,12 +35,13 @@ const Title = ({ hideQuote }: TitleProps) => {
       {!hideQuote && (
         <>
           <QuoteContainer>
-            {quote.split('\n').map((line) => (
+            {quote.split('\n').map((line, idx) => (
               <Quote
                 variant="h3"
                 mobileVariant={{
                   '@md': 'title2',
                 }}
+                key={idx}
               >
                 {line}
               </Quote>
