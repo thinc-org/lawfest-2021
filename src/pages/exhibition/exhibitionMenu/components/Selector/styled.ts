@@ -34,7 +34,7 @@ export const StyledImage = styled('img', {
 export const TextConatainer = styled('div', {
   display: 'flex',
   columnGap: '5px',
-  '@md': {
+  '@xl': {
     flexDirection: 'column',
   },
 })
