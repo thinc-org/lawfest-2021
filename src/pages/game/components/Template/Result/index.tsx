@@ -25,7 +25,7 @@ function ResultTemplate() {
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           boxSizing: 'border-box',
-          padding: '0px 20px 32px 20px',
+          padding: '0px 20px 20px 20px',
         }}
       >
         <StyledButton

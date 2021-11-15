@@ -11,8 +11,10 @@ export const Container = styled('div', {
 export const Quote = styled(StyledText, {
   color: '$primary800',
   textAlign: 'center',
-  marginTop: '10px',
-  marginBottom: '10px',
+  lineHeight: '37px',
+  '@md': {
+    lineHeight: '25px',
+  },
 })
 
 export const NameStyle = {
@@ -64,4 +66,9 @@ export const TitleContainer = styled('div', {
     '-webkit-mask-composite': 'xor',
     'mask-composite': 'exclude',
   },
+})
+
+export const QuoteContainer = styled('div', {
+  marginTop: '10px',
+  marginBottom: '10px',
 })

@@ -17,18 +17,20 @@ const CarouselContent = (props: ICarouselContent) => {
           imagePosition={imagePosition}
         />
       )}
-      <div style={{ flexGrow: 1 }}>
-        {text.map((line, idx) => (
-          <div key={idx}>
-            <StyledText variant="body1" mobileVariant={{ '@md': 'body' }}>
-              &nbsp;&nbsp;&nbsp;&nbsp;{line}
-            </StyledText>
-            <br />
-          </div>
-        ))}
-        {imageRefs && <Refs title="ภาพ : " refs={imageRefs} />}
-        {contentRefs && <Refs title="อ้างอิง : " refs={contentRefs} />}
-      </div>
+      {text[0] !== '' && (
+        <div style={{ flexGrow: 1 }}>
+          {text.map((line, idx) => (
+            <div key={idx}>
+              <StyledText variant="body1" mobileVariant={{ '@md': 'body' }}>
+                &nbsp;&nbsp;&nbsp;&nbsp;{line}
+              </StyledText>
+              <br />
+            </div>
+          ))}
+          {imageRefs && <Refs title="ภาพ : " refs={imageRefs} />}
+          {contentRefs && <Refs title="อ้างอิง : " refs={contentRefs} />}
+        </div>
+      )}
     </Container>
   )
 }

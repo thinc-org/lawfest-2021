@@ -30,10 +30,10 @@ const Carousel = (props: ICarousel & { onClick: () => void }) => {
       {/* Next button */}
       <Button
         variant="secondary"
-        onClick={final ? () => history.push('/') : onClick}
+        onClick={final ? () => history.push('/exhibition') : onClick}
         css={{ marginTop: '40px', width: '100%' }}
       >
-        {final ? 'กลับหน้าแรก' : 'ไปต่อ'}
+        {final ? 'กลับสู่นิทรรศการ' : 'ไปต่อ'}
       </Button>
     </Container>
   )

@@ -41,7 +41,7 @@ export const ContentContainer = styled('div', {
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  padding: '10px 40px 0 40px',
+  padding: '30px 40px 20px 40px',
   backgroundColor: '#f1e1c7',
   boxSizing: 'border-box',
   height: '100%',

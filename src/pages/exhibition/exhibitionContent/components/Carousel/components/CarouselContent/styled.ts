@@ -5,9 +5,14 @@ export const Container = styled('div', {
   gap: '15px',
   padding: '10px 2px',
   width: '100%',
+  pointerEvents: 'none',
   variants: {
     imagePosition: {
       top: {
+        display: 'flex',
+        flexDirection: 'column',
+      },
+      center: {
         display: 'flex',
         flexDirection: 'column',
       },
@@ -43,6 +48,12 @@ export const StyledImage = styled('img', {
         '@sm': {
           height: 'auto',
           width: '40%',
+        },
+      },
+      center: {
+        width: '35%',
+        '@md': {
+          width: '60%',
         },
       },
     },

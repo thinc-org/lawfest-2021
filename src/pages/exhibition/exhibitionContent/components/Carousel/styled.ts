@@ -5,7 +5,7 @@ export const Container = styled('div', {
   flexDirection: 'column',
   alignItems: 'center',
   width: '50%',
-  paddingBottom: '50px',
+  paddingBottom: '30px',
   '@xl': {
     width: '70%',
   },
