@@ -45,7 +45,7 @@ export const StyledText = styled('div', {
         fontFamily: '$Mitr',
       },
       body1: {
-        fontSize: '$4',
+        fontSize: '1.125rem',
         fontWeight: '$regular',
         fontFamily: '$ChulaCharas',
       },
@@ -68,6 +68,79 @@ export const StyledText = styled('div', {
         fontSize: '$1',
         fontWeight: '$medium',
         fontFamily: '$Mitr',
+      },
+    },
+    mobileVariant: {
+      largeTitle: {
+        fontSize: '34px',
+        fontWeight: '$medium',
+        fontFamily: '$Mitr',
+      },
+      title1: {
+        fontSize: '28px',
+        fontWeight: '$medium',
+        fontFamily: '$Mitr',
+      },
+
+      title2: {
+        fontSize: '22px',
+        fontWeight: '$medium',
+        fontFamily: '$Mitr',
+      },
+
+      title3: {
+        fontSize: '20px',
+        fontWeight: '$medium',
+        fontFamily: '$Mitr',
+      },
+
+      headline: {
+        fontSize: '17px',
+        fontWeight: '$medium',
+        fontFamily: '$Mitr',
+      },
+
+      subhead: {
+        fontSize: '15px',
+        fontWeight: '$regular',
+        fontFamily: '$Mitr',
+      },
+
+      footnote: {
+        fontSize: '13px',
+        fontWeight: '$regular',
+        fontFamily: '$Mitr',
+      },
+
+      body: {
+        fontSize: '17px',
+        fontWeight: '$regular',
+        fontFamily: '$ChulaCharas',
+        letterSpacing: '0.3px',
+      },
+
+      callout: {
+        fontSize: '12px',
+        fontWeight: '$light',
+        fontFamily: '$Mitr',
+      },
+
+      button: {
+        fontSize: '18px',
+        fontWeight: '$medium',
+        fontFamily: '$Mitr',
+      },
+
+      caption1: {
+        fontSize: '12px',
+        fontWeight: '$regular',
+        fontFamily: '$ChulaCharas',
+      },
+
+      caption2: {
+        fontSize: '11px',
+        fontWeight: '$regular',
+        fontFamily: '$ChulaCharas',
       },
     },
   },

@@ -11,7 +11,7 @@ export const { styled, theme, keyframes, prefix, css, globalCss } =
         ...palette,
       },
       fonts: {
-        Mitr: "'Kanit', sans-serif",
+        Mitr: "'Mitr', sans-serif",
         ChulaCharas: "'ChulaCharas', sans-serif",
       },
       fontSizes: {
@@ -57,6 +57,6 @@ globalCss({
     },
   ],
   '@import': [
-    "url('https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap')",
+    "url('https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap')",
   ],
 })()
