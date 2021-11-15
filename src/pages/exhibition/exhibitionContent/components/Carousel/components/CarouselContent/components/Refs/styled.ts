@@ -7,8 +7,8 @@ export const RefConatainer = styled('div', {
     fontSize: '12px',
   },
 })
+
 export const StyledLink = styled('a', {
-  textDecoration: 'none',
   color: '$primary600',
   '&:visited': {
     color: '$primary600',
@@ -22,7 +22,18 @@ export const StyledLink = styled('a', {
   variants: {
     disabled: {
       true: {
+        textDecoration: 'none',
         pointerEvents: 'none',
+        color: 'black',
+        '&:visited': {
+          color: 'black',
+        },
+        '&:focus': {
+          color: 'black',
+        },
+        '&:active': {
+          color: 'black',
+        },
       },
     },
   },

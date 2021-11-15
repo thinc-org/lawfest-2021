@@ -29,7 +29,7 @@ export interface ICarousel {
 export interface ICarouselContent {
   text: string | string[]
   imageUrl?: string
-  imagePosition?: 'top' | 'left'
+  imagePosition?: 'top' | 'left' | 'center'
   contentRefs?: IReference[]
   imageRefs?: IReference[]
 }

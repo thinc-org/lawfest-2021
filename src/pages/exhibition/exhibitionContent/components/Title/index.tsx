@@ -10,6 +10,7 @@ import {
   Container,
   TitleContainer,
   TitleBackground,
+  QuoteContainer,
 } from './styled'
 import { TitleProps } from './types'
 
@@ -33,14 +34,19 @@ const Title = ({ hideQuote }: TitleProps) => {
       </TitleBackground>
       {!hideQuote && (
         <>
-          <Quote
-            variant="h3"
-            mobileVariant={{
-              '@md': 'title2',
-            }}
-          >
-            {quote}
-          </Quote>
+          <QuoteContainer>
+            {quote.split('\n').map((line, idx) => (
+              <Quote
+                variant="h3"
+                mobileVariant={{
+                  '@md': 'title2',
+                }}
+                key={idx}
+              >
+                {line}
+              </Quote>
+            ))}
+          </QuoteContainer>
 
           {quoteOwner && (
             <TextWithLine
