@@ -154,17 +154,17 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
     choices: [
       {
         nextScene: 'age-1-12',
-        text: '1 - 12 ปี',
+        text: '0 - 14 ปี',
         value: '1-12',
       },
       {
         nextScene: 'age-13-24',
-        text: '13 - 24 ปี',
+        text: '15 - 22 ปี',
         value: '13-24',
       },
       {
         nextScene: 'age-25-40',
-        text: '25 - 40 ปี',
+        text: '23 - 40 ปี',
         value: '25-59',
       },
       {
@@ -174,7 +174,7 @@ export const SHOP_SCENE: { [x: string]: IScene } = {
       },
       {
         nextScene: 'age-60+',
-        text: '60 ปีเป็นต้นไป',
+        text: '60 ปีขึ้นไป',
         value: '60+',
       },
     ],

@@ -1,10 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { StyledText } from 'common/components/Typography'
 import { RootContainer } from '../Container'
-import { FadeContainer, ScrollContainer } from './styled'
+import { FadeContainer, LogoImg, ScrollContainer } from './styled'
 import CREDIT from 'common/constant/Scene/Credit'
 import { ICreditProps } from './types'
 import Candle from 'assets/images/candle.svg'
+import LawFestLogo from 'assets/logo.svg'
+import ThincLogo from 'assets/images/thinc_logo_grey.png'
 
 function Credit(props: ICreditProps) {
   const { onFinish } = props
@@ -29,36 +31,64 @@ function Credit(props: ICreditProps) {
   }, [onFinish])
 
   const generateCredit = () => {
-    return CREDIT.map((val, idx) => {
-      return (
+    const lastIdx = CREDIT.length
+    return (
+      <>
+        {CREDIT.map((val, idx) => {
+          return (
+            <ScrollContainer
+              css={{
+                top: `${(idx + 1) * 60}%`,
+                bottom: `${(idx + 2) * 60}%`,
+              }}
+              start={isStart}
+              key={`scroll-${idx}`}
+            >
+              <FadeContainer show={true}>
+                <StyledText
+                  mobileVariant="title1"
+                  css={{ color: '$secondary900' }}
+                >
+                  {val.topic}
+                </StyledText>
+                {val.name.map((_val, _key) => {
+                  return (
+                    <FadeContainer
+                      show={true}
+                      key={`section-${val.topic}-${_key}`}
+                      css={{ marginTop: '10px', width: '100%' }}
+                    >
+                      <StyledText mobileVariant="title2">
+                        {_val.thai}
+                      </StyledText>
+                      <StyledText mobileVariant="title2">{_val.eng}</StyledText>
+                    </FadeContainer>
+                  )
+                })}
+              </FadeContainer>
+            </ScrollContainer>
+          )
+        })}
         <ScrollContainer
           css={{
-            top: `${(idx + 1) * 60}%`,
-            bottom: `${(idx + 2) * 60}%`,
+            top: `${(lastIdx + 1) * 60}%`,
+            bottom: `${(lastIdx + 2) * 60}%`,
           }}
           start={isStart}
-          key={`scroll-${idx}`}
         >
-          <FadeContainer show={true}>
-            <StyledText mobileVariant="title1" css={{ color: '$secondary900' }}>
-              {val.topic}
-            </StyledText>
-            {val.name.map((_val, _key) => {
-              return (
-                <FadeContainer
-                  show={true}
-                  key={`section-${val.topic}-${_key}`}
-                  css={{ marginTop: '10px', width: '100%' }}
-                >
-                  <StyledText mobileVariant="title2">{_val.thai}</StyledText>
-                  <StyledText mobileVariant="title2">{_val.eng}</StyledText>
-                </FadeContainer>
-              )
-            })}
-          </FadeContainer>
+          <LogoImg src={ThincLogo}></LogoImg>
         </ScrollContainer>
-      )
-    })
+        <ScrollContainer
+          css={{
+            top: `${(lastIdx + 2) * 60}%`,
+            bottom: `${(lastIdx + 3) * 60}%`,
+          }}
+          start={isStart}
+        >
+          <LogoImg src={LawFestLogo} darkBg={true}></LogoImg>
+        </ScrollContainer>
+      </>
+    )
   }
 
   return (
@@ -87,10 +117,10 @@ function Credit(props: ICreditProps) {
           }}
         />
         <StyledText
-          css={{ maxWidth: '300px', color: '#683F19' }}
+          css={{ maxWidth: '200px', color: '#683F19' }}
           mobileVariant="title2"
         >
-          {'แด่ผู้สร้างความหวังให้งานนี้'}
+          {'ขอบคุณที่ร่วมสร้างความหวังไปกับเรา'}
         </StyledText>
       </ScrollContainer>
       {generateCredit()}

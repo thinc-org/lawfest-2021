@@ -24,7 +24,7 @@ const ScrollKeyFrame = keyframes({
     transform: 'translateY(0%)',
   },
   '100%': {
-    transform: 'translateY(-250%)',
+    transform: 'translateY(-370%)',
   },
 })
 
@@ -36,7 +36,7 @@ export const ScrollContainer = styled('div', {
   variants: {
     start: {
       true: {
-        animation: `${ScrollKeyFrame} 17s linear forwards`,
+        animation: `${ScrollKeyFrame} 21s linear forwards`,
       },
       false: {},
     },
@@ -44,5 +44,22 @@ export const ScrollContainer = styled('div', {
 
   defaultVariants: {
     start: false,
+  },
+})
+
+export const LogoImg = styled('img', {
+  borderRadius: '8px',
+  width: '200px',
+  variants: {
+    darkBg: {
+      true: {
+        backgroundColor: '$primary900',
+      },
+      false: {},
+    },
+  },
+
+  defaultVariants: {
+    darkBg: false,
   },
 })

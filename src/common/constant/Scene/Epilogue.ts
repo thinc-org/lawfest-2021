@@ -41,7 +41,7 @@ export const EPILOGUE: { [x: string]: IScene } = {
     delay: 3000,
     text: 'ไม่ว่าความหวังที่มีจะลดลงหรือเพิ่มขึ้นก็ไม่เป็นไร',
     forceFade: true,
-    textColor: 'Darkblue',
+    textColor: '#444C71',
   },
   'epilogue-2': {
     type: 'delay',
@@ -52,7 +52,7 @@ export const EPILOGUE: { [x: string]: IScene } = {
     delay: 3000,
     text: 'ดีใจที่ได้มาเจอกันวันนี้นะ',
     forceFade: true,
-    textColor: 'Darkblue',
+    textColor: '#444C71',
   },
   'epilogue-3': {
     type: 'delay',
@@ -62,7 +62,7 @@ export const EPILOGUE: { [x: string]: IScene } = {
     nextScene: 'finalize',
     delay: 3000,
     text: 'เรามี….จะให้',
-    textColor: 'Darkblue',
+    textColor: '#444C71',
   },
   finalize: {
     type: 'result',
