@@ -103,7 +103,9 @@ function Credit(props: ICreditProps) {
         css={{ top: '0%', bottom: '100%' }}
         start={isStart}
         onAnimationEnd={() => {
-          handleOnFinish()
+          window.setTimeout(() => {
+            handleOnFinish()
+          }, 500)
         }}
       >
         <img
