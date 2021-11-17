@@ -17,7 +17,7 @@ const CarouselContent = (props: ICarouselContent) => {
           imagePosition={imagePosition}
         />
       )}
-      {props.text !== '' && (
+      {!!props.text && (
         <div style={{ flexGrow: 1 }}>
           {text.map(({ text, bold, center }, idx) => (
             <React.Fragment key={idx}>
