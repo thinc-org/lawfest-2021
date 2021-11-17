@@ -1,3 +1,4 @@
+import { StyledText } from 'common/components/Typography'
 import { styled } from 'common/config'
 
 export const Container = styled('div', {
@@ -56,6 +57,19 @@ export const StyledImage = styled('img', {
           width: '60%',
         },
       },
+    },
+  },
+})
+
+export const CarouselText = styled(StyledText, {
+  variants: {
+    center: {
+      true: { textAlign: 'center' },
+      false: {},
+    },
+    bold: {
+      true: { fontWeight: '600' },
+      false: {},
     },
   },
 })

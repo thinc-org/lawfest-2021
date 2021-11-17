@@ -1,12 +1,12 @@
-import { StyledText } from 'common/components/Typography'
 import { ICarouselContent } from 'common/constant/ExhibitionContent/types'
 import React from 'react'
 import { Refs } from './components/Refs'
-import { Container, StyledImage } from './styled'
+import useCarouselText from './hooks/useCarouselText'
+import { CarouselText, Container, StyledImage } from './styled'
 
 const CarouselContent = (props: ICarouselContent) => {
   const { imageUrl, imagePosition, contentRefs, imageRefs } = props
-  const text = Array.isArray(props.text) ? props.text : props.text.split('\n')
+  const text = useCarouselText(props.text)
 
   return (
     <Container imagePosition={imagePosition}>
@@ -17,15 +17,21 @@ const CarouselContent = (props: ICarouselContent) => {
           imagePosition={imagePosition}
         />
       )}
-      {text[0] !== '' && (
+      {!!props.text && (
         <div style={{ flexGrow: 1 }}>
-          {text.map((line, idx) => (
-            <div key={idx}>
-              <StyledText variant="body1" mobileVariant={{ '@md': 'body' }}>
-                &nbsp;&nbsp;&nbsp;&nbsp;{line}
-              </StyledText>
+          {text.map(({ text, bold, center }, idx) => (
+            <React.Fragment key={idx}>
+              <CarouselText
+                variant="body1"
+                mobileVariant={{ '@md': 'body' }}
+                center={center}
+                bold={bold}
+              >
+                {!center && <>&nbsp;&nbsp;&nbsp;&nbsp;</>}
+                {text}
+              </CarouselText>
               <br />
-            </div>
+            </React.Fragment>
           ))}
           {imageRefs && <Refs title="ภาพ : " refs={imageRefs} />}
           {contentRefs && <Refs title="อ้างอิง : " refs={contentRefs} />}
