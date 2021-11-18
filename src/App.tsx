@@ -1,21 +1,16 @@
 import Layout from 'common/components/Layout'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import routes from 'routes'
 
 function App() {
   return (
     <BrowserRouter>
       <Layout>
-        <Switch>
+        <Routes>
           {routes.map((routeProps, index) => (
-            <Route
-              key={`route-${index}`}
-              exact
-              path={routeProps.path}
-              component={routeProps.component}
-            />
+            <Route key={`route-${index}`} {...routeProps} />
           ))}
-        </Switch>
+        </Routes>
       </Layout>
     </BrowserRouter>
   )

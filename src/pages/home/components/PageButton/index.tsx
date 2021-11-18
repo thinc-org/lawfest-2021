@@ -10,16 +10,16 @@ import {
 import gameIcon from 'assets/images/game_icon.svg'
 import exhibitionIcon from 'assets/images/exhibition_icon.svg'
 import { MdKeyboardArrowLeft } from 'react-icons/md'
-import { useHistory } from 'react-router'
+import { useNavigate } from 'react-router'
 
 const PageButton = () => {
-  const history = useHistory()
+  const navigate = useNavigate()
   return (
     <Container>
       <ButtonConatiner>
         <StyledButton
           onClick={() => {
-            history.push('/game')
+            navigate('/game')
           }}
         >
           <StyledImage alt="game" src={gameIcon} />
@@ -27,7 +27,7 @@ const PageButton = () => {
         </StyledButton>
         <StyledButton
           onClick={() => {
-            history.push('/exhibition')
+            navigate('/exhibition')
           }}
         >
           <StyledImage

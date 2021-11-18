@@ -1,5 +1,5 @@
 import type { SceneType } from 'common/constant/Scene'
-import { useHistory } from 'react-router'
+import { useNavigate } from 'react-router'
 import {
   ContactContainer,
   HomeIcon,
@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react'
 function Topbar(props: { sceneType: SceneType }) {
   const { sceneType } = props
   const [isWhite, setWhite] = useState(false)
-  const history = useHistory()
+  const navigate = useNavigate()
 
   useEffect(() => {
     setWhite(['input', 'slider', 'choice', 'result'].includes(sceneType))
@@ -35,14 +35,14 @@ function Topbar(props: { sceneType: SceneType }) {
           color="white"
           size="36"
           show={isWhite}
-          onClick={() => history.push('/')}
+          onClick={() => navigate('/')}
         />
         <HomeIcon
           css={{ position: 'absolute', left: 0 }}
           color="black"
           size="36"
           show={!isWhite}
-          onClick={() => history.push('/')}
+          onClick={() => navigate('/')}
         />
       </div>
       <ContactContainer

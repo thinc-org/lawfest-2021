@@ -4,7 +4,7 @@ import Multiplechoice from './components/Multiplechoice'
 import SilderPage from './components/SliderPage'
 import InputPage from './components/InputPage'
 import Text from './components/Text'
-import { Redirect, useParams } from 'react-router-dom'
+import { Navigate, useParams } from 'react-router-dom'
 import {
   ICarousel,
   IMultipleChoice,
@@ -28,7 +28,7 @@ const Exhibition = () => {
   }, [])
 
   if (!type) {
-    return <Redirect to="/exhibition" />
+    return <Navigate to="/exhibition" />
   }
 
   let content = null

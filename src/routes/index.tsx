@@ -7,23 +7,19 @@ import ExhibitionMenu from 'pages/exhibition/exhibitionMenu'
 const routes: RouteProps[] = [
   {
     path: '/',
-    component: Home,
-    exact: true,
+    element: <Home />,
   },
   {
     path: '/game',
-    component: Game,
-    exact: true,
+    element: <Game />,
   },
   {
     path: '/exhibition',
-    component: ExhibitionMenu,
-    exact: true,
+    element: <ExhibitionMenu />,
   },
   {
     path: '/exhibition/:pageType',
-    component: ExhibitionContent,
-    exact: true,
+    element: <ExhibitionContent />,
   },
 ]
 

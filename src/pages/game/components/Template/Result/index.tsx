@@ -4,11 +4,11 @@ import { useCallback, useRef } from 'react'
 import { RootContainer } from '../Container'
 import { ButtonText, InnerContainer, ResultContainer } from './styled'
 import { AiOutlineDownload } from 'react-icons/ai'
-import { useHistory } from 'react-router'
+import { useNavigate } from 'react-router'
 
 function ResultTemplate() {
   const downloadRef = useRef<HTMLAnchorElement | null>()
-  const router = useHistory()
+  const navigate = useNavigate()
 
   const { lastImg } = useMainController()
 
@@ -46,7 +46,7 @@ function ResultTemplate() {
             <ButtonText css={{ marginLeft: '10px' }}>บันทึกรูปภาพ</ButtonText>
           </InnerContainer>
         </StyledButton>
-        <StyledButton variant="primary" onClick={() => router.push('/')}>
+        <StyledButton variant="primary" onClick={() => navigate('/')}>
           <ButtonText>กลับสู่หน้าหลัก</ButtonText>
         </StyledButton>
       </ResultContainer>
