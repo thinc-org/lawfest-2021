@@ -50,7 +50,7 @@ const PageButton = () => {
       >
         <StyledText>
           <MdKeyboardArrowLeft />
-          กลับสู่เว็บไซต์งานรพีฯ
+          กลับสู่เว็บไซต์ Law Chula Fest
         </StyledText>
       </a>
     </Container>
