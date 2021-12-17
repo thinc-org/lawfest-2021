@@ -5,7 +5,7 @@ import { FadeContainer, LogoImg, ScrollContainer } from './styled'
 import CREDIT from 'common/constant/Scene/Credit'
 import { ICreditProps } from './types'
 import Candle from 'assets/images/candle.svg'
-import LawFestLogo from 'assets/logo.svg'
+import LawFestLogo from 'assets/images/lawfest_logo.png'
 import ThincLogo from 'assets/images/thinc_logo_grey.png'
 
 function Credit(props: ICreditProps) {
@@ -76,7 +76,7 @@ function Credit(props: ICreditProps) {
           }}
           start={isStart}
         >
-          <LogoImg src={ThincLogo}></LogoImg>
+          <LogoImg src={ThincLogo} css={{ width: '200px' }}></LogoImg>
         </ScrollContainer>
         <ScrollContainer
           css={{
@@ -85,7 +85,11 @@ function Credit(props: ICreditProps) {
           }}
           start={isStart}
         >
-          <LogoImg src={LawFestLogo} darkBg={true}></LogoImg>
+          <LogoImg
+            src={LawFestLogo}
+            darkBg={true}
+            css={{ width: '125px', padding: '15px' }}
+          />
         </ScrollContainer>
       </>
     )

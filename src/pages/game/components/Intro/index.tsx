@@ -7,7 +7,7 @@ import {
   MainBlueInk,
   TopLeftInk,
 } from './styled'
-import Logo from 'assets/logo.svg'
+import Logo from 'assets/images/lawfest_logo.png'
 import { useMainController } from 'common/context/Controller/MainController'
 import { SCENE } from 'common/constant/Scene'
 import BlueInk from 'assets/images/blue_ink.svg'
