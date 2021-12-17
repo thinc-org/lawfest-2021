@@ -49,7 +49,6 @@ export const ScrollContainer = styled('div', {
 
 export const LogoImg = styled('img', {
   borderRadius: '8px',
-  width: '200px',
   variants: {
     darkBg: {
       true: {

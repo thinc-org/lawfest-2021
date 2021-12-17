@@ -19,7 +19,7 @@ export const InkContainer = styled('div', {
 })
 
 export const LawFestLogo = styled('img', {
-  height: '33%',
+  height: '25%',
   maxWidth: '80vw',
   position: 'absolute',
 

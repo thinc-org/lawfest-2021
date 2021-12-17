@@ -66,7 +66,11 @@ function Topbar(props: { sceneType: SceneType }) {
             FB: fb.com/LawChulaFest
           </StyledText>
         </TextContainer>
-        <img src={LogoWhite} alt="logo_white"></img>
+        <img
+          src={LogoWhite}
+          alt="logo_white"
+          style={{ width: '45px', height: '57px' }}
+        />
       </ContactContainer>
     </TopbarContainer>
   )
