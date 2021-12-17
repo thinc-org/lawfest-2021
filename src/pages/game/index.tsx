@@ -19,7 +19,7 @@ import BlueInk from 'assets/images/blue_ink.svg'
 import YellowInk from 'assets/images/yellow_ink.svg'
 import Candle from 'assets/images/candle.svg'
 import Headphone from 'assets/images/headphone.svg'
-import Logo from 'assets/logo.svg'
+import Logo from 'assets/images/lawfest_logo.png'
 
 const img = [OrangeInk, BlueInk, YellowInk, Headphone, Logo]
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PageButton from '../PageButton'
 import Footer from 'common/components/Footer'
-import lawfestLogo from 'assets/images/lawfest_logo.svg'
+import lawfestLogo from 'assets/images/lawfest_logo.png'
 import {
   AfterStateContainer,
   InkContainer,

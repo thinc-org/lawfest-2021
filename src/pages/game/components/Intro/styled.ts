@@ -76,7 +76,7 @@ export const LogoImage = styled('img', {
   left: '50%',
   transition: 'opacity 1s ease-in',
   zIndex: '99',
-  width: '50%',
+  width: '35%',
   variants: {
     show: {
       open: {
